@@ -1017,7 +1017,8 @@ function rUserMgmt(){
 
 // ── RENDER: SETTINGS ──────────────────────────────────
 function rSettings(){
-  var cfg=D.settings||{};
+  if(!D.settings)D.settings={cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};
+  var cfg=D.settings;
   return '<h1>'+T('settings')+'</h1><div class="g2">'
     +'<div class="card"><h3>☁️ '+T('cloudmode')+'</h3><p style="font-size:13px;color:var(--t2);margin-bottom:14px">'+(LG==='ar'?'فعّل الوضع السحابي لمزامنة البيانات عبر الأجهزة (JSONBin.io - مجاني).':'Enable cloud mode to sync data across all devices using JSONBin.io (free).')+'</p>'
     +'<div style="display:flex;gap:8px;margin-bottom:14px"><button class="btn btn-sm '+(cfg.cloudMode?'btn-s':'btn-r')+'" onclick="A.setCfg(\'cloudMode\',false)">'+T('localonly')+'</button><button class="btn btn-sm '+(cfg.cloudMode?'btn-r':'btn-s')+'" onclick="A.setCfg(\'cloudMode\',true)">'+T('cloudsync')+'</button></div>'
