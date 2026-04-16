@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html id="ROOT" lang="en" dir="ltr"><head>
+<html id="ROOT" lang="en" dir="ltr">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>SEDRADENT Solutions CRM</title>
@@ -12,7 +13,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Segoe UI',Tahoma,system-u
 ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-thumb{background:var(--brd2);border-radius:2px}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)!important;box-shadow:0 0 0 3px var(--rs)!important}
 .layout{display:flex;height:100vh;overflow:hidden}
-.sb{width:228px;min-width:228px;background:var(--card);border-right:1px solid var(--brd);display:flex;flex-direction:column;transition:.2s;overflow:hidden;flex-shrink:0}
+.sb{width:230px;min-width:230px;background:var(--card);border-right:1px solid var(--brd);display:flex;flex-direction:column;transition:.2s;overflow:hidden;flex-shrink:0}
 .sb.closed{width:0;min-width:0}
 [dir=rtl] .sb{border-right:none;border-left:1px solid var(--brd)}
 .sb-logo{padding:14px 12px 10px;border-bottom:1px solid var(--brd);cursor:pointer}
@@ -34,17 +35,14 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)!imp
 .btn-p{background:var(--pur);color:#fff}.btn-p:hover{background:var(--pur2)}
 .btn-s{background:transparent;color:var(--t2);border:1px solid var(--brd2)}.btn-s:hover{color:var(--t1);background:rgba(255,255,255,.04)}
 .btn-d{background:var(--err);color:#fff}
-.btn-sm{padding:5px 11px;font-size:12px}
-.btn-xs{padding:3px 8px;font-size:11px}
+.btn-sm{padding:5px 11px;font-size:12px}.btn-xs{padding:3px 8px;font-size:11px}
 input,select,textarea{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--brd);background:var(--bg);color:var(--t1);font-size:14px;font-family:inherit}
-[dir=rtl] input[type=date],[dir=rtl] input[type=number],[dir=rtl] input[type=email],[dir=rtl] input[type=password]{text-align:left;direction:ltr}
 select{cursor:pointer}textarea{resize:vertical}
 .card{background:var(--card);border-radius:12px;border:1px solid var(--brd);padding:17px}
 .badge{padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;display:inline-block;white-space:nowrap}
 .tw{background:var(--card);border-radius:12px;border:1px solid var(--brd);overflow:hidden}
 table{width:100%;border-collapse:collapse}
 th{padding:10px 12px;text-align:left;font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.5px;font-weight:600;border-bottom:1px solid var(--brd);white-space:nowrap}
-[dir=rtl] th{text-align:right}
 td{padding:10px 12px;border-bottom:1px solid var(--brd);font-size:13px}
 tr:last-child td{border-bottom:none}
 .tr-c{cursor:pointer}.tr-c:hover td{background:var(--rs)}
@@ -59,8 +57,8 @@ tr:last-child td{border-bottom:none}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .ga{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.kpi{background:var(--card);border-radius:12px;border:1px solid var(--brd);padding:14px 16px;transition:.15s}
-.kpi:hover{transform:translateY(-1px);border-color:var(--red)}
+.kpi{background:var(--card);border-radius:12px;border:1px solid var(--brd);padding:14px 16px;transition:.15s;cursor:pointer}
+.kpi:hover{transform:translateY(-2px);border-color:var(--red);box-shadow:0 4px 12px rgba(212,42,60,.15)}
 .kpi-l{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .kpi-v{font-size:20px;font-weight:800;line-height:1.2}
 .kpi-s{font-size:11px;color:var(--t2);margin-top:3px}
@@ -80,6 +78,11 @@ tr:last-child td{border-bottom:none}
 .rbdg{background:#d1fae5;color:#065f46;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700}
 .nbdg{background:#e0e7ff;color:#3730a3;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700}
 .mob-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:490}
+/* VISIT TYPE BADGES */
+.vt-first{background:#d1fae5;color:#065f46}
+.vt-second{background:#dbeafe;color:#1e40af}
+.vt-follow{background:#fef3c7;color:#92400e}
+/* LOGIN */
 .lp{display:flex;height:100vh;overflow:hidden}
 .ll{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:linear-gradient(135deg,#0d0d1a 0%,#180830 50%,#0d0d1a 100%);position:relative;overflow:hidden}
 .ll::before{content:'';position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(46,9,80,.5) 0%,transparent 70%);top:-180px;left:-180px;pointer-events:none}
@@ -87,25 +90,26 @@ tr:last-child td{border-bottom:none}
 .ll-inner{position:relative;z-index:1;text-align:center;max-width:430px;width:100%}
 .slogan{font-size:16px;font-style:italic;color:var(--pur3);margin-top:12px;letter-spacing:.5px}
 .ll-feats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:24px;text-align:left}
-[dir=rtl] .ll-feats{text-align:right}
 .ll-feat{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:10px;padding:11px 12px}
 .lr{width:410px;background:var(--card);border-left:1px solid var(--brd);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 34px;flex-shrink:0}
-[dir=rtl] .lr{border-left:none;border-right:1px solid var(--brd)}
 .lerr{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;padding:9px 13px;color:var(--err);font-size:13px;margin-bottom:12px;display:none}
 .lerr.show{display:block}
-.prov-card{cursor:pointer;padding:14px;border-radius:10px;border:2px solid var(--brd2);background:var(--card2);transition:.15s}
-.prov-card:hover{border-color:var(--red)}
-.prov-card.selected{border-color:var(--red);background:var(--rs)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 .fade{animation:fadeIn .2s}
 .spin{display:inline-block;animation:spin 1s linear infinite}
 h1{font-size:22px;font-weight:800;margin-bottom:18px}
 h3{font-size:14px;font-weight:700;margin-bottom:11px}
-.mt16{margin-top:16px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}.mb20{margin-bottom:20px}.w100{width:100%}
+.mt16{margin-top:16px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}.w100{width:100%}
+/* LOGO CSS APPROACH - more reliable than SVG text */
+.logo-wrap{display:flex;flex-direction:column;line-height:1}
+.logo-main{display:flex;align-items:baseline;gap:0}
+.logo-sedra{font-family:'Arial Black','Arial Narrow',Arial,sans-serif;font-weight:900;color:transparent;background:linear-gradient(135deg,#e8304a,#b81828);-webkit-background-clip:text;background-clip:text;letter-spacing:-1px;line-height:1}
+.logo-dent{font-family:'Arial Black','Arial Narrow',Arial,sans-serif;font-weight:900;color:#2d0950;letter-spacing:-1px;line-height:1}
+.logo-solutions{font-family:Arial,sans-serif;font-weight:400;color:#888;letter-spacing:3px;text-transform:uppercase}
+.logo-arc{position:relative;height:8px;overflow:visible}
 @media(max-width:768px){
-  .sb{position:fixed;z-index:500;height:100vh;transform:translateX(-110%);width:228px!important;min-width:228px!important}
-  [dir=rtl] .sb{transform:translateX(110%);left:auto;right:0}
+  .sb{position:fixed;z-index:500;height:100vh;transform:translateX(-110%);width:230px!important;min-width:230px!important}
   .sb.open{transform:translateX(0)!important}
   .mob-ov.show{display:block}
   .ll{display:none}.lr{width:100%;border:none;padding:28px 22px}
@@ -114,7 +118,7 @@ h3{font-size:14px;font-weight:700;margin-bottom:11px}
   .g2,.g3,.g4,.g5{grid-template-columns:1fr!important;gap:10px!important}
   .ga{grid-template-columns:1fr 1fr!important}
   .hm{display:none!important}
-  h1{font-size:18px}.kpi-v{font-size:17px}.card{padding:13px}
+  h1{font-size:18px}.card{padding:13px}
   .tw{overflow-x:auto}table{min-width:580px}
   .np{width:calc(100vw - 20px);right:10px}
   .modal{width:calc(100vw - 16px)!important;margin:8px}.mbd{padding:14px}
@@ -123,27 +127,27 @@ h3{font-size:14px;font-weight:700;margin-bottom:11px}
 </style>
 </head>
 <body>
-<div id="app"><div class="layout"><aside class="sb"><div class="sb-logo" onclick="A.gt('dashboard')"><svg viewBox="0 0 430 88" height="34" xmlns="http://www.w3.org/2000/svg" style="display:block"><defs><linearGradient id="rgg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e03050"></stop><stop offset="100%" stop-color="#b81828"></stop></linearGradient><linearGradient id="sgg8" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7b30a0"></stop><stop offset="100%" stop-color="#2e0952"></stop></linearGradient></defs><text x="2" y="65" font-family="'Arial Black',Impact,sans-serif" font-weight="900" font-size="68" fill="url(#rgg8)" letter-spacing="-1">SEDRA</text><text x="214" y="65" font-family="'Arial Black',Impact,sans-serif" font-weight="900" font-size="68" fill="#2d0950" letter-spacing="-1">DENT</text><text x="3" y="82" font-family="Arial,sans-serif" font-size="11.5" letter-spacing="4.5" fill="#777">SOLUTIONS</text><path d="M 248 72 Q 304 114 360 72" fill="none" stroke="url(#sgg8)" stroke-width="5.5" stroke-linecap="round"></path></svg></div><nav class="sb-nav"><button class="ni" onclick="A.gt('dashboard')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"></path></svg> Dashboard</button><button class="ni" onclick="A.gt('customers')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Customers</button><button class="ni" onclick="A.gt('deals')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Deals</button><button class="ni" onclick="A.gt('tasks')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg> Tasks</button><button class="ni" onclick="A.gt('pipeline')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg> Pipeline</button><button class="ni" onclick="A.gt('emails')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Email Templates</button><button class="ni" onclick="A.gt('reports')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> Reports</button><div class="sb-sec">Admin</div><button class="ni" onclick="A.gt('auditlog')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> Audit Log</button><button class="ni" onclick="A.gt('usermgmt')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg> User Management</button><button class="ni active" onclick="A.gt('settings')"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Settings</button></nav><div class="sb-foot"><div class="uc" onclick="A.gt('settings')"><div class="av" style="width:28px;height:28px;background:#d42a3c;font-size:11px">S</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">System Administrator</div><div style="font-size:10px;color:var(--t2)">Admin</div></div></div><button class="ni" onclick="A.logout()" style="color:var(--err)"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg> Sign Out</button><div style="font-size:10px;color:var(--t3);margin-top:4px;padding:0 4px">5 Customers · 4 Deals</div></div></aside><div class="main"><div class="topbar"><button onclick="A.sbt()" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:20px;padding:4px 6px;line-height:1;flex-shrink:0">☰</button><div style="flex:1;max-width:360px"><input id="srch" placeholder="Search by name, company, email, phone, address, tags, rep…" value="" oninput="A.srch(this.value)" style="background:var(--bg);font-size:13px"></div><div class="hm"><span style="display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;background:#dbeafe;color:#1e40af">☁️ Cloud</span></div><button onclick="A.doPull()" class="btn btn-s btn-sm hm">↻ Sync</button><button onclick="setLang(LG==='en'?'ar':'en')" style="background:var(--card2);border:1px solid var(--brd2);color:var(--t2);padding:4px 10px;border-radius:20px;cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">العربية</button><div style="position:relative;flex-shrink:0"><button onclick="A.tn()" style="background:none;border:none;cursor:pointer;color:var(--t2);font-size:20px;position:relative;padding:4px 6px">🔔</button></div><button class="btn btn-r btn-sm hm" onclick="A.mod('customer',null)">addcust</button><button onclick="A.dl()" class="btn btn-s btn-sm" style="flex-shrink:0">⬇ Save</button></div><div class="content fade"><h1>⚙️ Settings</h1><div class="g2"><div class="card"><h3>☁️ Cloud Sync</h3><p style="font-size:13px;color:var(--t2);margin-bottom:16px">Connect a free cloud database so your whole team shares live data on any device.</p><div style="display:flex;gap:8px;margin-bottom:20px"><button class="btn btn-sm btn-s" onclick="A.setCfg('cloudMode',false)">💾 Local Only</button><button class="btn btn-sm btn-r" onclick="A.setCfg('cloudMode',true)">☁️ Enable Cloud Sync</button></div><div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Choose your cloud provider:</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px"><div onclick="A.setCfg('cloudProvider','npoint')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid var(--red);background:var(--rs)"><div style="font-weight:700;font-size:14px;margin-bottom:4px">📌 npoint.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">No account needed</div><div style="font-size:11px;font-weight:700;color:var(--grn)">✅ Recommended</div><div style="font-size:10px;font-weight:800;color:var(--red);margin-top:4px">▶ SELECTED</div></div><div onclick="A.setCfg('cloudProvider','jsonbin')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid var(--brd2);background:var(--card2)"><div style="font-weight:700;font-size:14px;margin-bottom:4px">🔧 jsonbin.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Requires account</div><div style="font-size:11px;color:var(--t2)">&amp; Master Key</div></div></div></div><div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:13px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.9"><strong style="color:var(--grn);display:block;margin-bottom:5px">How to set up npoint.io (1 min, no account):</strong>1. Open new tab → go to <a href="https://www.npoint.io" target="_blank" style="color:#4ade80;font-weight:700">www.npoint.io</a><br>2. Delete all text in the box → type <code style="background:var(--bg);padding:2px 7px;border-radius:4px;color:#fff;font-size:13px"><b>{}</b></code> → click <b>Create JSON Bin</b><br>3. Your URL: <code style="background:var(--bg);padding:2px 6px;border-radius:4px;color:#4ade80">https://api.npoint.io/<b>abc123xyz</b></code> → copy <b style="color:#4ade80">abc123xyz</b> as Bin ID<br>4. Copy the <b>Access Token</b> shown on that page → paste as Key below</div><div class="field"><label>Access Token (from npoint.io page — optional but recommended)</label><input id="cfg-key" type="password" value="" placeholder="paste access token here"></div><div class="field"><label>Bin ID * <span style="font-size:10px;font-weight:400;color:var(--t2)">(code at end of your npoint URL)</span></label><input id="cfg-bid" value="5153a0f86834e60e7a95" placeholder="abc123xyz..."></div><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px"><button class="btn btn-r btn-sm" onclick="A.savCloud()">💾 Save &amp; Connect</button><button class="btn btn-s btn-sm" onclick="A.doPull()">↻ Test Sync</button></div><div style="padding:9px 13px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:8px;font-size:13px;color:var(--grn);font-weight:600">✅ Connected — data syncs automatically on every change</div></div><div class="card"><h3>📊 Data Management</h3><div class="field"><label>Export Backup</label><button class="btn btn-s btn-sm w100" onclick="A.expData()" style="justify-content:center">📤 Export JSON Backup</button></div><div class="field"><label>Import Backup</label><input type="file" id="impFile" accept=".json" onchange="A.impData(this)" style="font-size:12px;cursor:pointer"></div><div class="field"><label>Reset All Data</label><button class="btn btn-d btn-sm w100" onclick="A.resetData()" style="justify-content:center">⚠️ Reset All Data</button></div></div></div><div class="card mt16"><h3>💾 Download Desktop App</h3><p style="font-size:13px;color:var(--t2);margin-bottom:13px">Download the full CRM as one offline HTML file. Your cloud settings are embedded automatically so teammates connect instantly.</p><button class="btn btn-r btn-sm" onclick="A.dl()">⬇ Download SEDRADENT-CRM.html</button></div></div></div></div></div>
+<div id="app"></div>
 <div class="mob-ov" id="mOv" onclick="closeSb()"></div>
 <script>
-// ── TRANSLATIONS ──────────────────────────────────────
+// ── TRANSLATIONS ───────────────────────────────────────
 var TR={
-en:{slogan:'Empowering the smile makers',signin:'Sign In',uname:'Username',pwd:'Password',wback:'Welcome back',lsub:'Sign in to your CRM account',dashboard:'Dashboard',customers:'Customers',deals:'Deals',tasks:'Tasks',pipeline:'Pipeline',emails:'Email Templates',reports:'Reports',audit:'Audit Log',usermgmt:'User Management',settings:'Settings',signout:'Sign Out',save:'Save',cancel:'Cancel',del:'Delete',edit:'Edit',back:'← Back',lang:'العربية',srchph:'Search by name, company, email, phone, address, tags, rep…',totalrev:'Total Revenue',pipeval:'Pipeline Value',wpipe:'Weighted Pipeline',actcust:'Active Customers',repbuy:'Repeat Buyers',opentasks:'Open Tasks',nodata:'No data found',nocust:'No customers found',confdel:'Are you sure?',lead:'Lead',prospect:'Prospect',customer:'Customer',churned:'Churned',high:'High',medium:'Medium',low:'Low',fname:'Full Name',company:'Company',email:'Email',phone:'Phone',address:'Address',notes:'Notes',tags:'Tags',source:'Source',rep:'Assigned Rep',status:'Status',overview:'Overview',purchases:'Purchases',activity:'Activity',ai:'AI Insights',dtitle:'Deal Title',dvalue:'Value (EGP)',stage:'Stage',prob:'Probability %',expclose:'Expected Close',dudate:'Due Date',priority:'Priority',revbyrep:'Revenue by Rep',statbreak:'Status Breakdown',purchfreq:'Purchase Frequency',topcust:'Top Customers',repbuylbl:'Repeat Buyers (2+)',onebuy:'One-Time Buyers',nobuy:'No Purchases Yet',toprepbuy:'Top Repeat Buyers',adduser:'+ Add User',changepwd:'Change Password',disable:'Disable',enable:'Enable',allrep:'All Reps',allst:'All Status',itype:'Type',idate:'Date',inote:'Note',iamount:'Amount (EGP)',iitems:'Items',call:'📞 Call',emailact:'✉️ Email',meeting:'🤝 Meeting',noteact:'📝 Note',totalsales:'Total Sales',totalorders:'Total Orders',avgorder:'Avg Order',salestrend:'Sales Trend',irole:'Role',adminrole:'Admin',reprole:'Sales Rep',curpwd:'Current Password',newpwd:'New Password',confpwd:'Confirm Password',recentact:'Recent Activity',viewaudit:'View full audit log →',syncnow:'↻ Sync',syncing:'Syncing…',local:'Local',cloud:'Cloud',savefile:'⬇ Save',welcomeuser:'Welcome back,',firstpurch:'First Purchase',lastpurch:'Last Purchase',avgdays:'Avg Days Between',daysince:'Days Since Last',allactions:'All Actions',allusers:'All Users',clearlog:'Clear Log',nopurch:'No purchases yet',noact:'No activities logged',nodeals:'No deals',notasks:'No upcoming tasks',nonotif:'All caught up!',dismissall:'Dismiss all',addtag:'Type tag + Enter',confdelcust:'Delete this customer and all their data?',confdeluser:'Delete this user?',confimport:'Replace all data?',confreset:'Delete ALL data?',addpurch:'+ Add Purchase',logact:'+ Log Activity'},
-ar:{slogan:'نُمكِّن صانعي الابتسامات',signin:'تسجيل الدخول',uname:'اسم المستخدم',pwd:'كلمة المرور',wback:'مرحباً بعودتك',lsub:'سجّل دخولك',dashboard:'لوحة التحكم',customers:'العملاء',deals:'الصفقات',tasks:'المهام',pipeline:'خط الأنابيب',emails:'قوالب البريد',reports:'التقارير',audit:'سجل المراجعة',usermgmt:'إدارة المستخدمين',settings:'الإعدادات',signout:'تسجيل الخروج',save:'حفظ',cancel:'إلغاء',del:'حذف',edit:'تعديل',back:'رجوع →',lang:'English',srchph:'ابحث بالاسم، الشركة، الإيميل، الهاتف، العنوان…',totalrev:'إجمالي الإيرادات',pipeval:'قيمة خط الأنابيب',wpipe:'التقدير المحتمل',actcust:'العملاء النشطون',repbuy:'المشترون المتكررون',opentasks:'المهام المفتوحة',nodata:'لا توجد بيانات',nocust:'لم يتم العثور على عملاء',confdel:'هل أنت متأكد؟',lead:'عميل محتمل',prospect:'مرتقب',customer:'عميل',churned:'مفقود',high:'عالي',medium:'متوسط',low:'منخفض',fname:'الاسم الكامل',company:'الشركة',email:'البريد الإلكتروني',phone:'الهاتف',address:'العنوان',notes:'ملاحظات',tags:'العلامات',source:'المصدر',rep:'المندوب',status:'الحالة',overview:'نظرة عامة',purchases:'المشتريات',activity:'النشاط',ai:'تحليل ذكي',dtitle:'عنوان الصفقة',dvalue:'القيمة',stage:'المرحلة',prob:'الاحتمالية %',expclose:'تاريخ الإغلاق',dudate:'تاريخ الاستحقاق',priority:'الأولوية',revbyrep:'الإيرادات حسب المندوب',statbreak:'توزيع الحالات',purchfreq:'تحليل تكرار الشراء',topcust:'أفضل العملاء',repbuylbl:'مشترون متكررون',onebuy:'اشترى مرة',nobuy:'لم يشتر بعد',toprepbuy:'أبرز المشترين المتكررين',adduser:'+ مستخدم',changepwd:'تغيير كلمة المرور',disable:'تعطيل',enable:'تفعيل',allrep:'كل المندوبين',allst:'كل الحالات',itype:'النوع',idate:'التاريخ',inote:'الملاحظة',iamount:'المبلغ',iitems:'المنتجات',call:'📞 مكالمة',emailact:'✉️ إيميل',meeting:'🤝 اجتماع',noteact:'📝 ملاحظة',totalsales:'إجمالي المبيعات',totalorders:'إجمالي الطلبات',avgorder:'متوسط الطلب',salestrend:'مؤشر المبيعات',irole:'الصلاحية',adminrole:'مشرف',reprole:'مندوب',curpwd:'كلمة المرور الحالية',newpwd:'كلمة المرور الجديدة',confpwd:'تأكيد كلمة المرور',recentact:'آخر الإجراءات',viewaudit:'عرض السجل الكامل',syncnow:'↻ مزامنة',syncing:'جاري المزامنة…',local:'محلي',cloud:'سحابي',savefile:'⬇ حفظ',welcomeuser:'أهلاً،',firstpurch:'أول شراء',lastpurch:'آخر شراء',avgdays:'متوسط الأيام',daysince:'أيام منذ آخر طلب',allactions:'كل الإجراءات',allusers:'كل المستخدمين',clearlog:'مسح السجل',nopurch:'لا توجد مشتريات',noact:'لم يتم تسجيل نشاط',nodeals:'لا توجد صفقات',notasks:'لا توجد مهام',nonotif:'كل شيء على ما يرام!',dismissall:'رفض الكل',addtag:'اكتب علامة + Enter',confdelcust:'حذف هذا العميل؟',confdeluser:'حذف هذا المستخدم؟',confimport:'استبدال كل البيانات؟',confreset:'حذف كل البيانات؟',addpurch:'+ إضافة مشتريات',logact:'+ تسجيل نشاط'}
+en:{slogan:'Empowering the smile makers',signin:'Sign In',uname:'Username',pwd:'Password',wback:'Welcome back',lsub:'Sign in to your CRM account',dashboard:'Dashboard',customers:'Customers',deals:'Deals',tasks:'Tasks',pipeline:'Pipeline',emails:'Email Templates',reports:'Reports',visitrep:'Visit Reports',audit:'Audit Log',usermgmt:'User Management',settings:'Settings',signout:'Sign Out',save:'Save',cancel:'Cancel',edit:'Edit',back:'← Back',lang:'العربية',srchph:'Search name, company, email, phone, address, tags, rep…',totalrev:'Total Revenue',pipeval:'Pipeline Value',wpipe:'Weighted Pipeline',actcust:'Active Customers',repbuy:'Repeat Buyers',opentasks:'Open Tasks',nodata:'No data found',nocust:'No customers found',confdel:'Are you sure?',lead:'Lead',prospect:'Prospect',customer:'Customer',churned:'Churned',high:'High',medium:'Medium',low:'Low',fname:'Full Name',company:'Company',email:'Email',phone:'Phone',address:'Address',notes:'Notes',tags:'Tags',source:'Source',rep:'Assigned Rep',status:'Status',overview:'Overview',purchases:'Purchases',activity:'Activity',ai:'AI Insights',reps:'Reports',dtitle:'Deal Title',dvalue:'Value (EGP)',stage:'Stage',prob:'Probability %',expclose:'Expected Close',dudate:'Due Date',priority:'Priority',revbyrep:'Revenue by Rep',statbreak:'Status Breakdown',purchfreq:'Purchase Frequency',topcust:'Top Customers',repbuylbl:'Repeat Buyers (2+)',onebuy:'One-Time Buyers',nobuy:'No Purchases Yet',toprepbuy:'Top Repeat Buyers',adduser:'+ Add User',changepwd:'Change Password',disable:'Disable',enable:'Enable',allrep:'All Reps',allst:'All Status',itype:'Type',idate:'Date',inote:'Note',iamount:'Amount (EGP)',iitems:'Items',call:'📞 Call',emailact:'✉️ Email',meeting:'🤝 Meeting',noteact:'📝 Note',totalsales:'Total Sales',totalorders:'Total Orders',avgorder:'Avg Order',salestrend:'Sales Trend',irole:'Role',adminrole:'Admin',reprole:'Sales Rep',curpwd:'Current Password',newpwd:'New Password',confpwd:'Confirm Password',recentact:'Recent Activity',viewaudit:'View full audit log →',syncnow:'↻ Sync',syncing:'Syncing…',local:'Local',cloud:'Cloud',savefile:'⬇ Save',welcomeuser:'Welcome back,',firstpurch:'First Purchase',lastpurch:'Last Purchase',avgdays:'Avg Days Between',daysince:'Days Since Last',allactions:'All Actions',allusers:'All Users',clearlog:'Clear Log',nopurch:'No purchases yet',noact:'No activities logged',nodeals:'No deals',notasks:'No upcoming tasks',nonotif:'All caught up!',dismissall:'Dismiss all',addtag:'Type tag + Enter',confdelcust:'Delete this customer and all their data?',confdeluser:'Delete this user?',confimport:'Replace all data?',confreset:'Delete ALL data?',addpurch:'+ Add Purchase',logact:'+ Log Activity',newrep:'+ New Report',firstvt:'🟢 First Visit',secondvt:'🔵 Second Visit',followvt:'🔄 Follow Up',vttype:'Visit Type',vtdetails:'Visit Details',noreps:'No reports yet',repreadonly:'Reports cannot be edited by reps. Contact admin.'},
+ar:{slogan:'نُمكِّن صانعي الابتسامات',signin:'تسجيل الدخول',uname:'اسم المستخدم',pwd:'كلمة المرور',wback:'مرحباً بعودتك',lsub:'سجّل دخولك',dashboard:'لوحة التحكم',customers:'العملاء',deals:'الصفقات',tasks:'المهام',pipeline:'خط الأنابيب',emails:'قوالب البريد',reports:'التقارير',visitrep:'تقارير الزيارات',audit:'سجل المراجعة',usermgmt:'إدارة المستخدمين',settings:'الإعدادات',signout:'تسجيل الخروج',save:'حفظ',cancel:'إلغاء',edit:'تعديل',back:'رجوع →',lang:'English',srchph:'ابحث بالاسم، الشركة، الإيميل، الهاتف، العنوان…',totalrev:'إجمالي الإيرادات',pipeval:'قيمة خط الأنابيب',wpipe:'التقدير المحتمل',actcust:'العملاء النشطون',repbuy:'المشترون المتكررون',opentasks:'المهام المفتوحة',nodata:'لا توجد بيانات',nocust:'لم يتم العثور على عملاء',confdel:'هل أنت متأكد؟',lead:'عميل محتمل',prospect:'مرتقب',customer:'عميل',churned:'مفقود',high:'عالي',medium:'متوسط',low:'منخفض',fname:'الاسم الكامل',company:'الشركة',email:'البريد الإلكتروني',phone:'الهاتف',address:'العنوان',notes:'ملاحظات',tags:'العلامات',source:'المصدر',rep:'المندوب',status:'الحالة',overview:'نظرة عامة',purchases:'المشتريات',activity:'النشاط',ai:'تحليل ذكي',reps:'التقارير',dtitle:'عنوان الصفقة',dvalue:'القيمة',stage:'المرحلة',prob:'الاحتمالية %',expclose:'تاريخ الإغلاق',dudate:'تاريخ الاستحقاق',priority:'الأولوية',revbyrep:'الإيرادات حسب المندوب',statbreak:'توزيع الحالات',purchfreq:'تحليل تكرار الشراء',topcust:'أفضل العملاء',repbuylbl:'مشترون متكررون',onebuy:'اشترى مرة',nobuy:'لم يشتر بعد',toprepbuy:'أبرز المشترين',adduser:'+ مستخدم',changepwd:'تغيير كلمة المرور',disable:'تعطيل',enable:'تفعيل',allrep:'كل المندوبين',allst:'كل الحالات',itype:'النوع',idate:'التاريخ',inote:'الملاحظة',iamount:'المبلغ',iitems:'المنتجات',call:'📞 مكالمة',emailact:'✉️ إيميل',meeting:'🤝 اجتماع',noteact:'📝 ملاحظة',totalsales:'إجمالي المبيعات',totalorders:'إجمالي الطلبات',avgorder:'متوسط الطلب',salestrend:'مؤشر المبيعات',irole:'الصلاحية',adminrole:'مشرف',reprole:'مندوب',curpwd:'كلمة المرور الحالية',newpwd:'كلمة المرور الجديدة',confpwd:'تأكيد كلمة المرور',recentact:'آخر الإجراءات',viewaudit:'عرض السجل الكامل',syncnow:'↻ مزامنة',syncing:'جاري المزامنة…',local:'محلي',cloud:'سحابي',savefile:'⬇ حفظ',welcomeuser:'أهلاً،',firstpurch:'أول شراء',lastpurch:'آخر شراء',avgdays:'متوسط الأيام',daysince:'أيام منذ آخر طلب',allactions:'كل الإجراءات',allusers:'كل المستخدمين',clearlog:'مسح السجل',nopurch:'لا توجد مشتريات',noact:'لا يوجد نشاط',nodeals:'لا توجد صفقات',notasks:'لا توجد مهام',nonotif:'كل شيء على ما يرام!',dismissall:'رفض الكل',addtag:'اكتب علامة + Enter',confdelcust:'حذف هذا العميل؟',confdeluser:'حذف هذا المستخدم؟',confimport:'استبدال كل البيانات؟',confreset:'حذف كل البيانات؟',addpurch:'+ إضافة مشتريات',logact:'+ تسجيل نشاط',newrep:'+ تقرير جديد',firstvt:'🟢 زيارة أولى',secondvt:'🔵 زيارة ثانية',followvt:'🔄 متابعة',vttype:'نوع الزيارة',vtdetails:'تفاصيل الزيارة',noreps:'لا توجد تقارير',repreadonly:'لا يمكن للمندوبين تعديل التقارير. تواصل مع المشرف.'}
 };
 var LG=localStorage.getItem('sdlang')||'en';
 function T(k){return(TR[LG]&&TR[LG][k])||TR.en[k]||k;}
 function setLang(l){LG=l;localStorage.setItem('sdlang',l);var r=document.getElementById('ROOT');if(r){r.lang=l;r.dir=l==='ar'?'rtl':'ltr';}render();}
 
 // ── CONSTANTS ──────────────────────────────────────────
-var SK='sdcrm8',SSK='sdses';
+var SK='sdcrm9',SSK='sdses';
 function uid(){return Math.random().toString(36).slice(2,9);}
 function todayStr(){return new Date().toISOString().slice(0,10);}
 function daysFrom(n){var d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);}
 function daysDiff(a,b){return Math.round((new Date(b)-new Date(a))/86400000);}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function fc(n){return'EGP '+Number(n||0).toLocaleString();}
-function fmtTS(ts){if(!ts)return'—';var d=new Date(ts);return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+function fmtTS(ts){if(!ts)return'—';var d=new Date(ts);return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
 function fmtD(d){if(!d)return'—';return new Date(d+'T12:00:00').toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});}
 var SM={lead:{bg:'#dbeafe',fg:'#1e40af',icon:'◎'},prospect:{bg:'#fef3c7',fg:'#92400e',icon:'◉'},customer:{bg:'#d1fae5',fg:'#065f46',icon:'●'},churned:{bg:'#fee2e2',fg:'#991b1b',icon:'○'}};
 function smL(k){return{lead:T('lead'),prospect:T('prospect'),customer:T('customer'),churned:T('churned')}[k]||k;}
@@ -151,14 +155,17 @@ var PM={high:'#ef4444',medium:'#f59e0b',low:'#22c55e'};
 function pmL(k){return{high:T('high'),medium:T('medium'),low:T('low')}[k]||k;}
 var DS=['qualification','proposal','negotiation','closed_won','closed_lost'];
 var DM={qualification:{label:'Qualification',bg:'#dbeafe',fg:'#1e40af'},proposal:{label:'Proposal',bg:'#fef3c7',fg:'#92400e'},negotiation:{label:'Negotiation',bg:'#e0e7ff',fg:'#3730a3'},closed_won:{label:'Closed Won',bg:'#d1fae5',fg:'#065f46'},closed_lost:{label:'Closed Lost',bg:'#fee2e2',fg:'#991b1b'}};
-var ATYPE={LOGIN:'🔑',LOGOUT:'🚪',CREATE_CUST:'👤',UPDATE_CUST:'✏️',DELETE_CUST:'🗑️',ADD_PURCHASE:'🛒',CREATE_DEAL:'💰',UPDATE_DEAL:'✏️',DELETE_DEAL:'🗑️',CREATE_TASK:'📋',UPDATE_TASK:'✏️',DELETE_TASK:'🗑️',COMPLETE_TASK:'✅',LOG_ACT:'📝',CREATE_USER:'👥',UPDATE_USER:'✏️',DELETE_USER:'🗑️',CHANGE_PWD:'🔐',SETTINGS:'⚙️'};
+var VT={first_visit:{label:function(){return T('firstvt');},cls:'vt-first'},second_visit:{label:function(){return T('secondvt');},cls:'vt-second'},follow_up:{label:function(){return T('followvt');},cls:'vt-follow'}};
+var ATYPE={LOGIN:'🔑',LOGOUT:'🚪',CREATE_CUST:'👤',UPDATE_CUST:'✏️',DELETE_CUST:'🗑️',ADD_PURCHASE:'🛒',CREATE_DEAL:'💰',UPDATE_DEAL:'✏️',DELETE_DEAL:'🗑️',CREATE_TASK:'📋',UPDATE_TASK:'✏️',DELETE_TASK:'🗑️',COMPLETE_TASK:'✅',LOG_ACT:'📝',CREATE_VITREP:'📋',UPDATE_VITREP:'✏️',DELETE_VITREP:'🗑️',CREATE_USER:'👥',UPDATE_USER:'✏️',DELETE_USER:'🗑️',CHANGE_PWD:'🔐',SETTINGS:'⚙️'};
 var ETPL=[
-  {id:'et1',name:'Welcome New Lead',subject:'Welcome to SEDRADENT Solutions!',body:'Dear Dr. {{name}},\n\nThank you for your interest in SEDRADENT Solutions.\n\nI\'d love to schedule a quick call.\n• [Time 1]\n• [Time 2]\n\nBest regards,\n{{repName}}\nSEDRADENT Solutions'},
-  {id:'et2',name:'Follow-Up After Meeting',subject:'Great Meeting You, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nThank you for meeting me today at {{company}}.\n\nSummary:\n• [Key point 1]\n• [Key point 2]\n\nFollow up: {{followUpDate}}\n\nBest,\n{{repName}}\nSEDRADENT Solutions'},
+  {id:'et1',name:'Welcome New Lead',subject:'Welcome to SEDRADENT Solutions!',body:'Dear Dr. {{name}},\n\nThank you for your interest in SEDRADENT Solutions.\n\nI\'d love to schedule a quick call.\n\nBest regards,\n{{repName}}\nSEDRADENT Solutions'},
+  {id:'et2',name:'Follow-Up After Meeting',subject:'Great Meeting You, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nThank you for meeting me today at {{company}}.\n\nI\'ll follow up on {{followUpDate}}.\n\nBest,\n{{repName}}\nSEDRADENT Solutions'},
   {id:'et3',name:'Quote / Proposal',subject:'Your Custom Quote from SEDRADENT',body:'Dear Dr. {{name}},\n\nHere is your custom quote:\n━━━━━━━━━━━━━━━━━━━\nItems: [Products]\nTotal: [Total]\n━━━━━━━━━━━━━━━━━━━\nValid 30 days.\n\nBest,\n{{repName}}\nSEDRADENT Solutions'},
-  {id:'et4',name:'Re-Engagement',subject:'We Miss You, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nIt\'s been a while. Exclusive 15% discount on your next order!\n\nWarm regards,\n{{repName}}\nSEDRADENT Solutions'},
-  {id:'et5',name:'Thank You After Purchase',subject:'Thank You for Your Order, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nThank you for your recent order!\n• Items: [Items]\n• Total: [Amount]\n• Delivery: [Date]\n\nBest,\n{{repName}}\nSEDRADENT Solutions'},
+  {id:'et4',name:'Re-Engagement',subject:'We Miss You, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nExclusive 15% discount on your next order!\n\nWarm regards,\n{{repName}}\nSEDRADENT Solutions'},
+  {id:'et5',name:'Thank You After Purchase',subject:'Thank You, Dr. {{name}}!',body:'Dear Dr. {{name}},\n\nThank you for your recent order!\n\nBest,\n{{repName}}\nSEDRADENT Solutions'},
 ];
+
+// ── DEFAULT DATA ───────────────────────────────────────
 var INIT={
   users:[
     {id:'u1',username:'admin',password:'Admin@2024',name:'System Administrator',role:'admin',email:'admin@sedradent.com',color:'#d42a3c',createdAt:'2024-01-01T00:00:00Z',active:true},
@@ -188,216 +195,136 @@ var INIT={
   ],
   deals:[
     {id:'d1',title:'Implant Bulk Order',customerId:'c1',repId:'u3',value:25000,stage:'negotiation',probability:80,expectedClose:'2026-05-01',createdAt:'2026-03-15T09:00:00Z',notes:'Discussing 10-unit discount'},
-    {id:'d2',title:'Ortho Starter Package',customerId:'c2',repId:'u4',value:8500,stage:'proposal',probability:50,expectedClose:'2026-05-15',createdAt:'2026-04-01T09:00:00Z',notes:'Sent proposal, awaiting response'},
+    {id:'d2',title:'Ortho Starter Package',customerId:'c2',repId:'u4',value:8500,stage:'proposal',probability:50,expectedClose:'2026-05-15',createdAt:'2026-04-01T09:00:00Z',notes:'Sent proposal'},
     {id:'d3',title:'Annual Supply Contract',customerId:'c4',repId:'u5',value:60000,stage:'qualification',probability:30,expectedClose:'2026-06-01',createdAt:'2026-04-05T09:00:00Z',notes:'Annual contract terms'},
     {id:'d4',title:'Win-back Composite Deal',customerId:'c5',repId:'u4',value:3500,stage:'qualification',probability:15,expectedClose:'2026-05-30',createdAt:'2026-04-08T09:00:00Z',notes:'Re-engagement effort'},
   ],
+  visitReports:[
+    {id:'vr1',customerId:'c1',repId:'u3',visitType:'first_visit',details:'First visit to Cairo Dental Clinic. Dr. Ahmed was very interested in the new implant line. Showed the full catalog and product demos. Very positive reception.',createdAt:'2024-12-01T09:30:00Z',updatedAt:null,updatedBy:null},
+    {id:'vr2',customerId:'c1',repId:'u3',visitType:'follow_up',details:'Follow-up visit. Dr. Ahmed confirmed he wants to proceed with Implant Kit x5 order. Agreed on pricing and delivery timeline.',createdAt:'2025-01-08T11:00:00Z',updatedAt:null,updatedBy:null},
+    {id:'vr3',customerId:'c2',repId:'u4',visitType:'first_visit',details:'First visit to Smile Studio. Dr. Sarah is looking for orthodontic brackets. Sent sample pack and catalog. Promising lead.',createdAt:'2025-09-01T10:00:00Z',updatedAt:null,updatedBy:null},
+    {id:'vr4',customerId:'c4',repId:'u5',visitType:'second_visit',details:'Second visit. Dr. Layla confirmed the quarterly order for Endo Files. Discussed expanding to composite materials.',createdAt:'2025-03-10T14:00:00Z',updatedAt:null,updatedBy:null},
+  ],
   auditLog:[],
-  settings:{"cloudMode":true,"cloudProvider":"npoint","cloudKey":"","cloudBinId":"5153a0f86834e60e7a95"},
+  settings:{cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''},
 };
 
 // ── STATE ──────────────────────────────────────────────
 var D=JSON.parse(JSON.stringify(INIT));
 var SU=null;
-var V={tab:'dashboard',custId:null,dtab:'overview',sb:true,search:'',fStatus:'all',fRep:'all',notifs:false,dismissed:[],modal:null,tplId:'et1',auditUser:'all',auditType:'all',cloudSync:false,loginErr:''};
+var V={tab:'dashboard',custId:null,dtab:'overview',sb:true,search:'',fStatus:'all',fRep:'all',notifs:false,dismissed:[],modal:null,tplId:'et1',auditUser:'all',auditType:'all',cloudSync:false,loginErr:'',vrFilter:{cust:'all',type:'all',rep:'all'}};
 var _tags=[];
 var _sbOpen=false;
+var _focusSearch=false; // ← KEY FIX: track when search needs refocus
 
 // ── STORAGE ────────────────────────────────────────────
 function saveData(){
   try{localStorage.setItem(SK,JSON.stringify(D));}catch(e){}
-  if(D.settings&&D.settings.cloudMode&&D.settings.cloudBinId){cloudPush();}
+  if(D.settings&&D.settings.cloudMode&&D.settings.cloudBinId)cloudPush();
 }
 function loadData(){
-  try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p&&p.users)D=p;}}catch(e){}
+  try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p&&p.users){D=p;if(!D.visitReports)D.visitReports=[];if(!D.settings)D.settings={cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};if(!D.settings.cloudProvider)D.settings.cloudProvider='npoint';if(!D.auditLog)D.auditLog=[];}}}catch(e){}
   try{var s=sessionStorage.getItem(SSK);if(s)SU=JSON.parse(s);}catch(e){}
-  if(!D.settings)D.settings={cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};
-  if(!D.settings.cloudProvider)D.settings.cloudProvider='npoint';
-  if(!D.auditLog)D.auditLog=[];
 }
 
 // ── CLOUD ──────────────────────────────────────────────
-function isNpoint(){return D.settings.cloudProvider!=='jsonbin';}
+function isNp(){return D.settings.cloudProvider!=='jsonbin';}
 function cloudPush(){
-  var s=D.settings;
-  if(!s||!s.cloudBinId)return;
+  var s=D.settings;if(!s||!s.cloudBinId)return;
   var url,method='POST',headers={'Content-Type':'application/json'},body=JSON.stringify(D);
-  if(isNpoint()){
-    url='https://api.npoint.io/'+s.cloudBinId.trim();
-    if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();
-  } else {
-    if(!s.cloudKey||!s.cloudKey.trim())return;
-    url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim();
-    method='PUT';
-    headers['X-Master-Key']=s.cloudKey.trim();
-    headers['X-Bin-Private']='false';
-  }
-  fetch(url,{method:method,headers:headers,body:body}).catch(function(){
-    setTimeout(function(){fetch(url,{method:method,headers:headers,body:body}).catch(function(){});},5000);
-  });
+  if(isNp()){url='https://api.npoint.io/'+s.cloudBinId.trim();if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();}
+  else{if(!s.cloudKey||!s.cloudKey.trim())return;url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim();method='PUT';headers['X-Master-Key']=s.cloudKey.trim();headers['X-Bin-Private']='false';}
+  fetch(url,{method:method,headers:headers,body:body}).catch(function(){setTimeout(function(){fetch(url,{method:method,headers:headers,body:body}).catch(function(){});},5000);});
 }
 function cloudPull(){
-  var s=D.settings;
-  if(!s||!s.cloudBinId){alert('Please enter a Bin ID first.');return;}
+  var s=D.settings;if(!s||!s.cloudBinId){alert('Please enter a Bin ID first.');return;}
   V.cloudSync=true;render();
   var url,headers={};
-  if(isNpoint()){
-    url='https://api.npoint.io/'+s.cloudBinId.trim();
-    if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();
-  } else {
-    if(!s.cloudKey||!s.cloudKey.trim()){
-      alert('Please enter your JSONBin Master Key.');
-      V.cloudSync=false;render();return;
-    }
-    url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim()+'/latest';
-    headers['X-Master-Key']=s.cloudKey.trim();
-  }
-  fetch(url,{headers:headers})
-  .then(function(r){
-    if(r.status===401)throw new Error('Invalid key (401). Check your access token or master key.');
-    if(r.status===404)throw new Error('Bin not found (404). Check your Bin ID.');
-    if(!r.ok)throw new Error('HTTP error: '+r.status);
-    return r.json();
-  })
+  if(isNp()){url='https://api.npoint.io/'+s.cloudBinId.trim();if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();}
+  else{if(!s.cloudKey||!s.cloudKey.trim()){alert('Enter your JSONBin Master Key.');V.cloudSync=false;render();return;}url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim()+'/latest';headers['X-Master-Key']=s.cloudKey.trim();}
+  fetch(url,{headers:headers}).then(function(r){if(r.status===401)throw new Error('Invalid key (401)');if(r.status===404)throw new Error('Bin not found (404)');if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
   .then(function(j){
-    var record=isNpoint()?j:(j.record||null);
-    var prevSettings=JSON.parse(JSON.stringify(D.settings));
-    var prevSession=SU;
-    if(record&&record.users){
-      D=record;D.settings=prevSettings;
-      if(!D.auditLog)D.auditLog=[];
-      localStorage.setItem(SK,JSON.stringify(D));
-      if(prevSession){
-        var ok=false;
-        for(var i=0;i<D.users.length;i++){if(D.users[i].id===prevSession.id&&D.users[i].active!==false){SU=D.users[i];ok=true;break;}}
-        if(!ok){SU=null;try{sessionStorage.removeItem(SSK);}catch(e){}}
-      }
-      V.cloudSync=false;render();
-      alert('✅ Sync successful! Cloud data loaded.');
-    } else {
-      cloudPush();
-      V.cloudSync=false;render();
-      alert('✅ Cloud initialized! Your data has been uploaded.');
-    }
-  })
-  .catch(function(e){
-    V.cloudSync=false;render();
-    alert('❌ Sync failed: '+e.message+'\n\n'+(isNpoint()?'npoint.io tips:\n• Check Bin ID (code after last / in your npoint URL)\n• Access Token is on the same page as your bin':'jsonbin.io tips:\n• Check your Master Key from Account → API Keys\n• Make sure Bin ID is correct'));
-  });
+    var rec=isNp()?j:(j.record||null);var prevS=JSON.parse(JSON.stringify(D.settings)),prevU=SU;
+    if(rec&&rec.users){D=rec;D.settings=prevS;if(!D.auditLog)D.auditLog=[];if(!D.visitReports)D.visitReports=[];localStorage.setItem(SK,JSON.stringify(D));
+      if(prevU){var ok=false;for(var i=0;i<D.users.length;i++)if(D.users[i].id===prevU.id&&D.users[i].active!==false){SU=D.users[i];ok=true;break;}if(!ok){SU=null;try{sessionStorage.removeItem(SSK);}catch(e){}}}
+      V.cloudSync=false;render();alert('✅ Sync successful!');
+    }else{cloudPush();V.cloudSync=false;render();alert('✅ Cloud initialized! Data uploaded.');}
+  }).catch(function(e){V.cloudSync=false;render();alert('❌ Sync failed: '+e.message+'\n\n'+(isNp()?'npoint.io: Check Bin ID (code after last / in URL)':'jsonbin.io: Check Master Key from Account → API Keys'));});
 }
 
 // ── AUDIT ──────────────────────────────────────────────
 function addAudit(type,target,details){
-  if(!SU)return;
-  if(!D.auditLog)D.auditLog=[];
+  if(!SU)return;if(!D.auditLog)D.auditLog=[];
   D.auditLog.unshift({id:uid(),userId:SU.id,username:SU.username,userName:SU.name,role:SU.role,type:type,icon:ATYPE[type]||'⚡',target:target||'',details:details||'',ts:new Date().toISOString()});
   if(D.auditLog.length>1000)D.auditLog=D.auditLog.slice(0,1000);
 }
 
 // ── AUTH ───────────────────────────────────────────────
-function doLogin(uname,pass){
-  var u=null;
-  for(var i=0;i<D.users.length;i++){if(D.users[i].username===uname&&D.users[i].password===pass&&D.users[i].active!==false){u=D.users[i];break;}}
+function doLogin(un,pw){
+  var u=null;for(var i=0;i<D.users.length;i++)if(D.users[i].username===un&&D.users[i].password===pw&&D.users[i].active!==false){u=D.users[i];break;}
   if(!u){V.loginErr=LG==='ar'?'اسم المستخدم أو كلمة المرور غير صحيحة':'Invalid username or password.';render();return;}
   SU=u;try{sessionStorage.setItem(SSK,JSON.stringify(u));}catch(e){}
-  V.loginErr='';V.tab='dashboard';
-  addAudit('LOGIN','—','User logged in');saveData();render();
+  V.loginErr='';V.tab='dashboard';addAudit('LOGIN','—','Logged in');saveData();render();
 }
-function doLogout(){
-  addAudit('LOGOUT','—','User logged out');saveData();SU=null;
-  try{sessionStorage.removeItem(SSK);}catch(e){}
-  V.tab='dashboard';V.custId=null;V.modal=null;render();
-}
+function doLogout(){addAudit('LOGOUT','—','Logged out');saveData();SU=null;try{sessionStorage.removeItem(SSK);}catch(e){}V.tab='dashboard';V.custId=null;V.modal=null;render();}
 
 // ── HELPERS ────────────────────────────────────────────
 function myCs(){return SU&&SU.role==='admin'?D.customers:D.customers.filter(function(c){return c.repId===SU.id;});}
 function myDs(){return SU&&SU.role==='admin'?D.deals:D.deals.filter(function(d){return d.repId===SU.id;});}
 function myTs(){return SU&&SU.role==='admin'?D.tasks:D.tasks.filter(function(t){return t.repId===SU.id;});}
+function myVRs(){return SU&&SU.role==='admin'?D.visitReports:D.visitReports.filter(function(r){return r.repId===SU.id;});}
 function filterCs(list){
   return list.filter(function(c){
     if(V.fStatus!=='all'&&c.status!==V.fStatus)return false;
     if(V.fRep!=='all'&&c.repId!==V.fRep)return false;
-    if(V.search){
-      var s=V.search.toLowerCase().trim();if(!s)return true;
-      var rep=null;for(var i=0;i<D.users.length;i++)if(D.users[i].id===c.repId){rep=D.users[i];break;}
-      return(c.name||'').toLowerCase().indexOf(s)>=0||(c.company||'').toLowerCase().indexOf(s)>=0||(c.email||'').toLowerCase().indexOf(s)>=0||(c.phone||'').toLowerCase().indexOf(s)>=0||(c.address||'').toLowerCase().indexOf(s)>=0||(c.notes||'').toLowerCase().indexOf(s)>=0||(c.source||'').toLowerCase().indexOf(s)>=0||(c.tags||[]).join(' ').toLowerCase().indexOf(s)>=0||(rep?rep.name:'').toLowerCase().indexOf(s)>=0;
-    }
+    if(V.search){var s=V.search.toLowerCase().trim();if(!s)return true;var rep=null;for(var i=0;i<D.users.length;i++)if(D.users[i].id===c.repId){rep=D.users[i];break;}return(c.name||'').toLowerCase().indexOf(s)>=0||(c.company||'').toLowerCase().indexOf(s)>=0||(c.email||'').toLowerCase().indexOf(s)>=0||(c.phone||'').toLowerCase().indexOf(s)>=0||(c.address||'').toLowerCase().indexOf(s)>=0||(c.notes||'').toLowerCase().indexOf(s)>=0||(c.source||'').toLowerCase().indexOf(s)>=0||(c.tags||[]).join(' ').toLowerCase().indexOf(s)>=0||(rep?rep.name:'').toLowerCase().indexOf(s)>=0;}
     return true;
   });
 }
-function pStats(c){
-  var ps=c.purchases.slice().sort(function(a,b){return a.date.localeCompare(b.date);});
-  var cnt=ps.length,total=0;for(var i=0;i<ps.length;i++)total+=ps[i].amount;
-  var avg=cnt?total/cnt:0,avgDays=null;
-  if(cnt>1){var td=0;for(var j=1;j<ps.length;j++)td+=daysDiff(ps[j-1].date,ps[j].date);avgDays=Math.round(td/(cnt-1));}
-  var last=ps[ps.length-1]||null,first=ps[0]||null;
-  return{cnt:cnt,total:total,avg:avg,avgDays:avgDays,daysSince:last?daysDiff(last.date,todayStr()):null,first:first,last:last,sorted:ps};
-}
-function leadScore(c){
-  var s=0,ps=pStats(c);
-  if(ps.total>50000)s+=30;else if(ps.total>20000)s+=25;else if(ps.total>5000)s+=15;else if(ps.total>0)s+=8;
-  s+=Math.min(ps.cnt*4,20);
-  var ra=0;for(var i=0;i<D.activities.length;i++)if(D.activities[i].customerId===c.id&&daysDiff(D.activities[i].date,todayStr())<30)ra++;
-  s+=Math.min(ra*5,15);
-  if(c.lastContact){var g=daysDiff(c.lastContact.slice(0,10),todayStr());if(g<7)s+=10;else if(g<30)s+=5;else if(g>90)s-=10;}
-  var ad=0;for(var j=0;j<D.deals.length;j++)if(D.deals[j].customerId===c.id&&D.deals[j].stage!=='closed_won'&&D.deals[j].stage!=='closed_lost')ad++;
-  s+=Math.min(ad*5,10);
-  if(c.tags&&c.tags.indexOf('VIP')>=0)s+=10;if(c.tags&&c.tags.indexOf('Bulk')>=0)s+=5;if(c.status==='churned')s-=15;
-  return Math.max(0,Math.min(100,s));
-}
-function aiIns(c){
-  var r=[],gap=c.lastContact?daysDiff(c.lastContact.slice(0,10),todayStr()):999;
-  if(gap>60&&c.status!=='churned')r.push({t:'warning',i:'⚠️',m:'No contact in '+gap+' days — risk of churning.'});
-  if(gap>30&&gap<=60)r.push({t:'info',i:'📞',m:'Last contact '+gap+' days ago.'});
-  var hasAct=false;for(var i=0;i<D.activities.length;i++)if(D.activities[i].customerId===c.id){hasAct=true;break;}
-  if(c.status==='lead'&&!hasAct)r.push({t:'action',i:'🎯',m:'New lead with no activity yet!'});
-  if(c.status==='churned')r.push({t:'action',i:'🔄',m:'Consider a win-back campaign.'});
-  var ps=pStats(c);
-  if(ps.cnt>1&&ps.avgDays&&ps.daysSince>ps.avgDays*1.3)r.push({t:'opportunity',i:'🛒',m:'Avg cycle: '+ps.avgDays+' days. '+ps.daysSince+' days since last order.'});
-  if(ps.total>30000)r.push({t:'positive',i:'⭐',m:'High-value customer. Consider VIP treatment.'});
-  var av=[],avv=0;for(var j=0;j<D.deals.length;j++)if(D.deals[j].customerId===c.id&&D.deals[j].stage!=='closed_won'&&D.deals[j].stage!=='closed_lost'){av.push(D.deals[j]);avv+=D.deals[j].value;}
-  if(av.length)r.push({t:'info',i:'💰',m:av.length+' active deal(s) worth '+fc(avv)+'.'});
-  return r;
-}
-function getNots(){
-  var r=[],td=todayStr(),tasks=myTs();
-  for(var i=0;i<tasks.length;i++){var tk=tasks[i];if(tk.done)continue;if(tk.dueDate===td)r.push({id:'nt'+tk.id,i:'📋',title:'Task due today',body:tk.title,link:'tasks'});else if(tk.dueDate<td)r.push({id:'no'+tk.id,i:'🔴',title:'Overdue',body:tk.title,link:'tasks'});else if(daysDiff(td,tk.dueDate)<=2)r.push({id:'ns'+tk.id,i:'⏰',title:'Due soon',body:tk.title,link:'tasks'});}
-  var cs=myCs();
-  for(var j=0;j<cs.length;j++){var c=cs[j];if(c.status==='churned')continue;var g=c.lastContact?daysDiff(c.lastContact.slice(0,10),td):999;if(g>45)r.push({id:'nc'+c.id,i:'📞',title:'Follow-up needed',body:c.name+' — '+g+' days',link:'customers',cid:c.id});}
-  var dls=myDs();
-  for(var k=0;k<dls.length;k++){var dl=dls[k];if(dl.stage==='closed_won'||dl.stage==='closed_lost')continue;if(dl.expectedClose<=td)r.push({id:'nd'+dl.id,i:'💰',title:'Deal past close date',body:dl.title,link:'deals'});else if(daysDiff(td,dl.expectedClose)<=7)r.push({id:'nds'+dl.id,i:'📊',title:'Deal closing soon',body:dl.title,link:'deals'});}
-  return r.filter(function(n){return V.dismissed.indexOf(n.id)<0;});
+function pStats(c){var ps=c.purchases.slice().sort(function(a,b){return a.date.localeCompare(b.date);});var cnt=ps.length,total=0;for(var i=0;i<ps.length;i++)total+=ps[i].amount;var avg=cnt?total/cnt:0,avgDays=null;if(cnt>1){var td=0;for(var j=1;j<ps.length;j++)td+=daysDiff(ps[j-1].date,ps[j].date);avgDays=Math.round(td/(cnt-1));}var last=ps[ps.length-1]||null,first=ps[0]||null;return{cnt:cnt,total:total,avg:avg,avgDays:avgDays,daysSince:last?daysDiff(last.date,todayStr()):null,first:first,last:last,sorted:ps};}
+function leadScore(c){var s=0,ps=pStats(c);if(ps.total>50000)s+=30;else if(ps.total>20000)s+=25;else if(ps.total>5000)s+=15;else if(ps.total>0)s+=8;s+=Math.min(ps.cnt*4,20);var ra=0;for(var i=0;i<D.activities.length;i++)if(D.activities[i].customerId===c.id&&daysDiff(D.activities[i].date,todayStr())<30)ra++;s+=Math.min(ra*5,15);if(c.lastContact){var g=daysDiff(c.lastContact.slice(0,10),todayStr());if(g<7)s+=10;else if(g<30)s+=5;else if(g>90)s-=10;}var ad=0;for(var j=0;j<D.deals.length;j++)if(D.deals[j].customerId===c.id&&D.deals[j].stage!=='closed_won'&&D.deals[j].stage!=='closed_lost')ad++;s+=Math.min(ad*5,10);if(c.tags&&c.tags.indexOf('VIP')>=0)s+=10;if(c.tags&&c.tags.indexOf('Bulk')>=0)s+=5;if(c.status==='churned')s-=15;return Math.max(0,Math.min(100,s));}
+function aiIns(c){var r=[],gap=c.lastContact?daysDiff(c.lastContact.slice(0,10),todayStr()):999;if(gap>60&&c.status!=='churned')r.push({t:'warning',i:'⚠️',m:'No contact in '+gap+' days — risk of churning.'});if(gap>30&&gap<=60)r.push({t:'info',i:'📞',m:'Last contact '+gap+' days ago.'});var hasAct=false;for(var i=0;i<D.activities.length;i++)if(D.activities[i].customerId===c.id){hasAct=true;break;}if(c.status==='lead'&&!hasAct)r.push({t:'action',i:'🎯',m:'New lead with no activity yet!'});if(c.status==='churned')r.push({t:'action',i:'🔄',m:'Consider a win-back campaign.'});var ps=pStats(c);if(ps.cnt>1&&ps.avgDays&&ps.daysSince>ps.avgDays*1.3)r.push({t:'opportunity',i:'🛒',m:'Avg cycle: '+ps.avgDays+' days. '+ps.daysSince+' days since last order.'});if(ps.total>30000)r.push({t:'positive',i:'⭐',m:'High-value customer. Consider VIP treatment.'});var av=[],avv=0;for(var j=0;j<D.deals.length;j++)if(D.deals[j].customerId===c.id&&D.deals[j].stage!=='closed_won'&&D.deals[j].stage!=='closed_lost'){av.push(D.deals[j]);avv+=D.deals[j].value;}if(av.length)r.push({t:'info',i:'💰',m:av.length+' active deal(s) worth '+fc(avv)+'.'});return r;}
+function getNots(){var r=[],td=todayStr();myTs().forEach(function(tk){if(tk.done)return;if(tk.dueDate===td)r.push({id:'nt'+tk.id,i:'📋',title:'Task due today',body:tk.title,link:'tasks'});else if(tk.dueDate<td)r.push({id:'no'+tk.id,i:'🔴',title:'Overdue',body:tk.title,link:'tasks'});else if(daysDiff(td,tk.dueDate)<=2)r.push({id:'ns'+tk.id,i:'⏰',title:'Due soon',body:tk.title,link:'tasks'});});myCs().forEach(function(c){if(c.status==='churned')return;var g=c.lastContact?daysDiff(c.lastContact.slice(0,10),td):999;if(g>45)r.push({id:'nc'+c.id,i:'📞',title:'Follow-up needed',body:c.name+' — '+g+' days',link:'customers',cid:c.id});});myDs().forEach(function(dl){if(dl.stage==='closed_won'||dl.stage==='closed_lost')return;if(dl.expectedClose<=td)r.push({id:'nd'+dl.id,i:'💰',title:'Deal past close date',body:dl.title,link:'deals'});else if(daysDiff(td,dl.expectedClose)<=7)r.push({id:'nds'+dl.id,i:'📊',title:'Deal closing soon',body:dl.title,link:'deals'});});return r.filter(function(n){return V.dismissed.indexOf(n.id)<0;});}
+
+// ── LOGO HTML (CSS approach — reliable on all devices) ──
+function logoHtml(sz){
+  // sz: 'lg'=login page, 'md'=topbar/sidebar large, 'sm'=sidebar small
+  var main,sub,arcH;
+  if(sz==='lg'){main=52;sub=11;arcH=10;}
+  else if(sz==='md'){main=32;sub=7;arcH=7;}
+  else{main=24;sub=5.5;arcH=5;}
+  var arcW=main*2.2,arcTop=main*0.12;
+  return'<div class="logo-wrap" style="user-select:none">'
+    +'<div class="logo-main">'
+    +'<span class="logo-sedra" style="font-size:'+main+'px">SEDRA</span>'
+    +'<span class="logo-dent" style="font-size:'+main+'px">DENT</span>'
+    +'</div>'
+    +'<div style="display:flex;align-items:center;justify-content:space-between">'
+    +'<span class="logo-solutions" style="font-size:'+sub+'px">SOLUTIONS</span>'
+    +'<svg width="'+arcW+'" height="'+(arcH*2)+'" viewBox="0 0 100 '+(arcH*4)+'" style="display:block;flex-shrink:0;margin-top:'+arcTop+'px">'
+    +'<defs><linearGradient id="arcg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7b30a0"/><stop offset="100%" stop-color="#2e0952"/></linearGradient></defs>'
+    +'<path d="M 5 5 Q 50 35 95 5" fill="none" stroke="url(#arcg)" stroke-width="7" stroke-linecap="round"/>'
+    +'</svg>'
+    +'</div>'
+    +'</div>';
 }
 
-// ── SVG HELPERS ────────────────────────────────────────
-var _lc=0;
-function logoSvg(h){
-  _lc++;var id='g'+_lc;
-  return'<svg viewBox="0 0 430 88" height="'+h+'" xmlns="http://www.w3.org/2000/svg" style="display:block">'
-    +'<defs><linearGradient id="rg'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e03050"/><stop offset="100%" stop-color="#b81828"/></linearGradient>'
-    +'<linearGradient id="sg'+id+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7b30a0"/><stop offset="100%" stop-color="#2e0952"/></linearGradient></defs>'
-    +'<text x="2" y="65" font-family="\'Arial Black\',Impact,sans-serif" font-weight="900" font-size="68" fill="url(#rg'+id+')" letter-spacing="-1">SEDRA</text>'
-    +'<text x="214" y="65" font-family="\'Arial Black\',Impact,sans-serif" font-weight="900" font-size="68" fill="#2d0950" letter-spacing="-1">DENT</text>'
-    +'<text x="3" y="82" font-family="Arial,sans-serif" font-size="11.5" letter-spacing="4.5" fill="#777">SOLUTIONS</text>'
-    +'<path d="M 248 72 Q 304 114 360 72" fill="none" stroke="url(#sg'+id+')" stroke-width="5.5" stroke-linecap="round"/>'
-    +'</svg>';
-}
-function ring(sc,sz){var c=sc>=70?'#22c55e':sc>=40?'#f59e0b':'#ef4444';return'<div class="ring" style="width:'+sz+'px;height:'+sz+'px;border-color:'+c+';font-size:'+Math.round(sz*.36)+'px;color:'+c+'" title="Score: '+sc+'/100">'+sc+'</div>';}
-function avD(u,sz){return'<div class="av" style="width:'+sz+'px;height:'+sz+'px;background:'+((u&&u.color)||'#555')+';font-size:'+Math.round(sz*.38)+'px">'+((u&&u.name)?u.name[0]:'?')+'</div>';}
-var ICOS={dashboard:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1',customers:'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',deals:'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',tasks:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',pipeline:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',emails:'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',reports:'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',audit:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',users:'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',settings:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',logout:'M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'};
+// ── SVG ICONS ──────────────────────────────────────────
+var ICOS={dashboard:'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1',customers:'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',deals:'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',tasks:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',pipeline:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',emails:'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',reports:'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',visitrep:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',audit:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',users:'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',settings:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',logout:'M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'};
 function ico(n,sz){return'<svg width="'+sz+'" height="'+sz+'" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="'+(ICOS[n]||'')+'"/></svg>';}
-function spark(data,w,h){if(!data||data.length<2)return'';var max=0,min=Infinity;for(var i=0;i<data.length;i++){if(data[i]>max)max=data[i];if(data[i]<min)min=data[i];}if(max===min)max=min+1;var pts='';for(var j=0;j<data.length;j++)pts+=(j/(data.length-1)*w)+','+(h-((data[j]-min)/(max-min))*h)+' ';return'<svg width="'+w+'" height="'+h+'" style="display:block;max-width:100%"><polyline points="'+pts.trim()+'" fill="none" stroke="#d42a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
-function mbar(data,w,h){if(!data||!data.length)return'';var max=0;for(var i=0;i<data.length;i++)if(data[i].v>max)max=data[i].v;if(!max)max=1;var bw=Math.min(30,(w-(data.length-1)*4)/data.length),s='<svg width="'+w+'" height="'+(h+20)+'" style="max-width:100%">';for(var j=0;j<data.length;j++){var bh=Math.max(2,(data[j].v/max)*h);s+='<rect x="'+(j*(bw+4))+'" y="'+(h-bh)+'" width="'+bw+'" height="'+bh+'" rx="3" fill="#d42a3c" opacity=".85"/><text x="'+(j*(bw+4)+bw/2)+'" y="'+(h+14)+'" text-anchor="middle" font-size="9" fill="#8888aa">'+data[j].l+'</text>';}return s+'</svg>';}
+function ring(sc,sz){var c=sc>=70?'#22c55e':sc>=40?'#f59e0b':'#ef4444';return'<div class="ring" style="width:'+sz+'px;height:'+sz+'px;border-color:'+c+';font-size:'+Math.round(sz*.36)+'px;color:'+c+'">'+sc+'</div>';}
+function avD(u,sz){return'<div class="av" style="width:'+sz+'px;height:'+sz+'px;background:'+((u&&u.color)||'#555')+';font-size:'+Math.round(sz*.38)+'px">'+((u&&u.name)?u.name[0]:'?')+'</div>';}
+function spark(data,w,h){if(!data||data.length<2)return'';var mx=0,mn=Infinity;for(var i=0;i<data.length;i++){if(data[i]>mx)mx=data[i];if(data[i]<mn)mn=data[i];}if(mx===mn)mx=mn+1;var pts='';for(var j=0;j<data.length;j++)pts+=(j/(data.length-1)*w)+','+(h-((data[j]-mn)/(mx-mn))*h)+' ';return'<svg width="'+w+'" height="'+h+'" style="display:block;max-width:100%"><polyline points="'+pts.trim()+'" fill="none" stroke="#d42a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
+function mbar(data,w,h){if(!data||!data.length)return'';var mx=0;for(var i=0;i<data.length;i++)if(data[i].v>mx)mx=data[i].v;if(!mx)mx=1;var bw=Math.min(30,(w-(data.length-1)*4)/data.length),s='<svg width="'+w+'" height="'+(h+20)+'" style="max-width:100%">';for(var j=0;j<data.length;j++){var bh=Math.max(2,(data[j].v/mx)*h);s+='<rect x="'+(j*(bw+4))+'" y="'+(h-bh)+'" width="'+bw+'" height="'+bh+'" rx="3" fill="#d42a3c" opacity=".85"/><text x="'+(j*(bw+4)+bw/2)+'" y="'+(h+14)+'" text-anchor="middle" font-size="9" fill="#8888aa">'+data[j].l+'</text>';}return s+'</svg>';}
+function vtBadge(vt){var v=VT[vt];if(!v)return'';return'<span class="badge '+v.cls+'">'+v.label()+'</span>';}
 
 // ── RENDER: LOGIN ──────────────────────────────────────
 function rLogin(){
   var isAr=LG==='ar';
-  var feats=[['👥',isAr?'وصول متعدد المستخدمين':'Multi-User',isAr?'مشرفون ومندوبون':'Admins & reps'],['🔒',isAr?'آمن':'Secure',isAr?'سجل مراجعة كامل':'Full audit trail'],['🛒',isAr?'تتبع الشراء':'Purchases',isAr?'كشف المشترين المتكررين':'Detect repeat buyers'],['☁️',isAr?'سحابي':'Cloud Ready',isAr?'مزامنة الفريق':'Team sync']];
+  var feats=[['👥',isAr?'متعدد المستخدمين':'Multi-User',isAr?'مشرفون ومندوبون':'Admins & reps'],['🔒',isAr?'آمن':'Secure',isAr?'سجل مراجعة':'Audit trail'],['🛒',isAr?'تتبع الشراء':'Purchases',isAr?'مشترون متكررون':'Repeat buyers'],['☁️',isAr?'سحابي':'Cloud Ready',isAr?'مزامنة الفريق':'Team sync']];
   var fs='';for(var i=0;i<feats.length;i++)fs+='<div class="ll-feat"><div style="font-size:18px;margin-bottom:4px">'+feats[i][0]+'</div><div style="font-size:12px;font-weight:700;color:var(--t1);margin-bottom:1px">'+feats[i][1]+'</div><div style="font-size:11px;color:var(--t2)">'+feats[i][2]+'</div></div>';
-  return'<div class="lp"><div class="ll"><div class="ll-inner">'+logoSvg(70)+'<div class="slogan">'+T('slogan')+'</div><div class="ll-feats">'+fs+'</div><div style="margin-top:16px"><button onclick="setLang(LG===\'en\'?\'ar\':\'en\')" style="background:rgba(255,255,255,.08);border:1px solid var(--brd2);color:var(--t2);padding:5px 14px;border-radius:20px;cursor:pointer;font-size:12px;font-family:inherit">'+T('lang')+'</button></div></div></div>'
-  +'<div class="lr"><div style="margin-bottom:24px">'+logoSvg(44)+'</div>'
-  +'<div style="font-size:20px;font-weight:800;margin-bottom:5px;text-align:center">'+T('wback')+'</div>'
-  +'<div style="font-size:13px;color:var(--t2);margin-bottom:20px;text-align:center">'+T('lsub')+'</div>'
+  return'<div class="lp"><div class="ll"><div class="ll-inner">'+logoHtml('lg')+'<div class="slogan">'+T('slogan')+'</div><div class="ll-feats">'+fs+'</div><div style="margin-top:16px"><button onclick="setLang(LG===\'en\'?\'ar\':\'en\')" style="background:rgba(255,255,255,.08);border:1px solid var(--brd2);color:var(--t2);padding:5px 14px;border-radius:20px;cursor:pointer;font-size:12px;font-family:inherit">'+T('lang')+'</button></div></div></div>'
+  +'<div class="lr"><div style="margin-bottom:24px">'+logoHtml('md')+'</div><div style="font-size:20px;font-weight:800;margin-bottom:5px;text-align:center">'+T('wback')+'</div><div style="font-size:13px;color:var(--t2);margin-bottom:20px;text-align:center">'+T('lsub')+'</div>'
   +'<div class="lerr'+(V.loginErr?' show':'')+'">'+esc(V.loginErr)+'</div>'
   +'<div class="field w100"><label>'+T('uname')+'</label><input id="lu" type="text" autocomplete="username" placeholder="'+T('uname')+'" onkeydown="if(event.key===\'Enter\')A.login()"/></div>'
   +'<div class="field w100" style="margin-bottom:18px"><label>'+T('pwd')+'</label><input id="lp" type="password" autocomplete="current-password" placeholder="'+T('pwd')+'" onkeydown="if(event.key===\'Enter\')A.login()"/></div>'
@@ -409,13 +336,13 @@ function rLogin(){
 // ── RENDER: SIDEBAR ────────────────────────────────────
 function rSb(){
   var isAdmin=SU&&SU.role==='admin';
-  var tabs=[{id:'dashboard'},{id:'customers'},{id:'deals'},{id:'tasks'},{id:'pipeline'},{id:'emails'},{id:'reports'}];
+  var tabs=[{id:'dashboard'},{id:'customers'},{id:'deals'},{id:'tasks'},{id:'pipeline'},{id:'emails'},{id:'reports'},{id:'visitrep'}];
   var atabs=[{id:'auditlog',icon:'audit',lbl:T('audit')},{id:'usermgmt',icon:'users',lbl:T('usermgmt')},{id:'settings',icon:'settings',lbl:T('settings')}];
-  var lbls={dashboard:T('dashboard'),customers:T('customers'),deals:T('deals'),tasks:T('tasks'),pipeline:T('pipeline'),emails:T('emails'),reports:T('reports')};
+  var lbls={dashboard:T('dashboard'),customers:T('customers'),deals:T('deals'),tasks:T('tasks'),pipeline:T('pipeline'),emails:T('emails'),reports:T('reports'),visitrep:T('visitrep')};
   var nav='';
   for(var i=0;i<tabs.length;i++){var x=tabs[i];nav+='<button class="ni'+(V.tab===x.id?' active':'')+'" onclick="A.gt(\''+x.id+'\')">'+ico(x.id,15)+' '+lbls[x.id]+'</button>';}
   if(isAdmin){nav+='<div class="sb-sec">'+T('adminrole')+'</div>';for(var j=0;j<atabs.length;j++){var y=atabs[j];nav+='<button class="ni'+(V.tab===y.id?' active':'')+'" onclick="A.gt(\''+y.id+'\')">'+ico(y.icon,15)+' '+y.lbl+'</button>';}}
-  return'<aside class="sb'+(V.sb?'':' closed')+(_sbOpen?' open':'')+'"><div class="sb-logo" onclick="A.gt(\'dashboard\')">'+logoSvg(34)+'</div><nav class="sb-nav">'+nav+'</nav>'
+  return'<aside class="sb'+(V.sb?'':' closed')+(_sbOpen?' open':'')+'"><div class="sb-logo" onclick="A.gt(\'dashboard\')">'+logoHtml('sm')+'</div><nav class="sb-nav">'+nav+'</nav>'
   +'<div class="sb-foot"><div class="uc" onclick="A.gt(\'settings\')">'+avD(SU,28)+'<div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(SU?SU.name:'')+'</div><div style="font-size:10px;color:var(--t2)">'+(SU&&SU.role==='admin'?T('adminrole'):T('reprole'))+'</div></div></div>'
   +'<button class="ni" onclick="A.logout()" style="color:var(--err)">'+ico('logout',14)+' '+T('signout')+'</button>'
   +'<div style="font-size:10px;color:var(--t3);margin-top:4px;padding:0 4px">'+myCs().length+' '+T('customers')+' · '+myDs().length+' '+T('deals')+'</div></div></aside>';
@@ -428,76 +355,84 @@ function rTopbar(){
   var ni='';for(var i=0;i<ns.length;i++){var n=ns[i];ni+='<div onclick="A.goN(\''+n.link+'\',\''+(n.cid||'')+'\')" style="padding:9px 14px;border-bottom:1px solid var(--brd);cursor:pointer;display:flex;gap:9px;align-items:flex-start"><span style="font-size:17px;flex-shrink:0">'+n.i+'</span><div style="flex:1"><div style="font-size:13px;font-weight:600">'+esc(n.title)+'</div><div style="font-size:12px;color:var(--t2)">'+esc(n.body)+'</div></div><button onclick="event.stopPropagation();A.dimN(\''+n.id+'\')" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:16px;line-height:1">×</button></div>';}
   var npanel=V.notifs?'<div class="np fade"><div style="padding:11px 15px;border-bottom:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700;font-size:14px">🔔</span>'+(cnt?'<button onclick="A.dAll()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;font-weight:600">'+T('dismissall')+'</button>':'')+'</div>'+(!cnt?'<div style="padding:24px;text-align:center;color:var(--t2);font-size:13px">✓ '+T('nonotif')+'</div>':ni)+'</div>':'';
   return'<div class="topbar"><button onclick="A.sbt()" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:20px;padding:4px 6px;line-height:1;flex-shrink:0">☰</button>'
+  // ── SEARCH FIX: id="srch" with oninput ──
   +'<div style="flex:1;max-width:360px"><input id="srch" placeholder="'+esc(T('srchph'))+'" value="'+esc(V.search)+'" oninput="A.srch(this.value)" style="background:var(--bg);font-size:13px"/></div>'
   +'<div class="hm">'+ci+'</div>'
   +(D.settings&&D.settings.cloudMode?'<button onclick="A.doPull()" class="btn btn-s btn-sm hm">'+(V.cloudSync?'<span class="spin">↻</span> '+T('syncing'):T('syncnow'))+'</button>':'')
   +'<button onclick="setLang(LG===\'en\'?\'ar\':\'en\')" style="background:var(--card2);border:1px solid var(--brd2);color:var(--t2);padding:4px 10px;border-radius:20px;cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">'+T('lang')+'</button>'
   +'<div style="position:relative;flex-shrink:0"><button onclick="A.tn()" style="background:none;border:none;cursor:pointer;color:var(--t2);font-size:20px;position:relative;padding:4px 6px">🔔'+(cnt?'<span style="position:absolute;top:0;right:0;width:16px;height:16px;border-radius:50%;background:var(--err);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center">'+cnt+'</span>':'')+'</button>'+npanel+'</div>'
-  +'<button class="btn btn-r btn-sm hm" onclick="A.mod(\'customer\',null)">'+T('addcust'||'+ Customer')+'</button>'
+  +'<button class="btn btn-r btn-sm hm" onclick="A.mod(\'customer\',null)">+ '+T('customers')+'</button>'
   +'<button onclick="A.dl()" class="btn btn-s btn-sm" style="flex-shrink:0">'+T('savefile')+'</button></div>';
 }
 
 // ── RENDER: DASHBOARD ──────────────────────────────────
 function rDash(){
-  var isAdmin=SU&&SU.role==='admin',cs=myCs(),dls=myDs(),tks=myTs();
-  var rev=0;for(var i=0;i<cs.length;i++)for(var j=0;j<cs[i].purchases.length;j++)rev+=cs[i].purchases[j].amount;
-  var active=[];for(var k=0;k<dls.length;k++)if(dls[k].stage!=='closed_won'&&dls[k].stage!=='closed_lost')active.push(dls[k]);
-  var pv=0,wv=0;for(var m=0;m<active.length;m++){pv+=active[m].value;wv+=active[m].value*active[m].probability/100;}
-  var stc={lead:0,prospect:0,customer:0,churned:0};for(var n=0;n<cs.length;n++)stc[cs[n].status]++;
-  var ot=0,td=todayStr();for(var p=0;p<tks.length;p++)if(!tks[p].done&&tks[p].dueDate<td)ot++;
-  var repB=0;for(var q=0;q<cs.length;q++)if(cs[q].purchases.length>1)repB++;
-  var mmap={};for(var r=0;r<cs.length;r++)for(var s=0;s<cs[r].purchases.length;s++){var mk=cs[r].purchases[s].date.slice(0,7);mmap[mk]=(mmap[mk]||0)+cs[r].purchases[s].amount;}
-  var mkeys=Object.keys(mmap).sort().slice(-6),marr=[];for(var u=0;u<mkeys.length;u++)marr.push({l:mkeys[u].slice(5),v:mmap[mkeys[u]]});
-  var top=[];for(var v=0;v<cs.length;v++)top.push({c:cs[v],sc:leadScore(cs[v])});top.sort(function(a,b){return b.sc-a.sc;});top=top.slice(0,5);
-  var upT=[];for(var w=0;w<tks.length;w++)if(!tks[w].done&&tks[w].dueDate>=td)upT.push(tks[w]);
-  upT.sort(function(a,b){return a.dueDate.localeCompare(b.dueDate);});upT=upT.slice(0,4);
-  var rps=[];
-  for(var x=0;x<D.users.length;x++){if(D.users[x].role==='rep'&&D.users[x].active!==false){var uc=isAdmin?D.customers.filter(function(cc){return cc.repId===D.users[x].id;}):cs.filter(function(cc){return cc.repId===D.users[x].id;});var rv=0;for(var y=0;y<uc.length;y++)for(var z=0;z<uc[y].purchases.length;z++)rv+=uc[y].purchases[z].amount;rps.push({u:D.users[x],cnt:uc.length,rv:rv});}}
-  rps.sort(function(a,b){return b.rv-a.rv;});
-  var kpis=[{l:T('totalrev'),v:fc(rev),c:'var(--red)',s:cs.length+' '+T('customers')},{l:T('pipeval'),v:fc(pv),c:'var(--pur2)',s:active.length+' deals'},{l:T('wpipe'),v:fc(Math.round(wv)),c:'var(--grn)',s:'Probability-adj.'},{l:T('actcust'),v:stc.customer,c:'var(--grn)',s:stc.lead+' leads'},{l:T('repbuy'),v:repB,c:'var(--ylw)',s:'of '+cs.length+' total'},{l:T('opentasks'),v:tks.filter(function(t){return!t.done;}).length,c:ot?'var(--err)':'var(--red)',s:ot?'⚠ '+ot+' overdue':'On track'}];
-  var kh='';for(var ki=0;ki<kpis.length;ki++){var kp=kpis[ki];kh+='<div class="kpi"><div class="kpi-l">'+kp.l+'</div><div class="kpi-v" style="color:'+kp.c+'">'+kp.v+'</div><div class="kpi-s">'+kp.s+'</div></div>';}
-  var topH='';for(var ti=0;ti<top.length;ti++){var it=top[ti];var sm=SM[it.c.status];topH+='<div onclick="A.goC(\''+it.c.id+'\')" style="display:flex;align-items:center;gap:9px;margin-bottom:10px;cursor:pointer">'+ring(it.sc,27)+'<div style="flex:1"><span style="font-size:13px;font-weight:600">'+esc(it.c.name)+'</span></div><span class="badge" style="background:'+sm.bg+';color:'+sm.fg+'">'+smL(it.c.status)+'</span></div>';}
+  var isAdmin=SU&&SU.role==='admin',cs=myCs(),dls=myDs(),tks=myTs(),vrs=myVRs();
+  var rev=0;cs.forEach(function(c){c.purchases.forEach(function(p){rev+=p.amount;});});
+  var active=dls.filter(function(d){return d.stage!=='closed_won'&&d.stage!=='closed_lost';});
+  var pv=0,wv=0;active.forEach(function(d){pv+=d.value;wv+=d.value*d.probability/100;});
+  var stc={lead:0,prospect:0,customer:0,churned:0};cs.forEach(function(c){stc[c.status]++;});
+  var ot=0,td=todayStr();tks.forEach(function(t){if(!t.done&&t.dueDate<td)ot++;});
+  var repB=cs.filter(function(c){return c.purchases.length>1;}).length;
+  var mmap={};cs.forEach(function(c){c.purchases.forEach(function(p){var mk=p.date.slice(0,7);mmap[mk]=(mmap[mk]||0)+p.amount;});});
+  var mkeys=Object.keys(mmap).sort().slice(-6),marr=mkeys.map(function(k){return{l:k.slice(5),v:mmap[k]};});
+  var top=cs.map(function(c){return{c:c,sc:leadScore(c)};}).sort(function(a,b){return b.sc-a.sc;}).slice(0,5);
+  var upT=tks.filter(function(t){return!t.done&&t.dueDate>=td;}).sort(function(a,b){return a.dueDate.localeCompare(b.dueDate);}).slice(0,4);
+  var rps=D.users.filter(function(u){return u.role==='rep'&&u.active!==false;}).map(function(u){var uc=isAdmin?D.customers.filter(function(c){return c.repId===u.id;}):cs.filter(function(c){return c.repId===u.id;});var rv=0;uc.forEach(function(c){c.purchases.forEach(function(p){rv+=p.amount;});});return{u:u,cnt:uc.length,rv:rv,vrCnt:D.visitReports.filter(function(r){return r.repId===u.id;}).length};}).sort(function(a,b){return b.rv-a.rv;});
+
+  // KPI destinations
+  var kpiLinks={totalrev:'reports',pipeval:'deals',wpipe:'deals',actcust:'customers',repbuy:'customers',opentasks:'tasks'};
+  var kpis=[{k:'totalrev',v:fc(rev),c:'var(--red)',s:cs.length+' '+T('customers')},{k:'pipeval',v:fc(pv),c:'var(--pur2)',s:active.length+' deals'},{k:'wpipe',v:fc(Math.round(wv)),c:'var(--grn)',s:'Prob. adjusted'},{k:'actcust',v:stc.customer,c:'var(--grn)',s:stc.lead+' leads'},{k:'repbuy',v:repB,c:'var(--ylw)',s:'of '+cs.length+' total'},{k:'opentasks',v:tks.filter(function(t){return!t.done;}).length,c:ot?'var(--err)':'var(--red)',s:ot?'⚠ '+ot+' overdue':'On track'}];
+  var kh='';kpis.forEach(function(kp){kh+='<div class="kpi" onclick="A.gt(\''+kpiLinks[kp.k]+'\')" title="Click to view '+T(kp.k)+'"><div class="kpi-l">'+T(kp.k)+'</div><div class="kpi-v" style="color:'+kp.c+'">'+kp.v+'</div><div class="kpi-s">'+kp.s+'</div></div>';});
+
+  var topH='';top.forEach(function(it){var sm=SM[it.c.status];topH+='<div onclick="A.goC(\''+it.c.id+'\')" style="display:flex;align-items:center;gap:9px;margin-bottom:10px;cursor:pointer">'+ring(it.sc,27)+'<div style="flex:1"><span style="font-size:13px;font-weight:600">'+esc(it.c.name)+'</span><span style="font-size:11px;color:var(--t2);margin-left:5px">'+esc(it.c.company)+'</span></div><span class="badge" style="background:'+sm.bg+';color:'+sm.fg+'">'+smL(it.c.status)+'</span></div>';});
   var upH='';if(!upT.length)upH='<div style="color:var(--t2);font-size:13px">'+T('notasks')+'</div>';
-  for(var ui=0;ui<upT.length;ui++){var ut=upT[ui];var uc2=null;for(var ci2=0;ci2<cs.length;ci2++)if(cs[ci2].id===ut.customerId){uc2=cs[ci2];break;}upH+='<div style="display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--brd);font-size:13px"><div style="width:7px;height:7px;border-radius:50%;background:'+PM[ut.priority]+';flex-shrink:0"></div><div style="flex:1"><span style="font-weight:600">'+esc(ut.title)+'</span>'+(uc2?'<span style="color:var(--t2);font-size:11px;margin-left:5px">'+esc(uc2.name)+'</span>':'')+'</div><span style="color:var(--t2);font-size:11px">'+ut.dueDate+'</span></div>';}
-  var rpH='';for(var ri=0;ri<rps.length;ri++){var rp=rps[ri];var pct=rev?Math.round(rp.rv/rev*100):0;rpH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><div style="display:flex;align-items:center;gap:7px">'+avD(rp.u,22)+'<span style="font-size:13px;font-weight:600">'+esc(rp.u.name)+'</span></div><span style="font-weight:700;color:var(--red);font-size:12px">'+fc(rp.rv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+pct+'%;background:'+rp.u.color+'"></div></div></div>';}
-  var auH='';if(isAdmin&&D.auditLog&&D.auditLog.length){var ra=D.auditLog.slice(0,4);for(var ai=0;ai<ra.length;ai++){var ae=ra[ai];auH+='<div style="display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid var(--brd);font-size:12px"><span style="font-size:15px;flex-shrink:0">'+(ae.icon||'⚡')+'</span><div style="flex:1"><div style="font-weight:500">'+esc(ae.details)+'</div><div style="color:var(--t2);margin-top:1px">'+esc(ae.userName)+' · '+fmtTS(ae.ts)+'</div></div></div>';}}
+  upT.forEach(function(tk){var c=cs.filter(function(x){return x.id===tk.customerId;})[0];upH+='<div style="display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--brd);font-size:13px"><div style="width:7px;height:7px;border-radius:50%;background:'+PM[tk.priority]+';flex-shrink:0"></div><div style="flex:1"><span style="font-weight:600">'+esc(tk.title)+'</span>'+(c?'<span style="color:var(--t2);font-size:11px;margin-left:5px">'+esc(c.name)+'</span>':'')+'</div><span style="color:var(--t2);font-size:11px">'+tk.dueDate+'</span></div>';});
+  var rpH='';rps.forEach(function(rp){var pct=rev?Math.round(rp.rv/rev*100):0;rpH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><div style="display:flex;align-items:center;gap:7px">'+avD(rp.u,22)+'<span style="font-size:12px;font-weight:600">'+esc(rp.u.name)+'</span><span style="font-size:11px;color:var(--t2)">'+rp.cnt+' clients · '+rp.vrCnt+' reports</span></div><span style="font-weight:700;color:var(--red);font-size:12px">'+fc(rp.rv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+pct+'%;background:'+rp.u.color+'"></div></div></div>';});
+
+  // Recent visit reports
+  var recentVR=vrs.slice().sort(function(a,b){return b.createdAt.localeCompare(a.createdAt);}).slice(0,3);
+  var vrH='';recentVR.forEach(function(r){var c=D.customers.filter(function(x){return x.id===r.customerId;})[0],rep=D.users.filter(function(u){return u.id===r.repId;})[0];vrH+='<div style="display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid var(--brd);font-size:13px"><div style="flex:1"><div class="fac" style="display:flex;align-items:center;gap:6px;margin-bottom:3px">'+vtBadge(r.visitType)+'<span style="font-weight:600">'+esc(c?c.name:'—')+'</span></div><div style="font-size:11px;color:var(--t2)">'+esc(rep?rep.name:'—')+' · '+fmtTS(r.createdAt)+'</div><div style="font-size:12px;color:var(--t2);margin-top:3px">'+esc(r.details.slice(0,80))+(r.details.length>80?'…':'')+'</div></div></div>';});
+
   return'<h1>'+T('dashboard')+' <span style="font-size:13px;font-weight:400;color:var(--t2)">'+T('welcomeuser')+' '+esc(SU?SU.name:'')+'</span></h1>'
+  +'<div style="font-size:11px;color:var(--t3);margin-bottom:10px;margin-top:-12px">💡 Click any card to view details</div>'
   +'<div class="ga mb16">'+kh+'</div>'
-  +'<div class="g2 mb16"><div class="card"><h3>📊 Monthly Revenue</h3>'+mbar(marr,Math.min(260,marr.length*44),70)+'</div>'
-  +'<div class="card"><h3>🔥 Top Leads</h3>'+topH+'</div></div>'
-  +'<div class="g2 mb16"><div class="card"><h3>📋 '+T('tasks')+'</h3>'+upH+'</div><div class="card"><h3>👥 Rep Performance</h3>'+rpH+'</div></div>'
-  +(isAdmin&&auH?'<div class="card"><h3>'+T('recentact')+'</h3>'+auH+'<button class="btn btn-s btn-sm mt16" onclick="A.gt(\'auditlog\')">'+T('viewaudit')+'</button></div>':'');
+  +'<div class="g2 mb16"><div class="card"><h3>📊 Monthly Revenue</h3>'+mbar(marr,Math.min(260,marr.length*44),70)+'<button class="btn btn-s btn-sm" style="margin-top:12px;font-size:11px" onclick="A.gt(\'reports\')">View Full Reports →</button></div>'
+  +'<div class="card"><h3>🔥 Top Leads</h3>'+topH+'<button class="btn btn-s btn-sm" style="margin-top:12px;font-size:11px" onclick="A.gt(\'customers\')">View All Customers →</button></div></div>'
+  +'<div class="g2 mb16"><div class="card"><h3>📋 '+T('tasks')+'</h3>'+upH+'<button class="btn btn-s btn-sm" style="margin-top:12px;font-size:11px" onclick="A.gt(\'tasks\')">View All Tasks →</button></div>'
+  +'<div class="card"><h3>👥 Rep Performance</h3>'+rpH+'<button class="btn btn-s btn-sm" style="margin-top:12px;font-size:11px" onclick="A.gt(\'reports\')">View Detailed Reports →</button></div></div>'
+  +'<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h3 style="margin:0">📋 Recent Visit Reports</h3><button class="btn btn-s btn-sm" onclick="A.gt(\'visitrep\')">View All Reports →</button></div>'
+  +(vrH||'<div style="color:var(--t2);font-size:13px">'+T('noreps')+'</div>')+'</div>';
 }
 
 // ── RENDER: CUSTOMER LIST ──────────────────────────────
 function rCustList(){
   var list=filterCs(myCs()),isAdmin=SU&&SU.role==='admin';
-  var repB=0;for(var i=0;i<list.length;i++)if(list[i].purchases.length>1)repB++;
+  var repB=list.filter(function(c){return c.purchases.length>1;}).length;
   var stO='<option value="all"'+(V.fStatus==='all'?' selected':'')+'>'+T('allst')+'</option>';
-  var sks=['lead','prospect','customer','churned'];for(var si=0;si<sks.length;si++)stO+='<option value="'+sks[si]+'"'+(V.fStatus===sks[si]?' selected':'')+'>'+smL(sks[si])+'</option>';
+  ['lead','prospect','customer','churned'].forEach(function(sk){stO+='<option value="'+sk+'"'+(V.fStatus===sk?' selected':'')+'>'+smL(sk)+'</option>';});
   var rO='<option value="all"'+(V.fRep==='all'?' selected':'')+'>'+T('allrep')+'</option>';
-  for(var ri=0;ri<D.users.length;ri++)if(D.users[ri].role==='rep')rO+='<option value="'+D.users[ri].id+'"'+(V.fRep===D.users[ri].id?' selected':'')+'>'+esc(D.users[ri].name)+'</option>';
+  D.users.filter(function(u){return u.role==='rep';}).forEach(function(r){rO+='<option value="'+r.id+'"'+(V.fRep===r.id?' selected':'')+'>'+esc(r.name)+'</option>';});
   var rows='';
-  for(var ci=0;ci<list.length;ci++){
-    var c=list[ci],sm=SM[c.status],rep=null;for(var ri2=0;ri2<D.users.length;ri2++)if(D.users[ri2].id===c.repId){rep=D.users[ri2];break;}
-    var tot=0;for(var pi=0;pi<c.purchases.length;pi++)tot+=c.purchases[pi].amount;
+  list.forEach(function(c){
+    var sm=SM[c.status],rep=D.users.filter(function(u){return u.id===c.repId;})[0];
+    var tot=c.purchases.reduce(function(a,p){return a+p.amount;},0);
     var sc=leadScore(c),isRep=c.purchases.length>1;
-    rows+='<tr class="tr-c" onclick="A.goC(\''+c.id+'\')">'
-    +'<td><div style="display:flex;align-items:center;gap:8px">'+avD(rep,26)+'<div><div style="font-weight:600">'+esc(c.name)+'</div><div style="font-size:11px;color:var(--t2)">'+esc(c.company)+'</div></div></div></td>'
+    var vrCnt=D.visitReports.filter(function(r){return r.customerId===c.id;}).length;
+    rows+='<tr class="tr-c" onclick="A.goC(\''+c.id+'\')"><td><div style="display:flex;align-items:center;gap:8px">'+avD(rep,26)+'<div><div style="font-weight:600">'+esc(c.name)+'</div><div style="font-size:11px;color:var(--t2)">'+esc(c.company)+'</div></div></div></td>'
     +'<td><span class="badge" style="background:'+sm.bg+';color:'+sm.fg+'">'+smL(c.status)+'</span></td>'
     +'<td>'+ring(sc,26)+'</td>'
-    +'<td><div style="display:flex;align-items:center;gap:5px"><span style="font-weight:700">'+c.purchases.length+'</span>'+(isRep?'<span class="rbdg" style="font-size:9px">🔄</span>':'<span class="nbdg" style="font-size:9px">New</span>')+'</div></td>'
+    +'<td><div style="display:flex;align-items:center;gap:5px"><span style="font-weight:700">'+c.purchases.length+'</span>'+(isRep?'<span class="rbdg">🔄</span>':'<span class="nbdg">New</span>')+'</div></td>'
     +'<td style="font-weight:700;color:var(--red)">'+fc(tot)+'</td>'
+    +'<td class="hm">'+(vrCnt?'<span class="badge" style="background:var(--rs);color:var(--red)">'+vrCnt+' reports</span>':'<span style="color:var(--t3);font-size:12px">—</span>')+'</td>'
     +'<td class="hm" style="font-size:12px;color:var(--t2)">'+(c.lastContact?fmtD(c.lastContact.slice(0,10)):'—')+'</td>'
-    +'<td class="hm">'+(rep?'<div style="display:flex;align-items:center;gap:5px"><span style="width:7px;height:7px;border-radius:50%;background:'+rep.color+'"></span><span style="font-size:12px;color:var(--t2)">'+esc(rep.name)+'</span></div>':'')+'</td>'
-    +'<td><div style="display:flex;gap:4px"><button onclick="event.stopPropagation();A.mod(\'customer\',\''+c.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px">✏️</button><button onclick="event.stopPropagation();A.delC(\''+c.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px">🗑️</button></div></td>'
-    +'</tr>';
-  }
+    +'<td><div style="display:flex;gap:4px"><button onclick="event.stopPropagation();A.mod(\'customer\',\''+c.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px">✏️</button><button onclick="event.stopPropagation();A.delC(\''+c.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px">🗑️</button></div></td></tr>';
+  });
   return'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">'
   +'<div style="display:flex;align-items:center;gap:10px"><h1 style="margin:0">'+T('customers')+'</h1><span class="rbdg">🔄 '+repB+' '+T('repbuy')+'</span></div>'
   +'<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><select style="width:auto;font-size:12px" onchange="A.fs(\'s\',this.value)">'+stO+'</select>'+(isAdmin?'<select style="width:auto;font-size:12px" onchange="A.fs(\'r\',this.value)">'+rO+'</select>':'')+'<button class="btn btn-r btn-sm" onclick="A.mod(\'customer\',null)">+ '+T('customers')+'</button></div></div>'
   +'<div style="font-size:11px;color:var(--t3);margin-bottom:10px">💡 '+T('srchph')+'</div>'
-  +'<div class="tw"><table><thead><tr><th>'+T('customers')+'</th><th>'+T('status')+'</th><th>Score</th><th>Orders</th><th>Revenue</th><th class="hm">Last Contact</th><th class="hm">'+T('rep')+'</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>'
+  +'<div class="tw"><table><thead><tr><th>'+T('customers')+'</th><th>'+T('status')+'</th><th>Score</th><th>Orders</th><th>Revenue</th><th class="hm">Visit Reports</th><th class="hm">Last Contact</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>'
   +(!list.length?'<div style="padding:32px;text-align:center;color:var(--t2)">'+T('nocust')+'</div>':'')+'</div>';
 }
 
@@ -505,123 +440,172 @@ function rCustList(){
 function rCustDetail(id){
   var c=null;for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){c=D.customers[i];break;}
   if(!c)return'<div>'+T('nodata')+'</div>';
-  var rep=null;for(var ri=0;ri<D.users.length;ri++)if(D.users[ri].id===c.repId){rep=D.users[ri];break;}
+  var rep=D.users.filter(function(u){return u.id===c.repId;})[0];
   var sc=leadScore(c),sm=SM[c.status],dt=V.dtab;
-  var acts=[];for(var ai=0;ai<D.activities.length;ai++)if(D.activities[ai].customerId===id)acts.push(D.activities[ai]);
-  acts.sort(function(a,b){return b.date.localeCompare(a.date);});
-  var cdls=[];for(var di=0;di<D.deals.length;di++)if(D.deals[di].customerId===id)cdls.push(D.deals[di]);
+  var acts=D.activities.filter(function(a){return a.customerId===id;}).sort(function(a,b){return b.date.localeCompare(a.date);});
+  var cdls=D.deals.filter(function(d){return d.customerId===id;});
+  var cVrs=D.visitReports.filter(function(r){return r.customerId===id;}).sort(function(a,b){return b.createdAt.localeCompare(a.createdAt);});
   var ps=pStats(c),tc='';
   if(dt==='overview'){
-    var mm={};for(var pi=0;pi<c.purchases.length;pi++){var mk=c.purchases[pi].date.slice(0,7);mm[mk]=(mm[mk]||0)+c.purchases[pi].amount;}
-    var md=[];for(var mk2 in mm)md.push(mm[mk2]);
+    var mm={};c.purchases.forEach(function(p){var mk=p.date.slice(0,7);mm[mk]=(mm[mk]||0)+p.amount;});var md=Object.values(mm);
     tc='<div class="g3 mb16"><div style="background:var(--bg);border-radius:10px;padding:11px;text-align:center"><div style="font-size:10px;color:var(--t2);text-transform:uppercase;margin-bottom:3px">'+T('totalsales')+'</div><div style="font-size:16px;font-weight:800">'+fc(ps.total)+'</div></div><div style="background:var(--bg);border-radius:10px;padding:11px;text-align:center"><div style="font-size:10px;color:var(--t2);text-transform:uppercase;margin-bottom:3px">'+T('totalorders')+'</div><div style="font-size:16px;font-weight:800">'+ps.cnt+'</div></div><div style="background:var(--bg);border-radius:10px;padding:11px;text-align:center"><div style="font-size:10px;color:var(--t2);text-transform:uppercase;margin-bottom:3px">'+T('avgorder')+'</div><div style="font-size:16px;font-weight:800">'+(ps.cnt?fc(Math.round(ps.avg)):'—')+'</div></div></div>';
     if(md.length>1)tc+='<div style="margin-bottom:14px;background:var(--bg);border-radius:10px;padding:13px"><div style="font-size:10px;color:var(--t2);text-transform:uppercase;margin-bottom:7px">'+T('salestrend')+'</div>'+spark(md,380,44)+'</div>';
     var flds=[[T('email'),c.email],[T('phone'),c.phone],[T('address'),c.address],[T('source'),c.source],[T('rep'),rep?rep.name:'—'],[T('status'),smL(c.status)],['Last Contact',c.lastContact?fmtTS(c.lastContact):'—'],['Created',fmtTS(c.createdAt)]];
     tc+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;font-size:13px;margin-bottom:13px">';
-    for(var fi=0;fi<flds.length;fi++)tc+='<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--brd)"><span style="color:var(--t2)">'+flds[fi][0]+'</span><span style="font-weight:500;text-align:right">'+esc(flds[fi][1]||'—')+'</span></div>';
+    flds.forEach(function(f){tc+='<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--brd)"><span style="color:var(--t2)">'+f[0]+'</span><span style="font-weight:500;text-align:right">'+esc(f[1]||'—')+'</span></div>';});
     tc+='</div>';
-    if(c.tags&&c.tags.length){tc+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">';for(var tgi=0;tgi<c.tags.length;tgi++)tc+='<span class="tag">'+esc(c.tags[tgi])+'</span>';tc+='</div>';}
+    if(c.tags&&c.tags.length){tc+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">';c.tags.forEach(function(tg){tc+='<span class="tag">'+esc(tg)+'</span>';});tc+='</div>';}
     if(c.notes)tc+='<div style="background:var(--bg);border-radius:10px;padding:10px 13px;font-size:13px;color:var(--t2);font-style:italic">"'+esc(c.notes)+'"</div>';
   } else if(dt==='purchases'){
     tc='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0">'+T('purchases')+' ('+ps.cnt+')</h3><button class="btn btn-r btn-sm" onclick="A.mod(\'purchase\',\''+id+'\')">'+T('addpurch')+'</button></div>';
     if(ps.cnt>1){tc+='<div class="g4 mb12" style="gap:8px"><div style="background:var(--bg);border-radius:8px;padding:9px;text-align:center"><div style="font-size:9px;color:var(--t2);text-transform:uppercase;margin-bottom:2px">'+T('firstpurch')+'</div><div style="font-size:12px;font-weight:700">'+fmtD(ps.first?ps.first.date:'')+'</div></div><div style="background:var(--bg);border-radius:8px;padding:9px;text-align:center"><div style="font-size:9px;color:var(--t2);text-transform:uppercase;margin-bottom:2px">'+T('lastpurch')+'</div><div style="font-size:12px;font-weight:700">'+fmtD(ps.last?ps.last.date:'')+'</div></div><div style="background:var(--bg);border-radius:8px;padding:9px;text-align:center"><div style="font-size:9px;color:var(--t2);text-transform:uppercase;margin-bottom:2px">'+T('avgdays')+'</div><div style="font-size:12px;font-weight:700">'+(ps.avgDays?ps.avgDays+' d':'—')+'</div></div><div style="background:var(--bg);border-radius:8px;padding:9px;text-align:center"><div style="font-size:9px;color:var(--t2);text-transform:uppercase;margin-bottom:2px">'+T('daysince')+'</div><div style="font-size:12px;font-weight:700">'+(ps.daysSince!==null?ps.daysSince+' d':'—')+'</div></div></div><div style="background:var(--rs);border:1px solid rgba(212,42,60,.2);border-radius:8px;padding:9px 13px;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px">🔄 Repeat Buyer — '+ps.cnt+' orders totaling '+fc(ps.total)+'</div>';}
     if(!ps.cnt)tc+='<div style="color:var(--t2);padding:20px;text-align:center">'+T('nopurch')+'</div>';
     tc+='<div style="border:1px solid var(--brd);border-radius:10px;overflow:hidden">';
-    var sp=ps.sorted.slice().reverse();
-    for(var pi2=0;pi2<sp.length;pi2++){var purch=sp[pi2],pu=null;for(var pui=0;pui<D.users.length;pui++)if(D.users[pui].id===purch.addedBy){pu=D.users[pui];break;}tc+='<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--brd);font-size:13px"><div style="width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1"><div style="font-weight:600">'+esc(purch.items)+'</div><div style="font-size:11px;color:var(--t2)">'+fmtD(purch.date)+' · '+esc(pu?pu.name:'—')+' · '+fmtTS(purch.addedAt)+'</div></div><div style="font-weight:800;color:var(--red);font-size:14px">'+fc(purch.amount)+'</div></div>';}
+    ps.sorted.slice().reverse().forEach(function(p,i){var pu=D.users.filter(function(u){return u.id===p.addedBy;})[0];tc+='<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--brd);font-size:13px"><div style="width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1"><div style="font-weight:600">'+esc(p.items)+'</div><div style="font-size:11px;color:var(--t2)">'+fmtD(p.date)+' · '+esc(pu?pu.name:'—')+' · '+fmtTS(p.addedAt)+'</div></div><div style="font-weight:800;color:var(--red);font-size:14px">'+fc(p.amount)+'</div></div>';});
     tc+='</div>';
   } else if(dt==='activity'){
     var imap={call:'📞',email:'✉️',meeting:'🤝',note:'📝'};
     tc='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0">'+T('activity')+' ('+acts.length+')</h3><button class="btn btn-r btn-sm" onclick="A.mod(\'activity\',\''+id+'\')">'+T('logact')+'</button></div>';
     if(!acts.length)tc+='<div style="color:var(--t2);padding:20px;text-align:center">'+T('noact')+'</div>';
-    for(var acti=0;acti<acts.length;acti++){var act=acts[acti],ar=null;for(var ari=0;ari<D.users.length;ari++)if(D.users[ari].id===act.repId){ar=D.users[ari];break;}tc+='<div class="tl-item"><div class="tl-dot">'+(imap[act.type]||'📝')+'</div><div style="flex:1;padding-top:3px"><div style="font-size:13px;font-weight:500">'+esc(act.note)+'</div><div style="font-size:11px;color:var(--t2);margin-top:2px">'+act.date+' · '+esc(ar?ar.name:'—')+' · '+fmtTS(act.ts)+'</div></div></div>';}
+    acts.forEach(function(act){var ar=D.users.filter(function(u){return u.id===act.repId;})[0];tc+='<div class="tl-item"><div class="tl-dot">'+(imap[act.type]||'📝')+'</div><div style="flex:1;padding-top:3px"><div style="font-size:13px;font-weight:500">'+esc(act.note)+'</div><div style="font-size:11px;color:var(--t2);margin-top:2px">'+act.date+' · '+esc(ar?ar.name:'—')+' · '+fmtTS(act.ts)+'</div></div></div>';});
+  } else if(dt==='visitreports'){
+    var isAdmin=SU&&SU.role==='admin';
+    tc='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0">'+T('visitrep')+' ('+cVrs.length+')</h3><button class="btn btn-r btn-sm" onclick="A.mod(\'visitreport\',null,\''+id+'\')">'+T('newrep')+'</button></div>';
+    if(!cVrs.length)tc+='<div style="color:var(--t2);padding:20px;text-align:center">'+T('noreps')+'</div>';
+    cVrs.forEach(function(r){
+      var rRep=D.users.filter(function(u){return u.id===r.repId;})[0];
+      tc+='<div style="background:var(--bg);border-radius:10px;padding:14px;margin-bottom:10px;border:1px solid var(--brd)">'
+      +'<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px">'
+      +'<div style="display:flex;align-items:center;gap:8px">'+vtBadge(r.visitType)+'<span style="font-size:12px;color:var(--t2)">'+esc(rRep?rRep.name:'—')+'</span></div>'
+      +'<div style="display:flex;align-items:center;gap:8px">'
+      +'<span style="font-size:11px;color:var(--t3)">'+fmtTS(r.createdAt)+'</span>'
+      +(r.updatedAt?'<span style="font-size:10px;color:var(--t3);font-style:italic">Edited '+fmtTS(r.updatedAt)+'</span>':'')
+      +(isAdmin?'<button onclick="A.mod(\'visitreport\',\''+r.id+'\',\''+id+'\')" style="background:none;border:none;cursor:pointer;font-size:13px" title="Edit">✏️</button><button onclick="A.delVR(\''+r.id+'\')" style="background:none;border:none;cursor:pointer;font-size:13px;color:var(--err)" title="Delete">🗑️</button>':'')
+      +'</div>'
+      +'</div>'
+      +'<div style="font-size:13px;line-height:1.6;white-space:pre-wrap">'+esc(r.details)+'</div>'
+      +'</div>';
+    });
   } else if(dt==='deals'){
     tc='<h3>'+T('deals')+' ('+cdls.length+')</h3>';
     if(!cdls.length)tc+='<div style="color:var(--t2);padding:20px;text-align:center">'+T('nodeals')+'</div>';
-    for(var dli=0;dli<cdls.length;dli++){var dl=cdls[dli],dst=DM[dl.stage];tc+='<div style="background:var(--bg);border-radius:10px;padding:13px;margin-bottom:9px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px"><span style="font-weight:600">'+esc(dl.title)+'</span><span class="badge" style="background:'+dst.bg+';color:'+dst.fg+'">'+dst.label+'</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--t2)"><span>'+fc(dl.value)+'</span><span>'+dl.probability+'%</span><span>'+dl.expectedClose+'</span></div></div>';}
+    cdls.forEach(function(dl){var dst=DM[dl.stage];tc+='<div style="background:var(--bg);border-radius:10px;padding:13px;margin-bottom:9px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px"><span style="font-weight:600">'+esc(dl.title)+'</span><span class="badge" style="background:'+dst.bg+';color:'+dst.fg+'">'+dst.label+'</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--t2)"><span>'+fc(dl.value)+'</span><span>'+dl.probability+'%</span><span>'+dl.expectedClose+'</span></div></div>';});
   } else if(dt==='ai'){
-    var ins=aiIns(c);
-    var ic={warning:'#fef3c7',info:'#dbeafe',action:'#e0e7ff',opportunity:'#d1fae5',positive:'#d1fae5'};
-    var ib={warning:'#f59e0b',info:'#3b82f6',action:'#6366f1',opportunity:'#22c55e',positive:'#22c55e'};
-    var sl=sc>=70?'🔥 Hot':sc>=40?'🌤 Warm':'❄️ Cold';
-    tc='<div style="display:flex;align-items:center;gap:13px;margin-bottom:15px;background:var(--bg);border-radius:12px;padding:15px">'+ring(sc,50)+'<div><div style="font-weight:700;font-size:16px">Score: '+sc+'/100</div><div style="color:var(--t2);font-size:13px;margin-top:3px">'+sl+' lead</div></div></div><h3>'+T('ai')+'</h3>';
+    var ins=aiIns(c);var ic={warning:'#fef3c7',info:'#dbeafe',action:'#e0e7ff',opportunity:'#d1fae5',positive:'#d1fae5'};var ib={warning:'#f59e0b',info:'#3b82f6',action:'#6366f1',opportunity:'#22c55e',positive:'#22c55e'};
+    tc='<div style="display:flex;align-items:center;gap:13px;margin-bottom:15px;background:var(--bg);border-radius:12px;padding:15px">'+ring(sc,50)+'<div><div style="font-weight:700;font-size:16px">Score: '+sc+'/100</div><div style="color:var(--t2);font-size:13px;margin-top:3px">'+(sc>=70?'🔥 Hot':sc>=40?'🌤 Warm':'❄️ Cold')+' lead</div></div></div><h3>'+T('ai')+'</h3>';
     if(!ins.length)tc+='<div style="color:var(--t2);font-size:13px">No insights at this time.</div>';
-    for(var ii=0;ii<ins.length;ii++){var ins2=ins[ii];tc+='<div style="background:'+(ic[ins2.t]||'#f3f4f6')+';border-left:3px solid '+(ib[ins2.t]||'#888')+';border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:7px;font-size:13px;color:#111"><span style="margin-right:6px">'+ins2.i+'</span>'+esc(ins2.m)+'</div>';}
+    ins.forEach(function(ins2){tc+='<div style="background:'+(ic[ins2.t]||'#f3f4f6')+';border-left:3px solid '+(ib[ins2.t]||'#888')+';border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:7px;font-size:13px;color:#111"><span style="margin-right:6px">'+ins2.i+'</span>'+esc(ins2.m)+'</div>';});
   }
-  var tns=['overview','purchases','activity','deals','ai'];
-  var tls={overview:T('overview'),purchases:T('purchases')+' ('+ps.cnt+')',activity:T('activity'),deals:T('deals'),ai:T('ai')};
-  var tbbtns='';for(var tbi=0;tbi<tns.length;tbi++){var tbn=tns[tbi];tbbtns+='<button class="tab-btn'+(dt===tbn?' active':'')+'" onclick="A.dtab(\''+tbn+'\')">'+tls[tbn]+'</button>';}
+  var tns=['overview','purchases','activity','visitreports','deals','ai'];
+  var tls={overview:T('overview'),purchases:T('purchases')+' ('+ps.cnt+')',activity:T('activity'),visitreports:T('visitrep')+' ('+cVrs.length+')',deals:T('deals'),ai:T('ai')};
+  var tbbtns='';tns.forEach(function(tbn){tbbtns+='<button class="tab-btn'+(dt===tbn?' active':'')+'" onclick="A.dtab(\''+tbn+'\')">'+tls[tbn]+'</button>';});
   return'<button onclick="A.goC(null)" class="btn btn-s btn-sm mb12">'+T('back')+'</button>'
   +'<div class="card"><div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;flex-wrap:wrap">'+avD(rep,48)+'<div style="flex:1"><div style="font-weight:800;font-size:17px">'+esc(c.name)+'</div><div style="color:var(--t2);font-size:13px">'+esc(c.company)+'</div></div>'+ring(sc,34)+'<span class="badge" style="background:'+sm.bg+';color:'+sm.fg+'">'+smL(c.status)+'</span>'+(ps.cnt>1?'<span class="rbdg">🔄 Repeat</span>':'')+'<button class="btn btn-p btn-sm" onclick="A.mod(\'email\',\''+id+'\')">✉️</button><button class="btn btn-s btn-sm" onclick="A.mod(\'customer\',\''+id+'\')">✏️</button></div>'
   +'<div class="tabs">'+tbbtns+'</div>'+tc+'</div>';
 }
 
+// ── RENDER: VISIT REPORTS PAGE ─────────────────────────
+function rVisitRep(){
+  var isAdmin=SU&&SU.role==='admin';
+  var vf=V.vrFilter;
+  var list=myVRs().sort(function(a,b){return b.createdAt.localeCompare(a.createdAt);});
+  if(vf.cust!=='all')list=list.filter(function(r){return r.customerId===vf.cust;});
+  if(vf.type!=='all')list=list.filter(function(r){return r.visitType===vf.type;});
+  if(vf.rep!=='all')list=list.filter(function(r){return r.repId===vf.rep;});
+  var cO='<option value="all">All Customers</option>';
+  myCs().forEach(function(c){cO+='<option value="'+c.id+'"'+(vf.cust===c.id?' selected':'')+'>'+esc(c.name)+'</option>';});
+  var tO='<option value="all">All Types</option><option value="first_visit"'+(vf.type==='first_visit'?' selected':'')+'>'+T('firstvt')+'</option><option value="second_visit"'+(vf.type==='second_visit'?' selected':'')+'>'+T('secondvt')+'</option><option value="follow_up"'+(vf.type==='follow_up'?' selected':'')+'>'+T('followvt')+'</option>';
+  var rO2='<option value="all">'+T('allrep')+'</option>';
+  D.users.filter(function(u){return u.role==='rep';}).forEach(function(r){rO2+='<option value="'+r.id+'"'+(vf.rep===r.id?' selected':'')+'>'+esc(r.name)+'</option>';});
+  var rows='';
+  list.forEach(function(r){
+    var c=D.customers.filter(function(x){return x.id===r.customerId;})[0];
+    var rRep=D.users.filter(function(u){return u.id===r.repId;})[0];
+    rows+='<tr><td style="font-size:11px;color:var(--t2);white-space:nowrap">'+fmtTS(r.createdAt)+'</td>'
+    +'<td><div style="font-weight:600">'+esc(c?c.name:'—')+'</div><div style="font-size:11px;color:var(--t2)">'+esc(c?c.company:'')+'</div></td>'
+    +'<td><div style="display:flex;align-items:center;gap:6px">'+avD(rRep,22)+'<span style="font-size:12px">'+esc(rRep?rRep.name:'—')+'</span></div></td>'
+    +'<td>'+vtBadge(r.visitType)+'</td>'
+    +'<td style="font-size:12px;color:var(--t2);max-width:250px"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(r.details.slice(0,100))+(r.details.length>100?'…':'')+'</div></td>'
+    +'<td><div style="display:flex;gap:4px"><button onclick="A.mod(\'viewreport\',\''+r.id+'\')" class="btn btn-s btn-xs">👁 View</button>'+(isAdmin?'<button onclick="A.mod(\'visitreport\',\''+r.id+'\',\''+r.customerId+'\')" class="btn btn-s btn-xs">✏️</button><button onclick="A.delVR(\''+r.id+'\')" class="btn btn-xs" style="background:rgba(239,68,68,.15);color:var(--err);border:none">🗑️</button>':'')+'</div></td>'
+    +'</tr>';
+  });
+  return'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">'
+  +'<h1 style="margin:0">'+ico('visitrep',20)+' '+T('visitrep')+'</h1>'
+  +'<button class="btn btn-r btn-sm" onclick="A.mod(\'visitreport\',null,null)">'+T('newrep')+'</button>'
+  +'</div>'
+  +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">'
+  +'<select style="width:auto;font-size:12px" onchange="A.vrF(\'cust\',this.value)">'+cO+'</select>'
+  +'<select style="width:auto;font-size:12px" onchange="A.vrF(\'type\',this.value)">'+tO+'</select>'
+  +(isAdmin?'<select style="width:auto;font-size:12px" onchange="A.vrF(\'rep\',this.value)">'+rO2+'</select>':'')
+  +'</div>'
+  +'<div class="tw"><table><thead><tr><th>Date & Time</th><th>Customer</th><th>Rep</th><th>Visit Type</th><th>Details</th><th>Actions</th></tr></thead><tbody>'+rows+'</tbody></table>'
+  +(!list.length?'<div style="padding:32px;text-align:center;color:var(--t2)">'+T('noreps')+'</div>':'')+'</div>';
+}
+
 // ── RENDER: DEALS ──────────────────────────────────────
 function rDeals(){
-  var dls=myDs(),cs=myCs(),active=[];for(var i=0;i<dls.length;i++)if(dls[i].stage!=='closed_won'&&dls[i].stage!=='closed_lost')active.push(dls[i]);
-  var pv=0,wv=0;for(var j=0;j<active.length;j++){pv+=active[j].value;wv+=active[j].value*active[j].probability/100;}
+  var dls=myDs(),cs=myCs(),active=dls.filter(function(d){return d.stage!=='closed_won'&&d.stage!=='closed_lost';});
+  var pv=0,wv=0;active.forEach(function(d){pv+=d.value;wv+=d.value*d.probability/100;});
   var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h1 style="margin:0">'+T('deals')+'</h1><button class="btn btn-r btn-sm" onclick="A.mod(\'deal\',null)">+ Deal</button></div>'
-  +'<div class="g3 mb16"><div class="kpi"><div class="kpi-l">'+T('pipeval')+'</div><div class="kpi-v" style="color:var(--red)">'+fc(pv)+'</div></div><div class="kpi"><div class="kpi-l">'+T('wpipe')+'</div><div class="kpi-v" style="color:var(--grn)">'+fc(Math.round(wv))+'</div></div><div class="kpi"><div class="kpi-l">Active</div><div class="kpi-v" style="color:var(--pur2)">'+active.length+'</div></div></div>'
+  +'<div class="g3 mb16"><div class="kpi" onclick=""><div class="kpi-l">'+T('pipeval')+'</div><div class="kpi-v" style="color:var(--red)">'+fc(pv)+'</div></div><div class="kpi"><div class="kpi-l">'+T('wpipe')+'</div><div class="kpi-v" style="color:var(--grn)">'+fc(Math.round(wv))+'</div></div><div class="kpi"><div class="kpi-l">Active</div><div class="kpi-v" style="color:var(--pur2)">'+active.length+'</div></div></div>'
   +'<div class="g5" style="align-items:start">';
-  for(var si=0;si<DS.length;si++){
-    var stg=DS[si],dm=DM[stg],sds=[];for(var di=0;di<dls.length;di++)if(dls[di].stage===stg)sds.push(dls[di]);
+  DS.forEach(function(stg){
+    var dm=DM[stg],sds=dls.filter(function(d){return d.stage===stg;});
     h+='<div><div style="display:flex;align-items:center;gap:6px;margin-bottom:9px"><span class="badge" style="background:'+dm.bg+';color:'+dm.fg+'">'+dm.label+'</span><span style="font-size:12px;color:var(--t2)">'+sds.length+'</span></div>';
-    for(var sdi=0;sdi<sds.length;sdi++){var dl=sds[sdi],dc=null;for(var dci=0;dci<cs.length;dci++)if(cs[dci].id===dl.customerId){dc=cs[dci];break;}var pc=dl.probability>=60?'var(--grn)':dl.probability>=30?'var(--ylw)':'var(--err)';h+='<div onclick="A.mod(\'deal\',\''+dl.id+'\')" class="card" style="margin-bottom:7px;cursor:pointer;padding:11px"><div style="font-weight:600;font-size:13px;margin-bottom:4px">'+esc(dl.title)+'</div><div style="font-size:11px;color:var(--t2);margin-bottom:5px">'+esc(dc?dc.name:'—')+'</div><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:13px;color:var(--red)">'+fc(dl.value)+'</span><span style="font-size:10px;color:var(--t2)">'+dl.probability+'%</span></div><div style="margin:5px 0;height:4px;background:var(--bg);border-radius:2px"><div style="height:100%;width:'+dl.probability+'%;background:'+pc+';border-radius:2px"></div></div><div style="font-size:10px;color:var(--t3)">'+fmtTS(dl.createdAt)+'</div><button onclick="event.stopPropagation();A.delD(\''+dl.id+'\')" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:11px;margin-top:4px;float:right">🗑️</button></div>';}
+    sds.forEach(function(dl){var dc=cs.filter(function(c){return c.id===dl.customerId;})[0];var pc=dl.probability>=60?'var(--grn)':dl.probability>=30?'var(--ylw)':'var(--err)';h+='<div onclick="A.mod(\'deal\',\''+dl.id+'\')" class="card" style="margin-bottom:7px;cursor:pointer;padding:11px"><div style="font-weight:600;font-size:13px;margin-bottom:4px">'+esc(dl.title)+'</div><div style="font-size:11px;color:var(--t2);margin-bottom:5px">'+esc(dc?dc.name:'—')+'</div><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:13px;color:var(--red)">'+fc(dl.value)+'</span><span style="font-size:10px;color:var(--t2)">'+dl.probability+'%</span></div><div style="margin:5px 0;height:4px;background:var(--bg);border-radius:2px"><div style="height:100%;width:'+dl.probability+'%;background:'+pc+';border-radius:2px"></div></div><button onclick="event.stopPropagation();A.delD(\''+dl.id+'\')" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:11px;margin-top:4px;float:right">🗑️</button></div>';});
     h+='</div>';
-  }
+  });
   return h+'</div>';
 }
 
 // ── RENDER: TASKS ──────────────────────────────────────
 function rTasks(){
-  var tks=myTs(),td=todayStr(),od=0;for(var i=0;i<tks.length;i++)if(!tks[i].done&&tks[i].dueDate<td)od++;
+  var tks=myTs(),td=todayStr(),od=tks.filter(function(t){return!t.done&&t.dueDate<td;}).length;
   var sorted=tks.slice().sort(function(a,b){return(a.done?1:0)-(b.done?1:0)||a.dueDate.localeCompare(b.dueDate);});
   var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h1 style="margin:0">'+T('tasks')+'</h1><button class="btn btn-r btn-sm" onclick="A.mod(\'task\',null)">+ Task</button></div>';
   if(od)h+='<div style="background:rgba(239,68,68,.1);border-radius:10px;padding:9px 13px;margin-bottom:13px;border:1px solid rgba(239,68,68,.2);font-size:12px;font-weight:700;color:var(--err)">⚠ '+od+' overdue</div>';
   h+='<div style="display:flex;flex-direction:column;gap:6px">';
-  for(var si=0;si<sorted.length;si++){
-    var item=sorted[si],ic=null,ir=null;
-    for(var ci=0;ci<D.customers.length;ci++)if(D.customers[ci].id===item.customerId){ic=D.customers[ci];break;}
-    for(var ri=0;ri<D.users.length;ri++)if(D.users[ri].id===item.repId){ir=D.users[ri];break;}
+  sorted.forEach(function(item){
+    var ic=D.customers.filter(function(c){return c.id===item.customerId;})[0];
+    var ir=D.users.filter(function(u){return u.id===item.repId;})[0];
     var ov=!item.done&&item.dueDate<td;
     h+='<div class="card" style="padding:11px 14px;display:flex;align-items:center;gap:11px;opacity:'+(item.done?.45:1)+'"><button onclick="A.tog(\''+item.id+'\')" style="width:20px;height:20px;border-radius:5px;border:2px solid '+(item.done?'var(--grn)':'var(--brd2)')+';background:'+(item.done?'var(--grn)':'transparent')+';cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;flex-shrink:0">'+(item.done?'✓':'')+'</button><div style="width:7px;height:7px;border-radius:50%;background:'+PM[item.priority]+';flex-shrink:0"></div><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13px;text-decoration:'+(item.done?'line-through':'none')+'">'+esc(item.title)+'</div><div style="font-size:11px;color:var(--t2)">'+esc(ic?ic.name:'—')+' · '+esc(ir?ir.name:'—')+' · '+fmtTS(item.createdAt)+'</div></div><span style="font-size:11px;color:'+(ov?'var(--err)':'var(--t2)')+';font-weight:'+(ov?700:400)+';white-space:nowrap">'+item.dueDate+(ov?' ⚠':'')+'</span><button onclick="A.mod(\'task\',\''+item.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px;flex-shrink:0">✏️</button><button onclick="A.delT(\''+item.id+'\')" style="background:none;border:none;cursor:pointer;font-size:14px;color:var(--err);flex-shrink:0">🗑️</button></div>';
-  }
+  });
   return h+'</div>';
 }
 
 // ── RENDER: PIPELINE ───────────────────────────────────
 function rPipeline(){
   var cs=myCs(),h='<h1>'+T('pipeline')+'</h1><div class="g4" style="align-items:start">';
-  var sts=['lead','prospect','customer','churned'];
-  for(var si=0;si<sts.length;si++){
-    var st=sts[si],meta=SM[st],cols=[];for(var ci=0;ci<cs.length;ci++)if(cs[ci].status===st)cols.push(cs[ci]);
+  ['lead','prospect','customer','churned'].forEach(function(st){
+    var meta=SM[st],cols=cs.filter(function(c){return c.status===st;});
     h+='<div><div style="display:flex;align-items:center;gap:6px;margin-bottom:9px"><span class="badge" style="background:'+meta.bg+';color:'+meta.fg+'">'+smL(st)+'</span><span style="font-size:12px;color:var(--t2)">'+cols.length+'</span></div>';
-    for(var ci2=0;ci2<cols.length;ci2++){var c=cols[ci2],r=null;for(var ri=0;ri<D.users.length;ri++)if(D.users[ri].id===c.repId){r=D.users[ri];break;}var tot=0;for(var pi=0;pi<c.purchases.length;pi++)tot+=c.purchases[pi].amount;h+='<div onclick="A.goC(\''+c.id+'\')" class="card" style="cursor:pointer;margin-bottom:7px;padding:11px" onmouseenter="this.style.borderColor=\'var(--red)\'" onmouseleave="this.style.borderColor=\'var(--brd)\'"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">'+ring(leadScore(c),21)+'<span style="font-weight:600;font-size:12px;flex:1;margin-left:6px">'+esc(c.name)+'</span></div><div style="font-size:11px;color:var(--t2);margin-bottom:5px">'+esc(c.company)+'</div><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:12px;color:var(--red)">'+(tot?fc(tot):'—')+'</span><span style="font-size:10px;color:var(--t2)">'+esc(r?r.name.split(' ')[0]:'')+'</span></div></div>';}
+    cols.forEach(function(c){var r=D.users.filter(function(u){return u.id===c.repId;})[0];var tot=c.purchases.reduce(function(a,p){return a+p.amount;},0);h+='<div onclick="A.goC(\''+c.id+'\')" class="card" style="cursor:pointer;margin-bottom:7px;padding:11px" onmouseenter="this.style.borderColor=\'var(--red)\'" onmouseleave="this.style.borderColor=\'var(--brd)\'"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">'+ring(leadScore(c),21)+'<span style="font-weight:600;font-size:12px;flex:1;margin-left:6px">'+esc(c.name)+'</span></div><div style="font-size:11px;color:var(--t2);margin-bottom:5px">'+esc(c.company)+'</div><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:12px;color:var(--red)">'+(tot?fc(tot):'—')+'</span><span style="font-size:10px;color:var(--t2)">'+esc(r?r.name.split(' ')[0]:'')+'</span></div></div>';});
     h+='</div>';
-  }
+  });
   return h+'</div>';
 }
 
 // ── RENDER: EMAILS ─────────────────────────────────────
 function rEmails(){
   var cs=myCs(),h='<h1>'+T('emails')+'</h1><p style="color:var(--t2);font-size:13px;margin-bottom:18px">Select a customer to auto-fill a personalized email.</p><div class="g2">';
-  for(var i=0;i<ETPL.length;i++){var tpl=ETPL[i],btns='';for(var ci=0;ci<cs.length;ci++)btns+='<button onclick="A.emailTo(\''+cs[ci].id+'\',\''+tpl.id+'\')" class="btn btn-s btn-xs">'+esc(cs[ci].name.split(' ').pop())+'</button>';h+='<div class="card"><div style="font-weight:700;font-size:14px;margin-bottom:5px">✉️ '+esc(tpl.name)+'</div><div style="font-size:12px;color:var(--t2);margin-bottom:11px">'+esc(tpl.subject.replace(/\{\{.*?\}\}/g,'...'))+'</div><div style="display:flex;gap:5px;flex-wrap:wrap">'+btns+'</div></div>';}
+  ETPL.forEach(function(tpl){var btns='';cs.forEach(function(c){btns+='<button onclick="A.emailTo(\''+c.id+'\',\''+tpl.id+'\')" class="btn btn-s btn-xs">'+esc(c.name.split(' ').pop())+'</button>';});h+='<div class="card"><div style="font-weight:700;font-size:14px;margin-bottom:5px">✉️ '+esc(tpl.name)+'</div><div style="font-size:12px;color:var(--t2);margin-bottom:11px">'+esc(tpl.subject.replace(/\{\{.*?\}\}/g,'...'))+'</div><div style="display:flex;gap:5px;flex-wrap:wrap">'+btns+'</div></div>';});
   return h+'</div>';
 }
 
-// ── RENDER: REPORTS ────────────────────────────────────
+// ── RENDER: ANALYTICS REPORTS ──────────────────────────
 function rReports(){
-  var isAdmin=SU&&SU.role==='admin',cs=myCs(),tot=0;for(var i=0;i<cs.length;i++)for(var j=0;j<cs[i].purchases.length;j++)tot+=cs[i].purchases[j].amount;
-  var stc={lead:0,prospect:0,customer:0,churned:0};for(var k=0;k<cs.length;k++)stc[cs[k].status]++;
-  var rps=[];for(var ri=0;ri<D.users.length;ri++){if(D.users[ri].role==='rep'){var uc=isAdmin?D.customers.filter(function(cc){return cc.repId===D.users[ri].id;}):cs.filter(function(cc){return cc.repId===D.users[ri].id;});var rv=0;for(var ui=0;ui<uc.length;ui++)for(var pi=0;pi<uc[ui].purchases.length;pi++)rv+=uc[ui].purchases[pi].amount;rps.push({u:D.users[ri],rv:rv,cnt:uc.length});}}
-  rps.sort(function(a,b){return b.rv-a.rv;});
-  var topCs=cs.slice();topCs.sort(function(a,b){var at=0,bt=0;for(var i=0;i<a.purchases.length;i++)at+=a.purchases[i].amount;for(var j=0;j<b.purchases.length;j++)bt+=b.purchases[j].amount;return bt-at;});topCs=topCs.slice(0,5);
+  var isAdmin=SU&&SU.role==='admin',cs=myCs(),tot=cs.reduce(function(s,c){return s+c.purchases.reduce(function(a,p){return a+p.amount;},0);},0);
+  var stc={lead:0,prospect:0,customer:0,churned:0};cs.forEach(function(c){stc[c.status]++;});
+  var rps=D.users.filter(function(u){return u.role==='rep';}).map(function(u){var uc=isAdmin?D.customers.filter(function(c){return c.repId===u.id;}):cs.filter(function(c){return c.repId===u.id;});var rv=uc.reduce(function(s,c){return s+c.purchases.reduce(function(a,p){return a+p.amount;},0);},0);return{u:u,rv:rv,cnt:uc.length,vrCnt:D.visitReports.filter(function(r){return r.repId===u.id;}).length};}).sort(function(a,b){return b.rv-a.rv;});
+  var topCs=cs.slice().sort(function(a,b){var at=a.purchases.reduce(function(s,p){return s+p.amount;},0),bt=b.purchases.reduce(function(s,p){return s+p.amount;},0);return bt-at;}).slice(0,5);
   var repBs=cs.filter(function(c){return c.purchases.length>1;}),oneBs=cs.filter(function(c){return c.purchases.length===1;}),noBs=cs.filter(function(c){return c.purchases.length===0;});
-  var rpH='';for(var rpi=0;rpi<rps.length;rpi++){var rp=rps[rpi];var p=tot?Math.round(rp.rv/tot*100):0;rpH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><div style="display:flex;align-items:center;gap:7px">'+avD(rp.u,20)+'<span style="font-size:12px;font-weight:600">'+esc(rp.u.name)+'</span></div><span style="color:var(--red);font-weight:700;font-size:12px">'+fc(rp.rv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+p+'%;background:'+rp.u.color+'"></div></div></div>';}
-  var stH='';var sks2=['lead','prospect','customer','churned'];for(var sti=0;sti<sks2.length;sti++){var sk=sks2[sti],sv=SM[sk],cnt=stc[sk],p2=cs.length?Math.round(cnt/cs.length*100):0;stH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:500">'+sv.icon+' '+smL(sk)+'</span><span style="color:var(--t2)">'+cnt+' ('+p2+'%)</span></div><div class="prog"><div class="prog-bar" style="width:'+p2+'%;background:'+sv.fg+'"></div></div></div>';}
-  var topH='';for(var tci=0;tci<topCs.length;tci++){var tc=topCs[tci],tv=0;for(var tpi=0;tpi<tc.purchases.length;tpi++)tv+=tc.purchases[tpi].amount;var tp=tot?Math.round(tv/tot*100):0;topH+='<div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><span style="width:20px;height:20px;border-radius:50%;background:var(--rs);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--red);flex-shrink:0">'+(tci+1)+'</span><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:600">'+esc(tc.name)+'</span><span style="color:var(--red);font-weight:700;font-size:12px">'+fc(tv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+tp+'%;background:var(--red)"></div></div></div></div>';}
-  var rbH='';var rbS=repBs.slice().sort(function(a,b){return b.purchases.length-a.purchases.length;}).slice(0,5);for(var rbi=0;rbi<rbS.length;rbi++){var rb=rbS[rbi],rbv=0;for(var rbpi=0;rbpi<rb.purchases.length;rbpi++)rbv+=rb.purchases[rbpi].amount;rbH+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><span style="font-weight:700;color:var(--grn)">'+rb.purchases.length+'×</span><span style="font-size:13px">'+esc(rb.name)+'</span><span style="font-size:11px;color:var(--t2)">'+fc(rbv)+'</span></div>';}
-  return'<h1>'+T('reports')+(isAdmin?' (All)':' (Mine)')+'</h1>'
+  var rpH='';rps.forEach(function(rp){var p=tot?Math.round(rp.rv/tot*100):0;rpH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><div style="display:flex;align-items:center;gap:7px">'+avD(rp.u,20)+'<span style="font-size:12px;font-weight:600">'+esc(rp.u.name)+'</span><span style="font-size:11px;color:var(--t2)">'+rp.cnt+' clients · '+rp.vrCnt+' reports</span></div><span style="color:var(--red);font-weight:700;font-size:12px">'+fc(rp.rv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+p+'%;background:'+rp.u.color+'"></div></div></div>';});
+  var stH='';['lead','prospect','customer','churned'].forEach(function(sk){var cnt=stc[sk],p=cs.length?Math.round(cnt/cs.length*100):0;stH+='<div style="margin-bottom:11px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:500">'+SM[sk].icon+' '+smL(sk)+'</span><span style="color:var(--t2)">'+cnt+' ('+p+'%)</span></div><div class="prog"><div class="prog-bar" style="width:'+p+'%;background:'+SM[sk].fg+'"></div></div></div>';});
+  var topH='';topCs.forEach(function(c,i){var tv=c.purchases.reduce(function(s,p){return s+p.amount;},0),tp=tot?Math.round(tv/tot*100):0;topH+='<div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><span style="width:20px;height:20px;border-radius:50%;background:var(--rs);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--red);flex-shrink:0">'+(i+1)+'</span><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:600">'+esc(c.name)+'</span><span style="color:var(--red);font-weight:700;font-size:12px">'+fc(tv)+'</span></div><div class="prog"><div class="prog-bar" style="width:'+tp+'%;background:var(--red)"></div></div></div></div>';});
+  var rbS=repBs.slice().sort(function(a,b){return b.purchases.length-a.purchases.length;}).slice(0,5);
+  var rbH='';rbS.forEach(function(c){var rv=c.purchases.reduce(function(s,p){return s+p.amount;},0);rbH+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><span style="font-weight:700;color:var(--grn)">'+c.purchases.length+'×</span><span style="font-size:13px">'+esc(c.name)+'</span><span style="font-size:11px;color:var(--t2)">'+fc(rv)+'</span></div>';});
+  return'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><h1 style="margin:0">'+T('reports')+(isAdmin?' (All)':' (Mine)')+'</h1><button class="btn btn-s btn-sm" onclick="A.gt(\'visitrep\')">📋 '+T('visitrep')+' →</button></div>'
   +'<div class="g2 mb16"><div class="card"><h3>'+T('revbyrep')+'</h3>'+rpH+'</div><div class="card"><h3>'+T('statbreak')+'</h3>'+stH+'</div></div>'
   +'<div class="g2"><div class="card"><h3>🔄 '+T('purchfreq')+'</h3>'
   +'<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:600;color:var(--grn)">'+T('repbuylbl')+'</span><span style="font-weight:700;color:var(--grn)">'+repBs.length+'</span></div><div class="prog"><div class="prog-bar" style="width:'+(cs.length?Math.round(repBs.length/cs.length*100):0)+'%;background:var(--grn)"></div></div></div>'
@@ -634,91 +618,53 @@ function rReports(){
 // ── RENDER: AUDIT LOG ──────────────────────────────────
 function rAudit(){
   if(!SU||SU.role!=='admin')return'<div style="color:var(--err)">Access denied</div>';
-  var log=D.auditLog||[];
+  var log=(D.auditLog||[]).slice();
   if(V.auditUser!=='all')log=log.filter(function(e){return e.userId===V.auditUser;});
   if(V.auditType!=='all')log=log.filter(function(e){return e.type===V.auditType;});
-  var uO='<option value="all"'+(V.auditUser==='all'?' selected':'')+'>'+T('allusers')+'</option>';
-  for(var ui=0;ui<D.users.length;ui++)uO+='<option value="'+D.users[ui].id+'"'+(V.auditUser===D.users[ui].id?' selected':'')+'>'+esc(D.users[ui].name)+'</option>';
-  var tO='<option value="all"'+(V.auditType==='all'?' selected':'')+'>'+T('allactions')+'</option>';
-  for(var ak in ATYPE)tO+='<option value="'+ak+'"'+(V.auditType===ak?' selected':'')+'>'+ak+'</option>';
-  var rows='';var shown=log.slice(0,200);
-  for(var li=0;li<shown.length;li++){var e=shown[li],eu=null;for(var ui2=0;ui2<D.users.length;ui2++)if(D.users[ui2].id===e.userId){eu=D.users[ui2];break;}rows+='<tr><td style="font-size:11px;color:var(--t2);white-space:nowrap">'+fmtTS(e.ts)+'</td><td><div style="display:flex;align-items:center;gap:6px">'+avD(eu,20)+'<span style="font-size:12px;font-weight:600">'+esc(e.userName)+'</span></div></td><td><span class="badge" style="background:'+(e.role==='admin'?'#fee2e2':'#dbeafe')+';color:'+(e.role==='admin'?'#991b1b':'#1e40af')+'">'+e.role+'</span></td><td style="font-size:12px"><span style="font-weight:600">'+(e.icon||'⚡')+' '+esc(e.type)+'</span></td><td style="font-size:12px;color:var(--t2)">'+esc(e.target)+'</td><td style="font-size:12px">'+esc(e.details)+'</td></tr>';}
+  var uO='<option value="all">'+T('allusers')+'</option>';D.users.forEach(function(u){uO+='<option value="'+u.id+'"'+(V.auditUser===u.id?' selected':'')+'>'+esc(u.name)+'</option>';});
+  var tO='<option value="all">'+T('allactions')+'</option>';for(var ak in ATYPE)tO+='<option value="'+ak+'"'+(V.auditType===ak?' selected':'')+'>'+ak+'</option>';
+  var rows='';log.slice(0,200).forEach(function(e){var eu=D.users.filter(function(u){return u.id===e.userId;})[0];rows+='<tr><td style="font-size:11px;color:var(--t2);white-space:nowrap">'+fmtTS(e.ts)+'</td><td><div style="display:flex;align-items:center;gap:6px">'+avD(eu,20)+'<span style="font-size:12px;font-weight:600">'+esc(e.userName)+'</span></div></td><td><span class="badge" style="background:'+(e.role==='admin'?'#fee2e2':'#dbeafe')+';color:'+(e.role==='admin'?'#991b1b':'#1e40af')+'">'+e.role+'</span></td><td style="font-size:12px"><span style="font-weight:600">'+(e.icon||'⚡')+' '+esc(e.type)+'</span></td><td style="font-size:12px;color:var(--t2)">'+esc(e.target)+'</td><td style="font-size:12px">'+esc(e.details)+'</td></tr>';});
   return'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px"><h1 style="margin:0">'+T('audit')+' <span style="font-size:13px;font-weight:400;color:var(--t2)">'+log.length+'</span></h1><div style="display:flex;gap:8px;flex-wrap:wrap"><select style="width:auto;font-size:12px" onchange="A.auF(\'u\',this.value)">'+uO+'</select><select style="width:auto;font-size:12px" onchange="A.auF(\'t\',this.value)">'+tO+'</select><button class="btn btn-d btn-sm" onclick="if(confirm(\'Clear log?\')){D.auditLog=[];saveData();render();}">'+T('clearlog')+'</button></div></div>'
-  +'<div class="tw"><table><thead><tr><th>Timestamp</th><th>User</th><th>Role</th><th>Action</th><th>Target</th><th>Details</th></tr></thead><tbody>'+rows+'</tbody></table>'
-  +(!log.length?'<div style="padding:32px;text-align:center;color:var(--t2)">'+T('nodata')+'</div>':'')+'</div>';
+  +'<div class="tw"><table><thead><tr><th>Timestamp</th><th>User</th><th>Role</th><th>Action</th><th>Target</th><th>Details</th></tr></thead><tbody>'+rows+'</tbody></table>'+(!log.length?'<div style="padding:32px;text-align:center;color:var(--t2)">'+T('nodata')+'</div>':'')+'</div>';
 }
 
 // ── RENDER: USER MANAGEMENT ────────────────────────────
 function rUserMgmt(){
   if(!SU||SU.role!=='admin')return'<div style="color:var(--err)">Access denied</div>';
-  var rows='';
-  for(var ui=0;ui<D.users.length;ui++){var u=D.users[ui];rows+='<tr><td><div style="display:flex;align-items:center;gap:8px">'+avD(u,26)+'<span style="font-weight:600">'+esc(u.name)+'</span></div></td><td style="font-family:monospace;color:var(--pur3)">'+esc(u.username)+'</td><td><span class="badge" style="background:'+(u.role==='admin'?'#fee2e2':'#dbeafe')+';color:'+(u.role==='admin'?'#991b1b':'#1e40af')+'">'+esc(u.role==='admin'?'👑 '+T('adminrole'):'👤 '+T('reprole'))+'</span></td><td style="color:var(--t2);font-size:12px">'+esc(u.email)+'</td><td><span class="badge" style="background:'+(u.active!==false?'#d1fae5':'#fee2e2')+';color:'+(u.active!==false?'#065f46':'#991b1b')+'">'+(u.active!==false?'Active':'Disabled')+'</span></td><td style="font-size:11px;color:var(--t2)">'+fmtTS(u.createdAt)+'</td><td><div style="display:flex;gap:4px;flex-wrap:wrap"><button onclick="A.mod(\'user\',\''+u.id+'\')" class="btn btn-s btn-xs">✏️</button><button onclick="A.mod(\'changepwd\',\''+u.id+'\')" class="btn btn-s btn-xs">🔐</button>'+(u.id!==SU.id?'<button onclick="A.togU(\''+u.id+'\')" class="btn btn-xs" style="background:'+(u.active!==false?'rgba(239,68,68,.15)':'rgba(34,197,94,.15)')+';color:'+(u.active!==false?'var(--err)':'var(--grn)')+';border:none">'+(u.active!==false?T('disable'):T('enable'))+'</button>':'')+(u.id!==SU.id&&u.id!=='u1'&&u.id!=='u2'?'<button onclick="A.delU(\''+u.id+'\')" class="btn btn-xs" style="background:rgba(239,68,68,.15);color:var(--err);border:none">🗑️</button>':'')+'</div></td></tr>';}
+  var rows='';D.users.forEach(function(u){rows+='<tr><td><div style="display:flex;align-items:center;gap:8px">'+avD(u,26)+'<span style="font-weight:600">'+esc(u.name)+'</span></div></td><td style="font-family:monospace;color:var(--pur3)">'+esc(u.username)+'</td><td><span class="badge" style="background:'+(u.role==='admin'?'#fee2e2':'#dbeafe')+';color:'+(u.role==='admin'?'#991b1b':'#1e40af')+'">'+esc(u.role==='admin'?'👑 '+T('adminrole'):'👤 '+T('reprole'))+'</span></td><td style="color:var(--t2);font-size:12px">'+esc(u.email)+'</td><td><span class="badge" style="background:'+(u.active!==false?'#d1fae5':'#fee2e2')+';color:'+(u.active!==false?'#065f46':'#991b1b')+'">'+(u.active!==false?'Active':'Disabled')+'</span></td><td style="font-size:11px;color:var(--t2)">'+fmtTS(u.createdAt)+'</td><td><div style="display:flex;gap:4px;flex-wrap:wrap"><button onclick="A.mod(\'user\',\''+u.id+'\')" class="btn btn-s btn-xs">✏️</button><button onclick="A.mod(\'changepwd\',\''+u.id+'\')" class="btn btn-s btn-xs">🔐</button>'+(u.id!==SU.id?'<button onclick="A.togU(\''+u.id+'\')" class="btn btn-xs" style="background:'+(u.active!==false?'rgba(239,68,68,.15)':'rgba(34,197,94,.15)')+';color:'+(u.active!==false?'var(--err)':'var(--grn)')+';border:none">'+(u.active!==false?T('disable'):T('enable'))+'</button>':'')+(u.id!==SU.id&&u.id!=='u1'&&u.id!=='u2'?'<button onclick="A.delU(\''+u.id+'\')" class="btn btn-xs" style="background:rgba(239,68,68,.15);color:var(--err);border:none">🗑️</button>':'')+'</div></td></tr>';});
   return'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h1 style="margin:0">'+T('usermgmt')+'</h1><button class="btn btn-r btn-sm" onclick="A.mod(\'user\',null)">'+T('adduser')+'</button></div>'
   +'<div class="tw"><table><thead><tr><th>User</th><th>Username</th><th>Role</th><th>Email</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
 }
 
-// ── RENDER: SETTINGS ────────────────────────────────────
+// ── RENDER: SETTINGS ───────────────────────────────────
 function rSettings(){
   var cfg=D.settings||{cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};
-  var useNpoint=cfg.cloudProvider!=='jsonbin';
+  var useNp=cfg.cloudProvider!=='jsonbin';
   var connected=!!(cfg.cloudMode&&cfg.cloudBinId&&cfg.cloudBinId.length>3);
   var h='<h1>⚙️ '+T('settings')+'</h1><div class="g2">';
-  // Cloud card
   h+='<div class="card"><h3>☁️ Cloud Sync</h3><p style="font-size:13px;color:var(--t2);margin-bottom:16px">Connect a free cloud database so your whole team shares live data on any device.</p>';
-  // ON/OFF
   h+='<div style="display:flex;gap:8px;margin-bottom:20px"><button class="btn btn-sm '+(!cfg.cloudMode?'btn-r':'btn-s')+'" onclick="A.setCfg(\'cloudMode\',false)">💾 Local Only</button><button class="btn btn-sm '+(cfg.cloudMode?'btn-r':'btn-s')+'" onclick="A.setCfg(\'cloudMode\',true)">☁️ Enable Cloud Sync</button></div>';
   if(cfg.cloudMode){
-    // Provider selector
-    h+='<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Choose your cloud provider:</div>'
-    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">';
-    // npoint card
-    h+='<div onclick="A.setCfg(\'cloudProvider\',\'npoint\')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid '+(useNpoint?'var(--red)':'var(--brd2)')+';background:'+(useNpoint?'var(--rs)':'var(--card2)')+'"><div style="font-weight:700;font-size:14px;margin-bottom:4px">📌 npoint.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">No account needed</div><div style="font-size:11px;font-weight:700;color:var(--grn)">✅ Recommended</div>'+(useNpoint?'<div style="font-size:10px;font-weight:800;color:var(--red);margin-top:4px">▶ SELECTED</div>':'')+'</div>';
-    // jsonbin card
-    h+='<div onclick="A.setCfg(\'cloudProvider\',\'jsonbin\')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid '+(!useNpoint?'var(--red)':'var(--brd2)')+';background:'+(!useNpoint?'var(--rs)':'var(--card2)')+'"><div style="font-weight:700;font-size:14px;margin-bottom:4px">🔧 jsonbin.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Requires account</div><div style="font-size:11px;color:var(--t2)">& Master Key</div>'+(!useNpoint?'<div style="font-size:10px;font-weight:800;color:var(--red);margin-top:4px">▶ SELECTED</div>':'')+'</div>';
-    h+='</div></div>';
-    // Instructions
-    if(useNpoint){
-      h+='<div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:13px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.9">'
-      +'<strong style="color:var(--grn);display:block;margin-bottom:5px">How to set up npoint.io (1 min, no account):</strong>'
-      +'1. Open new tab → go to <a href="https://www.npoint.io" target="_blank" style="color:#4ade80;font-weight:700">www.npoint.io</a><br>'
-      +'2. Delete all text in the box → type <code style="background:var(--bg);padding:2px 7px;border-radius:4px;color:#fff;font-size:13px"><b>{}</b></code> → click <b>Create JSON Bin</b><br>'
-      +'3. Your URL: <code style="background:var(--bg);padding:2px 6px;border-radius:4px;color:#4ade80">https://api.npoint.io/<b>abc123xyz</b></code> → copy <b style="color:#4ade80">abc123xyz</b> as Bin ID<br>'
-      +'4. Copy the <b>Access Token</b> shown on that page → paste as Key below'
-      +'</div>';
-    } else {
-      h+='<div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.3);border-radius:10px;padding:13px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.9">'
-      +'<strong style="color:#60a5fa;display:block;margin-bottom:5px">How to set up jsonbin.io:</strong>'
-      +'1. Go to <a href="https://jsonbin.io" target="_blank" style="color:#60a5fa;font-weight:700">jsonbin.io</a> → Sign up → log in<br>'
-      +'2. Click <b>Create a Bin</b> → type <code style="background:var(--bg);padding:2px 5px;border-radius:4px">{}</code> → click <b>Save Bin</b><br>'
-      +'3. Go to Account → API Keys → copy your <b>Master Key</b> (starts $2a$10$...)<br>'
-      +'4. Copy <b>Bin ID</b> from the URL of your bin'
-      +'</div>';
-    }
-    // Input fields
-    h+='<div class="field"><label>'+(useNpoint?'Access Token (from npoint.io page — optional but recommended)':'Master Key * (from jsonbin.io → Account → API Keys)')+'</label>'
-    +'<input id="cfg-key" type="password" value="'+esc(cfg.cloudKey||'')+'" placeholder="'+(useNpoint?'paste access token here':'$2a$10$...')+'"/></div>'
-    +'<div class="field"><label>Bin ID * <span style="font-size:10px;font-weight:400;color:var(--t2)">(code at end of your '+(useNpoint?'npoint':'jsonbin')+' URL)</span></label>'
-    +'<input id="cfg-bid" value="'+esc(cfg.cloudBinId||'')+'" placeholder="'+(useNpoint?'abc123xyz...':'6823abc...')+'"/></div>'
-    +'<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px">'
-    +'<button class="btn btn-r btn-sm" onclick="A.savCloud()">💾 Save & Connect</button>'
-    +(cfg.cloudBinId?'<button class="btn btn-s btn-sm" onclick="A.doPull()">'+(V.cloudSync?'<span class="spin">↻</span> Syncing…':'↻ Test Sync')+'</button>':'')
-    +'</div>'
-    +(connected?'<div style="padding:9px 13px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:8px;font-size:13px;color:var(--grn);font-weight:600">✅ Connected — data syncs automatically on every change</div>'
-    :'<div style="padding:9px 13px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;font-size:13px;color:var(--err)">⚠️ Not connected yet — fill in fields above and click Save & Connect</div>');
-  } else {
-    h+='<div style="padding:13px;background:var(--card2);border-radius:8px;font-size:13px;color:var(--t2)">Local mode: data saved in this browser only. Enable Cloud Sync above to share with your team.</div>';
-  }
-  h+='</div>';
-  // Data management card
-  h+='<div class="card"><h3>📊 Data Management</h3>'
+    h+='<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Choose provider:</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">'
+    +'<div onclick="A.setCfg(\'cloudProvider\',\'npoint\')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid '+(useNp?'var(--red)':'var(--brd2)')+';background:'+(useNp?'var(--rs)':'var(--card2)')+'"><div style="font-weight:700;font-size:14px;margin-bottom:4px">📌 npoint.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">No account needed</div><div style="font-size:11px;font-weight:700;color:var(--grn)">✅ Recommended</div>'+(useNp?'<div style="font-size:10px;font-weight:800;color:var(--red);margin-top:4px">▶ SELECTED</div>':'')+'</div>'
+    +'<div onclick="A.setCfg(\'cloudProvider\',\'jsonbin\')" style="cursor:pointer;padding:14px;border-radius:10px;border:2px solid '+(!useNp?'var(--red)':'var(--brd2)')+';background:'+(!useNp?'var(--rs)':'var(--card2)')+'"><div style="font-weight:700;font-size:14px;margin-bottom:4px">🔧 jsonbin.io</div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Requires account</div><div style="font-size:11px;color:var(--t2)">& Master Key</div>'+(!useNp?'<div style="font-size:10px;font-weight:800;color:var(--red);margin-top:4px">▶ SELECTED</div>':'')+'</div>'
+    +'</div></div>';
+    if(useNp){h+='<div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:13px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.9"><strong style="color:var(--grn);display:block;margin-bottom:5px">📋 npoint.io setup (1 min, no account):</strong>1. Open <a href="https://www.npoint.io" target="_blank" style="color:#4ade80;font-weight:700">www.npoint.io</a><br>2. Delete all text → type <code style="background:var(--bg);padding:2px 7px;border-radius:4px;color:#fff"><b>{}</b></code> → click <b>Create JSON Bin</b><br>3. URL: <code style="background:var(--bg);padding:2px 6px;border-radius:4px;color:#4ade80">https://api.npoint.io/<b>abc123xyz</b></code> → copy <b style="color:#4ade80">abc123xyz</b> as Bin ID<br>4. Copy the <b>Access Token</b> on that page → paste as Key</div>';}
+    else{h+='<div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.3);border-radius:10px;padding:13px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.9"><strong style="color:#60a5fa;display:block;margin-bottom:5px">📋 jsonbin.io setup:</strong>1. Go to <a href="https://jsonbin.io" target="_blank" style="color:#60a5fa;font-weight:700">jsonbin.io</a> → Sign up<br>2. Click <b>Create a Bin</b> → type <code style="background:var(--bg);padding:2px 5px;border-radius:4px">{}</code> → <b>Save Bin</b><br>3. Account → API Keys → copy your <b>Master Key</b> (starts $2a$10$...)<br>4. Copy <b>Bin ID</b> from the bin URL</div>';}
+    h+='<div class="field"><label>'+(useNp?'Access Token (optional but recommended)':'Master Key *')+'</label><input id="cfg-key" type="password" value="'+esc(cfg.cloudKey||'')+'" placeholder="'+(useNp?'paste access token':'$2a$10$...')+'"/></div>'
+    +'<div class="field"><label>Bin ID * <span style="font-size:10px;font-weight:400;color:var(--t2)">(code after last / in URL)</span></label><input id="cfg-bid" value="'+esc(cfg.cloudBinId||'')+'" placeholder="'+(useNp?'abc123xyz...':'6823abc...')+'"/></div>'
+    +'<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px"><button class="btn btn-r btn-sm" onclick="A.savCloud()">💾 Save & Connect</button>'+(cfg.cloudBinId?'<button class="btn btn-s btn-sm" onclick="A.doPull()">'+(V.cloudSync?'<span class="spin">↻</span> '+T('syncing'):'↻ Test Sync')+'</button>':'')+'</div>'
+    +(connected?'<div style="padding:9px 13px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:8px;font-size:13px;color:var(--grn);font-weight:600">✅ Connected — data syncs automatically</div>'
+    :'<div style="padding:9px 13px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;font-size:13px;color:var(--err)">⚠️ Not connected — fill in fields above and click Save & Connect</div>');
+  }else{h+='<div style="padding:13px;background:var(--card2);border-radius:8px;font-size:13px;color:var(--t2)">Local mode: data saved in this browser only.</div>';}
+  h+='</div><div class="card"><h3>📊 Data Management</h3>'
   +'<div class="field"><label>Export Backup</label><button class="btn btn-s btn-sm w100" onclick="A.expData()" style="justify-content:center">📤 Export JSON Backup</button></div>'
   +'<div class="field"><label>Import Backup</label><input type="file" id="impFile" accept=".json" onchange="A.impData(this)" style="font-size:12px;cursor:pointer"/></div>'
   +'<div class="field"><label>Reset All Data</label><button class="btn btn-d btn-sm w100" onclick="A.resetData()" style="justify-content:center">⚠️ Reset All Data</button></div>'
   +'</div></div>';
-  // Download card
-  h+='<div class="card mt16"><h3>💾 Download Desktop App</h3>'
-  +'<p style="font-size:13px;color:var(--t2);margin-bottom:13px">Download the full CRM as one offline HTML file. Your cloud settings are embedded automatically so teammates connect instantly.</p>'
-  +'<button class="btn btn-r btn-sm" onclick="A.dl()">⬇ Download SEDRADENT-CRM.html</button></div>';
+  h+='<div class="card mt16"><h3>💾 Download Desktop App</h3><p style="font-size:13px;color:var(--t2);margin-bottom:13px">Download as one offline HTML file. Cloud settings are embedded automatically.</p><button class="btn btn-r btn-sm" onclick="A.dl()">⬇ Download SEDRADENT-CRM.html</button></div>';
+  h+='<div class="card mt16" style="background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.3)"><h3 style="color:#60a5fa">🎨 Logo Note</h3><p style="font-size:13px;color:var(--t2);line-height:1.7">The current logo uses a CSS text approach which may look slightly different across devices.<br><br><strong style="color:var(--t1)">For perfect logo rendering, please send the logo as:</strong><br>• <strong style="color:#4ade80">SVG file</strong> (best — exported from Illustrator, CorelDraw, Figma) — scales perfectly<br>• <strong style="color:#60a5fa">PNG file with transparent background</strong> (at least 400px wide) — will be embedded as base64<br><br>Send the file in your next message and I\'ll embed it directly into the app.</p></div>';
   return h;
 }
 
@@ -731,53 +677,81 @@ function rModal(){
     var c=null;if(m.id)for(var ci=0;ci<D.customers.length;ci++)if(D.customers[ci].id===m.id){c=D.customers[ci];break;}
     title=(c?T('edit')+' ':'')+esc(c?c.name:'New Customer');w=620;
     var f=c||{name:'',company:'',email:'',phone:'',status:'lead',repId:defRep,notes:'',tags:[],address:'',source:''};
-    var selSt='';var sks=['lead','prospect','customer','churned'];for(var si=0;si<sks.length;si++)selSt+='<option value="'+sks[si]+'"'+(f.status===sks[si]?' selected':'')+'>'+smL(sks[si])+'</option>';
-    var selRp='';for(var ri=0;ri<D.users.length;ri++)if(D.users[ri].role==='rep'&&D.users[ri].active!==false)selRp+='<option value="'+D.users[ri].id+'"'+(f.repId===D.users[ri].id?' selected':'')+'>'+esc(D.users[ri].name)+'</option>';
-    var tgh='';for(var tgi=0;tgi<_tags.length;tgi++)tgh+='<span class="tag">'+esc(_tags[tgi])+'<span onclick="rmTag('+tgi+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';
+    var selSt='';['lead','prospect','customer','churned'].forEach(function(sk){selSt+='<option value="'+sk+'"'+(f.status===sk?' selected':'')+'>'+smL(sk)+'</option>';});
+    var selRp='';D.users.filter(function(u){return u.role==='rep'&&u.active!==false;}).forEach(function(r){selRp+='<option value="'+r.id+'"'+(f.repId===r.id?' selected':'')+'>'+esc(r.name)+'</option>';});
+    var tgh='';_tags.forEach(function(tg,i){tgh+='<span class="tag">'+esc(tg)+'<span onclick="rmTag('+i+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';});
     body='<div class="g2"><div class="field"><label>'+T('fname')+' *</label><input id="cf-n" value="'+esc(f.name)+'" placeholder="Dr. ..."/></div><div class="field"><label>'+T('company')+'</label><input id="cf-co" value="'+esc(f.company)+'"/></div><div class="field"><label>'+T('email')+'</label><input id="cf-em" type="email" value="'+esc(f.email)+'"/></div><div class="field"><label>'+T('phone')+'</label><input id="cf-ph" value="'+esc(f.phone)+'"/></div><div class="field"><label>'+T('status')+'</label><select id="cf-st">'+selSt+'</select></div><div class="field"><label>'+T('rep')+'</label><select id="cf-rp">'+selRp+'</select></div><div class="field"><label>'+T('source')+'</label><input id="cf-src" value="'+esc(f.source)+'"/></div><div class="field"><label>'+T('address')+'</label><input id="cf-adr" value="'+esc(f.address)+'"/></div></div><div class="field"><label>'+T('notes')+'</label><textarea id="cf-nt">'+esc(f.notes)+'</textarea></div><div class="field"><label>'+T('tags')+'</label><div id="tgbx" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px">'+tgh+'</div><input id="cf-tg" placeholder="'+T('addtag')+'" onkeydown="addTagEv(event)"/></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savC(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
+  } else if(m.type==='visitreport'){
+    var vr=null;if(m.id)vr=D.visitReports.filter(function(r){return r.id===m.id;})[0]||null;
+    var isAdmin2=SU&&SU.role==='admin';
+    if(vr&&!isAdmin2){title='Visit Report';body='<div style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:10px 13px;font-size:13px;color:var(--err);margin-bottom:14px">⚠️ '+T('repreadonly')+'</div><div style="font-size:13px;line-height:1.7">'+esc(vr.details)+'</div>';}
+    else{
+      title=(vr?'Edit':'New')+' Visit Report';w=540;
+      var presetCust=m.custId||'';
+      var f2=vr||{customerId:presetCust||(myCs()[0]||{}).id||'',visitType:'first_visit',details:''};
+      var cOpts='';myCs().forEach(function(c){cOpts+='<option value="'+c.id+'"'+(f2.customerId===c.id?' selected':'')+'>'+esc(c.name)+' — '+esc(c.company)+'</option>';});
+      var vtOpts='<option value="first_visit"'+(f2.visitType==='first_visit'?' selected':'')+'>'+T('firstvt')+'</option><option value="second_visit"'+(f2.visitType==='second_visit'?' selected':'')+'>'+T('secondvt')+'</option><option value="follow_up"'+(f2.visitType==='follow_up'?' selected':'')+'>'+T('followvt')+'</option>';
+      body='<div style="background:var(--card2);border-radius:8px;padding:10px 13px;font-size:12px;color:var(--t2);margin-bottom:14px">🕐 Timestamp: <strong style="color:var(--t1)">'+fmtTS(vr?vr.createdAt:new Date().toISOString())+'</strong>'+(vr?'<br>Created by: <strong style="color:var(--t1)">'+esc((D.users.filter(function(u){return u.id===vr.repId;})[0]||{}).name||'—')+'</strong>':'')+'</div>'
+      +'<div class="field"><label>'+T('customers')+' *</label><select id="vr-c">'+(m.custId?'':'')+cOpts+'</select></div>'
+      +'<div class="field"><label>'+T('vttype')+' *</label><select id="vr-t">'+vtOpts+'</select></div>'
+      +'<div class="field"><label>'+T('vtdetails')+' *</label><textarea id="vr-d" style="min-height:140px;line-height:1.6" placeholder="Describe the visit in detail…">'+esc(f2.details)+'</textarea></div>'
+      +'<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savVR(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
+    }
+  } else if(m.type==='viewreport'){
+    var vr2=D.visitReports.filter(function(r){return r.id===m.id;})[0];
+    if(!vr2){title='Report';body='<div>Not found</div>';}
+    else{
+      var c2=D.customers.filter(function(c){return c.id===vr2.customerId;})[0];
+      var rRep=D.users.filter(function(u){return u.id===vr2.repId;})[0];
+      title='Visit Report';w=520;
+      body='<div style="background:var(--bg);border-radius:10px;padding:14px;margin-bottom:16px">'
+      +'<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px">'+vtBadge(vr2.visitType)+'<span style="font-size:11px;color:var(--t3)">'+fmtTS(vr2.createdAt)+'</span></div>'
+      +'<div style="font-size:13px;margin-bottom:5px"><strong>Customer:</strong> '+esc(c2?c2.name:'—')+'</div>'
+      +'<div style="font-size:13px;margin-bottom:12px"><strong>Rep:</strong> '+esc(rRep?rRep.name:'—')+'</div>'
+      +'<div style="font-size:13px;line-height:1.7;white-space:pre-wrap;background:var(--card);border-radius:8px;padding:12px;border:1px solid var(--brd)">'+esc(vr2.details)+'</div>'
+      +(vr2.updatedAt?'<div style="font-size:11px;color:var(--t3);margin-top:8px;text-align:right">Last edited: '+fmtTS(vr2.updatedAt)+' by '+esc((D.users.filter(function(u){return u.id===vr2.updatedBy;})[0]||{}).name||'—')+'</div>':'')
+      +'</div>'
+      +'<div style="display:flex;justify-content:flex-end"><button class="btn btn-s btn-sm" onclick="A.cls()">Close</button></div>';
+    }
   } else if(m.type==='deal'){
-    var dl=null;if(m.id)for(var di=0;di<D.deals.length;di++)if(D.deals[di].id===m.id){dl=D.deals[di];break;}
+    var dl=null;if(m.id)dl=D.deals.filter(function(d){return d.id===m.id;})[0]||null;
     title=(dl?T('edit'):'New')+' Deal';
     var df=dl||{title:'',customerId:(myCs()[0]||{}).id||'',repId:defRep,value:'',stage:'qualification',probability:30,expectedClose:daysFrom(30),notes:''};
-    var cO='';var myCsArr=myCs();for(var dci=0;dci<myCsArr.length;dci++)cO+='<option value="'+myCsArr[dci].id+'"'+(df.customerId===myCsArr[dci].id?' selected':'')+'>'+esc(myCsArr[dci].name)+'</option>';
-    var rO='';for(var dri=0;dri<D.users.length;dri++)if(D.users[dri].role==='rep'&&D.users[dri].active!==false)rO+='<option value="'+D.users[dri].id+'"'+(df.repId===D.users[dri].id?' selected':'')+'>'+esc(D.users[dri].name)+'</option>';
-    var stO='';for(var dsi=0;dsi<DS.length;dsi++)stO+='<option value="'+DS[dsi]+'"'+(df.stage===DS[dsi]?' selected':'')+'>'+DM[DS[dsi]].label+'</option>';
+    var cO='';myCs().forEach(function(c){cO+='<option value="'+c.id+'"'+(df.customerId===c.id?' selected':'')+'>'+esc(c.name)+'</option>';});
+    var rO='';D.users.filter(function(u){return u.role==='rep'&&u.active!==false;}).forEach(function(r){rO+='<option value="'+r.id+'"'+(df.repId===r.id?' selected':'')+'>'+esc(r.name)+'</option>';});
+    var stO='';DS.forEach(function(s){stO+='<option value="'+s+'"'+(df.stage===s?' selected':'')+'>'+DM[s].label+'</option>';});
     body='<div class="field"><label>'+T('dtitle')+' *</label><input id="df-t" value="'+esc(df.title)+'"/></div><div class="g2"><div class="field"><label>'+T('customers')+'</label><select id="df-c">'+cO+'</select></div><div class="field"><label>'+T('rep')+'</label><select id="df-r">'+rO+'</select></div><div class="field"><label>'+T('dvalue')+'</label><input type="number" id="df-v" value="'+esc(String(df.value))+'"/></div><div class="field"><label>'+T('stage')+'</label><select id="df-s">'+stO+'</select></div><div class="field"><label>'+T('prob')+'</label><input type="number" min="0" max="100" id="df-p" value="'+df.probability+'"/></div><div class="field"><label>'+T('expclose')+'</label><input type="date" id="df-e" value="'+df.expectedClose+'"/></div></div><div class="field"><label>'+T('notes')+'</label><textarea id="df-n">'+esc(df.notes)+'</textarea></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savD(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
   } else if(m.type==='task'){
-    var tk=null;if(m.id)for(var tki=0;tki<D.tasks.length;tki++)if(D.tasks[tki].id===m.id){tk=D.tasks[tki];break;}
+    var tk=null;if(m.id)tk=D.tasks.filter(function(t){return t.id===m.id;})[0]||null;
     title=(tk?T('edit'):'New')+' Task';w=480;
     var tf=tk||{title:'',customerId:'',repId:defRep,dueDate:todayStr(),priority:'medium'};
-    var tcO='<option value="">— None —</option>';var myCsArr2=myCs();for(var tci=0;tci<myCsArr2.length;tci++)tcO+='<option value="'+myCsArr2[tci].id+'"'+(tf.customerId===myCsArr2[tci].id?' selected':'')+'>'+esc(myCsArr2[tci].name)+'</option>';
-    var trO='';for(var tri=0;tri<D.users.length;tri++)if(D.users[tri].role==='rep'&&D.users[tri].active!==false)trO+='<option value="'+D.users[tri].id+'"'+(tf.repId===D.users[tri].id?' selected':'')+'>'+esc(D.users[tri].name)+'</option>';
-    var prO='';var pks=['high','medium','low'];for(var pri=0;pri<pks.length;pri++)prO+='<option value="'+pks[pri]+'"'+(tf.priority===pks[pri]?' selected':'')+'>'+pmL(pks[pri])+'</option>';
+    var tcO='<option value="">— None —</option>';myCs().forEach(function(c){tcO+='<option value="'+c.id+'"'+(tf.customerId===c.id?' selected':'')+'>'+esc(c.name)+'</option>';});
+    var trO='';D.users.filter(function(u){return u.role==='rep'&&u.active!==false;}).forEach(function(r){trO+='<option value="'+r.id+'"'+(tf.repId===r.id?' selected':'')+'>'+esc(r.name)+'</option>';});
+    var prO='';['high','medium','low'].forEach(function(pk){prO+='<option value="'+pk+'"'+(tf.priority===pk?' selected':'')+'>'+pmL(pk)+'</option>';});
     body='<div class="field"><label>Title *</label><input id="tf-t" value="'+esc(tf.title)+'"/></div><div class="g2"><div class="field"><label>'+T('customers')+'</label><select id="tf-c">'+tcO+'</select></div><div class="field"><label>'+T('rep')+'</label><select id="tf-r">'+trO+'</select></div><div class="field"><label>'+T('dudate')+'</label><input type="date" id="tf-d" value="'+tf.dueDate+'"/></div><div class="field"><label>'+T('priority')+'</label><select id="tf-p">'+prO+'</select></div></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savT(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
   } else if(m.type==='purchase'){
     title='Add Purchase';w=400;
     body='<div class="field"><label>'+T('idate')+'</label><input type="date" id="pf-d" value="'+todayStr()+'"/></div><div class="field"><label>'+T('iitems')+' *</label><input id="pf-i" placeholder="Implant Kit x5"/></div><div class="field"><label>'+T('iamount')+' *</label><input type="number" id="pf-a" placeholder="0"/></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savP(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
   } else if(m.type==='activity'){
     title='Log Activity';w=440;
-    var arO='';for(var ari=0;ari<D.users.length;ari++)if(D.users[ari].role==='rep'&&D.users[ari].active!==false)arO+='<option value="'+D.users[ari].id+'"'+(D.users[ari].id===(SU&&SU.id)?'selected':'')+'>'+esc(D.users[ari].name)+'</option>';
+    var arO='';D.users.filter(function(u){return u.role==='rep'&&u.active!==false;}).forEach(function(r){arO+='<option value="'+r.id+'"'+(r.id===(SU&&SU.id)?'selected':'')+'>'+esc(r.name)+'</option>';});
     body='<div class="g2"><div class="field"><label>'+T('itype')+'</label><select id="af-t"><option value="call">'+T('call')+'</option><option value="email">'+T('emailact')+'</option><option value="meeting">'+T('meeting')+'</option><option value="note">'+T('noteact')+'</option></select></div><div class="field"><label>'+T('rep')+'</label><select id="af-r">'+arO+'</select></div></div><div class="field"><label>'+T('idate')+'</label><input type="date" id="af-d" value="'+todayStr()+'"/></div><div class="field"><label>'+T('inote')+' *</label><textarea id="af-n" style="min-height:80px" placeholder="Describe what happened…"></textarea></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savA(\''+esc(m.id||'')+'\')">Save</button></div>';
   } else if(m.type==='email'){
     title='Compose Email';w=620;
-    var ecust=null;for(var eci=0;eci<D.customers.length;eci++)if(D.customers[eci].id===m.id){ecust=D.customers[eci];break;}
-    if(!ecust&&myCs().length)ecust=myCs()[0];
-    var erep=null;if(ecust)for(var eri=0;eri<D.users.length;eri++)if(D.users[eri].id===ecust.repId){erep=D.users[eri];break;}
-    if(!erep)erep=SU;
-    var etpl=null;for(var eti=0;eti<ETPL.length;eti++)if(ETPL[eti].id===V.tplId){etpl=ETPL[eti];break;}
-    if(!etpl)etpl=ETPL[0];
+    var ecust=D.customers.filter(function(c){return c.id===m.id;})[0]||myCs()[0];
+    var erep=D.users.filter(function(u){return u.id===(ecust&&ecust.repId);})[0]||SU;
+    var etpl=ETPL.filter(function(t){return t.id===V.tplId;})[0]||ETPL[0];
     var vars={'{{name}}':(ecust&&ecust.name?ecust.name.split(' ').slice(1).join(' ')||'Doctor':'Doctor'),'{{company}}':(ecust&&ecust.company)||'','{{repName}}':(erep&&erep.name)||'Rep','{{followUpDate}}':daysFrom(7)};
-    var es=etpl.subject,eb=etpl.body;
-    for(var vk in vars){while(es.indexOf(vk)>=0)es=es.replace(vk,vars[vk]);while(eb.indexOf(vk)>=0)eb=eb.replace(vk,vars[vk]);}
-    var tpO='';for(var tpli=0;tpli<ETPL.length;tpli++)tpO+='<option value="'+ETPL[tpli].id+'"'+(ETPL[tpli].id===V.tplId?' selected':'')+'>'+esc(ETPL[tpli].name)+'</option>';
+    var es=etpl.subject,eb=etpl.body;for(var vk in vars){while(es.indexOf(vk)>=0)es=es.replace(vk,vars[vk]);while(eb.indexOf(vk)>=0)eb=eb.replace(vk,vars[vk]);}
+    var tpO='';ETPL.forEach(function(tp){tpO+='<option value="'+tp.id+'"'+(tp.id===V.tplId?' selected':'')+'>'+esc(tp.name)+'</option>';});
     body='<div class="field"><label>Template</label><select onchange="A.setTpl(this.value,\''+esc(m.id||'')+'\')">'+tpO+'</select></div><div class="field"><label>To</label><input readonly value="'+esc((ecust&&ecust.email)||'')+'" style="opacity:.6"/></div><div class="field"><label>Subject</label><input id="em-s" value="'+esc(es)+'"/></div><div class="field"><label>Body</label><textarea id="em-b" style="min-height:190px;line-height:1.6">'+esc(eb)+'</textarea></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button id="em-cp" class="btn btn-r btn-sm" onclick="A.cpyEm()">📋 Copy</button></div>';
   } else if(m.type==='user'){
-    var usr=null;if(m.id)for(var uui=0;uui<D.users.length;uui++)if(D.users[uui].id===m.id){usr=D.users[uui];break;}
+    var usr=D.users.filter(function(u){return u.id===m.id;})[0]||null;
     title=(usr?T('edit'):T('adduser'));w=480;
     var uf=usr||{name:'',username:'',email:'',role:'rep',color:'#3b82f6'};
     body='<div class="g2"><div class="field"><label>'+T('fname')+' *</label><input id="uf-n" value="'+esc(uf.name)+'"/></div><div class="field"><label>Username *</label><input id="uf-u" value="'+esc(uf.username)+'" '+(usr?'readonly style="opacity:.6"':'')+'/></div><div class="field"><label>'+T('email')+'</label><input id="uf-e" type="email" value="'+esc(uf.email)+'"/></div><div class="field"><label>'+T('irole')+'</label><select id="uf-r" '+((usr&&(usr.id==='u1'||usr.id==='u2'))?'disabled style="opacity:.6"':'')+'><option value="rep"'+(uf.role==='rep'?' selected':'')+'>'+T('reprole')+'</option><option value="admin"'+(uf.role==='admin'?' selected':'')+'>'+T('adminrole')+'</option></select></div><div class="field"><label>Color</label><input type="color" id="uf-c" value="'+esc(uf.color||'#3b82f6')+'" style="padding:4px;height:42px;cursor:pointer"/></div>'+(!usr?'<div class="field"><label>'+T('pwd')+' *</label><input id="uf-p" type="password" placeholder="Min 6 chars"/></div>':'')+'</div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.savU(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
   } else if(m.type==='changepwd'){
-    var cpu=null;if(m.id)for(var cpui=0;cpui<D.users.length;cpui++)if(D.users[cpui].id===m.id){cpu=D.users[cpui];break;}
+    var cpu=D.users.filter(function(u){return u.id===m.id;})[0]||null;
     title=T('changepwd');w=400;
     body='<div style="margin-bottom:14px;font-size:13px;color:var(--t2)">Changing password for: <strong style="color:var(--t1)">'+esc(cpu?cpu.name:'')+'</strong></div>'+(m.id===SU.id?'<div class="field"><label>'+T('curpwd')+'</label><input id="cp-old" type="password"/></div>':'')+'<div class="field"><label>'+T('newpwd')+' *</label><input id="cp-new" type="password" placeholder="Min 6 chars"/></div><div class="field"><label>'+T('confpwd')+' *</label><input id="cp-con" type="password"/></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn btn-s btn-sm" onclick="A.cls()">'+T('cancel')+'</button><button class="btn btn-r btn-sm" onclick="A.chPwd(\''+esc(m.id||'')+'\')">'+T('save')+'</button></div>';
   }
@@ -785,8 +759,8 @@ function rModal(){
 }
 
 // ── TAG HELPERS ────────────────────────────────────────
-function addTagEv(e){if(e.key==='Enter'){var inp=document.getElementById('cf-tg'),v=inp?inp.value.trim():'';if(v&&_tags.indexOf(v)<0){_tags.push(v);if(inp)inp.value='';}var bx=document.getElementById('tgbx');if(bx){var th='';for(var i=0;i<_tags.length;i++)th+='<span class="tag">'+esc(_tags[i])+'<span onclick="rmTag('+i+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';bx.innerHTML=th;}e.preventDefault();}}
-function rmTag(i){_tags.splice(i,1);var bx=document.getElementById('tgbx');if(bx){var th='';for(var j=0;j<_tags.length;j++)th+='<span class="tag">'+esc(_tags[j])+'<span onclick="rmTag('+j+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';bx.innerHTML=th;}}
+function addTagEv(e){if(e.key==='Enter'){var inp=document.getElementById('cf-tg'),v=inp?inp.value.trim():'';if(v&&_tags.indexOf(v)<0){_tags.push(v);if(inp)inp.value='';}var bx=document.getElementById('tgbx');if(bx){var th='';_tags.forEach(function(tg,i){th+='<span class="tag">'+esc(tg)+'<span onclick="rmTag('+i+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';});bx.innerHTML=th;}e.preventDefault();}}
+function rmTag(i){_tags.splice(i,1);var bx=document.getElementById('tgbx');if(bx){var th='';_tags.forEach(function(tg,j){th+='<span class="tag">'+esc(tg)+'<span onclick="rmTag('+j+')" style="cursor:pointer;margin-left:4px;font-weight:700">×</span></span>';});bx.innerHTML=th;}}
 function closeSb(){_sbOpen=false;var ov=document.getElementById('mOv');if(ov)ov.className='mob-ov';var sb=document.querySelector('.sb');if(sb)sb.className='sb'+(V.sb?'':' closed');}
 function gv(id){var el=document.getElementById(id);return el?el.value:'';}
 
@@ -802,11 +776,18 @@ function render(){
   else if(V.tab==='pipeline')pg=rPipeline();
   else if(V.tab==='emails')pg=rEmails();
   else if(V.tab==='reports')pg=rReports();
+  else if(V.tab==='visitrep')pg=rVisitRep();
   else if(V.tab==='auditlog')pg=rAudit();
   else if(V.tab==='usermgmt')pg=rUserMgmt();
   else if(V.tab==='settings')pg=rSettings();
   document.getElementById('app').innerHTML='<div class="layout">'+rSb()+'<div class="main">'+rTopbar()+'<div class="content fade">'+pg+'</div></div></div>'+rModal();
   var ov=document.getElementById('mOv');if(ov)ov.className='mob-ov'+(_sbOpen?' show':'');
+  // ── SEARCH FIX: restore focus after render ──────────
+  if(_focusSearch){
+    var srch=document.getElementById('srch');
+    if(srch){srch.focus();try{srch.setSelectionRange(srch.value.length,srch.value.length);}catch(e){}}
+    _focusSearch=false;
+  }
 }
 
 // ── ACTIONS ────────────────────────────────────────────
@@ -815,47 +796,52 @@ var A={
   logout:function(){doLogout();},
   gt:function(tb){V.tab=tb;V.custId=null;V.notifs=false;_sbOpen=false;render();},
   sbt:function(){if(window.innerWidth<=768){_sbOpen=!_sbOpen;var ov=document.getElementById('mOv');if(ov)ov.className='mob-ov'+(_sbOpen?' show':'');var sb=document.querySelector('.sb');if(sb)sb.className='sb'+(_sbOpen?' open':'');}else{V.sb=!V.sb;render();}},
-  srch:function(v){V.search=v;if(V.tab!=='customers'){V.tab='customers';V.custId=null;}render();},
+  // ── SEARCH FIX: set flag before render ──────────────
+  srch:function(v){_focusSearch=true;V.search=v;if(V.tab!=='customers'){V.tab='customers';V.custId=null;}render();},
   fs:function(t,v){if(t==='s')V.fStatus=v;else V.fRep=v;render();},
   tn:function(){V.notifs=!V.notifs;render();},
-  dAll:function(){var ns=getNots();for(var i=0;i<ns.length;i++)V.dismissed.push(ns[i].id);V.notifs=false;saveData();render();},
+  dAll:function(){getNots().forEach(function(n){V.dismissed.push(n.id);});V.notifs=false;saveData();render();},
   dimN:function(id){V.dismissed.push(id);render();},
   goN:function(tab,cid){V.notifs=false;V.tab=tab;V.custId=cid||null;if(cid)V.dtab='overview';_sbOpen=false;render();},
   goC:function(id){V.tab='customers';V.custId=id;if(id)V.dtab='overview';_sbOpen=false;render();},
   dtab:function(tb){V.dtab=tb;render();},
-  mod:function(t,id){if(t==='customer'){var c=null;if(id)for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){c=D.customers[i];break;}_tags=c&&c.tags?c.tags.slice():[];}V.modal={type:t,id:id};V.notifs=false;render();},
+  vrF:function(k,v){V.vrFilter[k]=v;render();},
+  mod:function(t,id,custId){if(t==='customer'){var c=id?D.customers.filter(function(x){return x.id===id;})[0]:null;_tags=c&&c.tags?c.tags.slice():[];}V.modal={type:t,id:id||null,custId:custId||null};V.notifs=false;render();},
   cls:function(){V.modal=null;render();},
   emailTo:function(cid,tid){V.tplId=tid;V.modal={type:'email',id:cid};render();},
   setTpl:function(tid,cid){V.tplId=tid;V.modal={type:'email',id:cid};render();},
   cpyEm:function(){var s=gv('em-s'),b=gv('em-b');if(navigator.clipboard){navigator.clipboard.writeText('Subject: '+s+'\n\n'+b).then(function(){var btn=document.getElementById('em-cp');if(btn){btn.textContent='✓ Copied!';btn.style.background='var(--grn)';setTimeout(function(){btn.textContent='📋 Copy';btn.style.background='';},2000);}});}},
   auF:function(t,v){if(t==='u')V.auditUser=v;else V.auditType=v;render();},
-  savC:function(id){var n=gv('cf-n').trim();if(!n){alert('Name required');return;}var c={id:id||'c'+uid(),name:n,company:gv('cf-co'),email:gv('cf-em'),phone:gv('cf-ph'),status:gv('cf-st'),repId:gv('cf-rp'),notes:gv('cf-nt'),source:gv('cf-src'),address:gv('cf-adr'),tags:_tags.slice()};if(id){var ex=null;for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){ex=D.customers[i];break;}if(ex){c.createdAt=ex.createdAt;c.lastContact=ex.lastContact;c.purchases=ex.purchases;}for(var j=0;j<D.customers.length;j++)if(D.customers[j].id===id){D.customers[j]=c;break;}addAudit('UPDATE_CUST',c.name,'Updated');}else{c.createdAt=new Date().toISOString();c.lastContact=new Date().toISOString();c.purchases=[];D.customers.push(c);addAudit('CREATE_CUST',c.name,'New '+c.status);}saveData();this.cls();},
-  delC:function(id){if(!confirm(T('confdelcust')))return;var cn='';for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){cn=D.customers[i].name;break;}D.customers=D.customers.filter(function(x){return x.id!==id;});D.activities=D.activities.filter(function(x){return x.customerId!==id;});D.tasks=D.tasks.filter(function(x){return x.customerId!==id;});D.deals=D.deals.filter(function(x){return x.customerId!==id;});if(V.custId===id)V.custId=null;addAudit('DELETE_CUST',cn,'Deleted');saveData();render();},
-  savD:function(id){var tl=gv('df-t').trim(),vl=Number(gv('df-v'));if(!tl||!vl){alert('Title and value required');return;}var dl={id:id||'d'+uid(),title:tl,value:vl,customerId:gv('df-c'),repId:gv('df-r'),stage:gv('df-s'),probability:Number(gv('df-p')),expectedClose:gv('df-e'),notes:gv('df-n')};if(id){var ex=null;for(var i=0;i<D.deals.length;i++)if(D.deals[i].id===id){ex=D.deals[i];break;}if(ex)dl.createdAt=ex.createdAt;for(var j=0;j<D.deals.length;j++)if(D.deals[j].id===id){D.deals[j]=dl;break;}addAudit('UPDATE_DEAL',dl.title,'Updated');}else{dl.createdAt=new Date().toISOString();D.deals.push(dl);addAudit('CREATE_DEAL',dl.title,fc(dl.value));}saveData();this.cls();},
+
+  savC:function(id){var n=gv('cf-n').trim();if(!n){alert('Name required');return;}var c={id:id||'c'+uid(),name:n,company:gv('cf-co'),email:gv('cf-em'),phone:gv('cf-ph'),status:gv('cf-st'),repId:gv('cf-rp'),notes:gv('cf-nt'),source:gv('cf-src'),address:gv('cf-adr'),tags:_tags.slice()};if(id){var ex=D.customers.filter(function(x){return x.id===id;})[0];if(ex){c.createdAt=ex.createdAt;c.lastContact=ex.lastContact;c.purchases=ex.purchases;}for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){D.customers[i]=c;break;}addAudit('UPDATE_CUST',c.name,'Updated');}else{c.createdAt=new Date().toISOString();c.lastContact=new Date().toISOString();c.purchases=[];D.customers.push(c);addAudit('CREATE_CUST',c.name,'New '+c.status);}saveData();this.cls();},
+  delC:function(id){if(!confirm(T('confdelcust')))return;var cn='';for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===id){cn=D.customers[i].name;break;}D.customers=D.customers.filter(function(x){return x.id!==id;});D.activities=D.activities.filter(function(x){return x.customerId!==id;});D.tasks=D.tasks.filter(function(x){return x.customerId!==id;});D.deals=D.deals.filter(function(x){return x.customerId!==id;});D.visitReports=D.visitReports.filter(function(x){return x.customerId!==id;});if(V.custId===id)V.custId=null;addAudit('DELETE_CUST',cn,'Deleted');saveData();render();},
+
+  savVR:function(id){var cid=gv('vr-c'),vt=gv('vr-t'),det=gv('vr-d').trim();if(!cid){alert('Select a customer');return;}if(!det){alert('Details required');return;}var c=D.customers.filter(function(x){return x.id===cid;})[0];if(id){var ex=D.visitReports.filter(function(r){return r.id===id;})[0];if(ex){ex.visitType=vt;ex.details=det;ex.updatedAt=new Date().toISOString();ex.updatedBy=SU?SU.id:'';}addAudit('UPDATE_VITREP',c?c.name:'—','Visit report updated');}else{D.visitReports.push({id:'vr'+uid(),customerId:cid,repId:SU?SU.id:'',visitType:vt,details:det,createdAt:new Date().toISOString(),updatedAt:null,updatedBy:null});addAudit('CREATE_VITREP',c?c.name:'—',T(vt==='first_visit'?'firstvt':vt==='second_visit'?'secondvt':'followvt')+' visit report created');}saveData();this.cls();},
+  delVR:function(id){if(!confirm(T('confdel')))return;var vr=D.visitReports.filter(function(r){return r.id===id;})[0];D.visitReports=D.visitReports.filter(function(r){return r.id!==id;});addAudit('DELETE_VITREP',vr?vr.customerId:'—','Deleted');saveData();render();},
+
+  savD:function(id){var tl=gv('df-t').trim(),vl=Number(gv('df-v'));if(!tl||!vl){alert('Title and value required');return;}var dl={id:id||'d'+uid(),title:tl,value:vl,customerId:gv('df-c'),repId:gv('df-r'),stage:gv('df-s'),probability:Number(gv('df-p')),expectedClose:gv('df-e'),notes:gv('df-n')};if(id){var ex=D.deals.filter(function(d){return d.id===id;})[0];if(ex)dl.createdAt=ex.createdAt;for(var i=0;i<D.deals.length;i++)if(D.deals[i].id===id){D.deals[i]=dl;break;}addAudit('UPDATE_DEAL',dl.title,'Updated');}else{dl.createdAt=new Date().toISOString();D.deals.push(dl);addAudit('CREATE_DEAL',dl.title,fc(dl.value));}saveData();this.cls();},
   delD:function(id){if(!confirm(T('confdel')))return;var dn='';for(var i=0;i<D.deals.length;i++)if(D.deals[i].id===id){dn=D.deals[i].title;break;}D.deals=D.deals.filter(function(x){return x.id!==id;});addAudit('DELETE_DEAL',dn,'Deleted');saveData();render();},
-  savT:function(id){var tl=gv('tf-t').trim();if(!tl){alert('Title required');return;}var tk={id:id||'t'+uid(),title:tl,customerId:gv('tf-c'),repId:gv('tf-r'),dueDate:gv('tf-d'),priority:gv('tf-p'),done:false,createdAt:new Date().toISOString(),createdBy:SU?SU.id:''};if(id){var ex=null;for(var i=0;i<D.tasks.length;i++)if(D.tasks[i].id===id){ex=D.tasks[i];break;}if(ex){tk.done=ex.done;tk.createdAt=ex.createdAt;tk.createdBy=ex.createdBy;}for(var j=0;j<D.tasks.length;j++)if(D.tasks[j].id===id){D.tasks[j]=tk;break;}addAudit('UPDATE_TASK',tk.title,'Updated');}else{D.tasks.push(tk);addAudit('CREATE_TASK',tk.title,'Due '+tk.dueDate);}saveData();this.cls();},
+  savT:function(id){var tl=gv('tf-t').trim();if(!tl){alert('Title required');return;}var tk={id:id||'t'+uid(),title:tl,customerId:gv('tf-c'),repId:gv('tf-r'),dueDate:gv('tf-d'),priority:gv('tf-p'),done:false,createdAt:new Date().toISOString(),createdBy:SU?SU.id:''};if(id){var ex=D.tasks.filter(function(t){return t.id===id;})[0];if(ex){tk.done=ex.done;tk.createdAt=ex.createdAt;tk.createdBy=ex.createdBy;}for(var i=0;i<D.tasks.length;i++)if(D.tasks[i].id===id){D.tasks[i]=tk;break;}addAudit('UPDATE_TASK',tk.title,'Updated');}else{D.tasks.push(tk);addAudit('CREATE_TASK',tk.title,'Due '+tk.dueDate);}saveData();this.cls();},
   tog:function(id){for(var i=0;i<D.tasks.length;i++)if(D.tasks[i].id===id){D.tasks[i].done=!D.tasks[i].done;addAudit('COMPLETE_TASK',D.tasks[i].title,D.tasks[i].done?'Done':'Reopened');break;}saveData();render();},
   delT:function(id){if(!confirm(T('confdel')))return;var tn='';for(var i=0;i<D.tasks.length;i++)if(D.tasks[i].id===id){tn=D.tasks[i].title;break;}D.tasks=D.tasks.filter(function(x){return x.id!==id;});addAudit('DELETE_TASK',tn,'Deleted');saveData();render();},
   savP:function(cid){var items=gv('pf-i').trim(),amount=Number(gv('pf-a'));if(!items||!amount){alert('Items and amount required');return;}var p={id:'p'+uid(),date:gv('pf-d'),items:items,amount:amount,addedAt:new Date().toISOString(),addedBy:SU?SU.id:''};for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===cid){D.customers[i].purchases.push(p);D.customers[i].lastContact=new Date().toISOString();addAudit('ADD_PURCHASE',D.customers[i].name,items+' — '+fc(amount));break;}saveData();this.cls();},
   savA:function(cid){var note=gv('af-n').trim();if(!note){alert('Note required');return;}var a={id:'a'+uid(),customerId:cid,type:gv('af-t'),note:note,date:gv('af-d'),repId:gv('af-r'),ts:new Date().toISOString()};D.activities.push(a);for(var i=0;i<D.customers.length;i++)if(D.customers[i].id===cid){D.customers[i].lastContact=new Date().toISOString();addAudit('LOG_ACT',D.customers[i].name,a.type+': '+note.slice(0,60));break;}saveData();this.cls();},
-  savU:function(id){var n=gv('uf-n').trim();if(!n){alert('Name required');return;}if(!id){var un=gv('uf-u').trim();if(!un){alert('Username required');return;}var exists=false;for(var i=0;i<D.users.length;i++)if(D.users[i].username===un){exists=true;break;}if(exists){alert('Username exists');return;}var pwd=gv('uf-p');if(!pwd||pwd.length<6){alert('Password min 6 chars');return;}D.users.push({id:'u'+uid(),username:un,password:pwd,name:n,email:gv('uf-e'),role:gv('uf-r'),color:gv('uf-c')||'#3b82f6',createdAt:new Date().toISOString(),active:true,createdBy:SU?SU.id:''});addAudit('CREATE_USER',n,'New user: '+un);}else{for(var j=0;j<D.users.length;j++)if(D.users[j].id===id){D.users[j].name=n;D.users[j].email=gv('uf-e');D.users[j].color=gv('uf-c');if(D.users[j].id!=='u1'&&D.users[j].id!=='u2')D.users[j].role=gv('uf-r');addAudit('UPDATE_USER',n,'Updated');break;}}saveData();this.cls();},
-  delU:function(id){var u=null;for(var i=0;i<D.users.length;i++)if(D.users[i].id===id){u=D.users[i];break;}if(!u||u.id==='u1'||u.id==='u2')return;if(!confirm(T('confdeluser')))return;D.users=D.users.filter(function(x){return x.id!==id;});addAudit('DELETE_USER',u.name,'Deleted');saveData();render();},
-  togU:function(id){for(var i=0;i<D.users.length;i++)if(D.users[i].id===id){D.users[i].active=D.users[i].active===false;addAudit('UPDATE_USER',D.users[i].name,D.users[i].active?'Enabled':'Disabled');break;}saveData();render();},
+  savU:function(id){var n=gv('uf-n').trim();if(!n){alert('Name required');return;}if(!id){var un=gv('uf-u').trim();if(!un){alert('Username required');return;}if(D.users.some(function(u){return u.username===un;})){alert('Username exists');return;}var pwd=gv('uf-p');if(!pwd||pwd.length<6){alert('Password min 6 chars');return;}D.users.push({id:'u'+uid(),username:un,password:pwd,name:n,email:gv('uf-e'),role:gv('uf-r'),color:gv('uf-c')||'#3b82f6',createdAt:new Date().toISOString(),active:true,createdBy:SU?SU.id:''});addAudit('CREATE_USER',n,'New: '+un);}else{for(var i=0;i<D.users.length;i++)if(D.users[i].id===id){D.users[i].name=n;D.users[i].email=gv('uf-e');D.users[i].color=gv('uf-c');if(D.users[i].id!=='u1'&&D.users[i].id!=='u2')D.users[i].role=gv('uf-r');addAudit('UPDATE_USER',n,'Updated');break;}}saveData();this.cls();},
+  delU:function(id){var u=D.users.filter(function(x){return x.id===id;})[0];if(!u||u.id==='u1'||u.id==='u2')return;if(!confirm(T('confdeluser')))return;D.users=D.users.filter(function(x){return x.id!==id;});addAudit('DELETE_USER',u.name,'Deleted');saveData();render();},
+  togU:function(id){for(var i=0;i<D.users.length;i++)if(D.users[i].id===id){D.users[i].active=D.users[i].active===false?true:false;addAudit('UPDATE_USER',D.users[i].name,D.users[i].active?'Enabled':'Disabled');break;}saveData();render();},
   chPwd:function(id){var np=gv('cp-new'),cp=gv('cp-con');if(!np||np.length<6){alert('Min 6 chars');return;}if(np!==cp){alert('Passwords do not match');return;}if(id===SU.id){var op=gv('cp-old');if(op!==SU.password){alert('Current password incorrect');return;}}for(var i=0;i<D.users.length;i++)if(D.users[i].id===id){D.users[i].password=np;if(id===SU.id){SU.password=np;try{sessionStorage.setItem(SSK,JSON.stringify(SU));}catch(e){}}addAudit('CHANGE_PWD',D.users[i].name,'Changed');break;}saveData();this.cls();},
   setCfg:function(k,v){if(!D.settings)D.settings={cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};D.settings[k]=v;saveData();render();},
-  savCloud:function(){if(!D.settings)D.settings={};D.settings.cloudKey=gv('cfg-key');D.settings.cloudBinId=gv('cfg-bid');addAudit('SETTINGS','Cloud','Settings saved');saveData();render();alert('✅ Settings saved! Now click "↻ Test Sync" to connect.');},
+  savCloud:function(){if(!D.settings)D.settings={};D.settings.cloudKey=gv('cfg-key');D.settings.cloudBinId=gv('cfg-bid');addAudit('SETTINGS','Cloud','Settings saved');saveData();render();alert('✅ Settings saved! Click ↻ Test Sync to connect.');},
   doPull:function(){cloudPull();},
   expData:function(){var blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='sedradent-backup-'+todayStr()+'.json';a.click();setTimeout(function(){URL.revokeObjectURL(url);},3000);addAudit('SETTINGS','Backup','Exported');},
-  impData:function(input){var f=input.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var imp=JSON.parse(e.target.result);if(imp&&imp.users){if(confirm(T('confimport'))){D=imp;if(!D.settings)D.settings={cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''};if(!D.auditLog)D.auditLog=[];saveData();addAudit('SETTINGS','Import','Imported');render();}}}catch(ex){alert('Invalid JSON file');}};r.readAsText(f);},
+  impData:function(input){var f=input.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var imp=JSON.parse(e.target.result);if(imp&&imp.users){if(confirm(T('confimport'))){D=imp;if(!D.settings)D.settings={};if(!D.auditLog)D.auditLog=[];if(!D.visitReports)D.visitReports=[];saveData();addAudit('SETTINGS','Import','Imported');render();}}}catch(ex){alert('Invalid JSON file');}};r.readAsText(f);},
   resetData:function(){if(confirm(T('confreset'))){D=JSON.parse(JSON.stringify(INIT));saveData();render();}},
   dl:function(){
     try{
       var src=document.documentElement.outerHTML;
-      // Embed current cloud settings into downloaded file
       var cfgStr=JSON.stringify(D.settings||{cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''});
-      src=src.replace('settings:{cloudMode:false,cloudProvider:\'npoint\',cloudKey:\'\',cloudBinId:\'\'}','settings:'+cfgStr);
-      var full='<!DOCTYPE html>\n'+src;
-      var blob=new Blob([full],{type:'text/html;charset=utf-8'});
+      src=src.replace("settings:{cloudMode:false,cloudProvider:'npoint',cloudKey:'',cloudBinId:''}","settings:"+cfgStr);
+      var blob=new Blob(['<!DOCTYPE html>\n'+src],{type:'text/html;charset=utf-8'});
       var url=URL.createObjectURL(blob),a=document.createElement('a');
       a.href=url;a.download='SEDRADENT-CRM.html';a.click();
       setTimeout(function(){URL.revokeObjectURL(url);},5000);
@@ -867,35 +853,18 @@ var A={
 loadData();
 var _r=document.getElementById('ROOT');if(_r){_r.lang=LG;_r.dir=LG==='ar'?'rtl':'ltr';}
 render();
-// Auto-sync on startup
 if(D.settings&&D.settings.cloudMode&&D.settings.cloudBinId){
   setTimeout(function(){
     var s=D.settings,url,headers={};
-    if(s.cloudProvider!=='jsonbin'){
-      url='https://api.npoint.io/'+s.cloudBinId.trim();
-      if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();
-    } else {
-      if(!s.cloudKey||!s.cloudKey.trim())return;
-      url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim()+'/latest';
-      headers['X-Master-Key']=s.cloudKey.trim();
-    }
+    if(s.cloudProvider!=='jsonbin'){url='https://api.npoint.io/'+s.cloudBinId.trim();if(s.cloudKey&&s.cloudKey.trim())headers['x-access-token']=s.cloudKey.trim();}
+    else{if(!s.cloudKey||!s.cloudKey.trim())return;url='https://api.jsonbin.io/v3/b/'+s.cloudBinId.trim()+'/latest';headers['X-Master-Key']=s.cloudKey.trim();}
     fetch(url,{headers:headers}).then(function(r){return r.json();}).then(function(j){
-      var record=s.cloudProvider!=='jsonbin'?j:(j.record||null);
-      if(record&&record.users){
-        var prevSettings=JSON.parse(JSON.stringify(D.settings));
-        var prevSession=SU;
-        D=record;D.settings=prevSettings;
-        if(!D.auditLog)D.auditLog=[];
-        localStorage.setItem(SK,JSON.stringify(D));
-        if(prevSession){var ok=false;for(var i=0;i<D.users.length;i++)if(D.users[i].id===prevSession.id&&D.users[i].active!==false){SU=D.users[i];ok=true;break;}if(!ok){SU=null;try{sessionStorage.removeItem(SSK);}catch(e){}}}
-        render();
-      }
+      var rec=s.cloudProvider!=='jsonbin'?j:(j.record||null);
+      if(rec&&rec.users){var ps=JSON.parse(JSON.stringify(D.settings)),pu=SU;D=rec;D.settings=ps;if(!D.auditLog)D.auditLog=[];if(!D.visitReports)D.visitReports=[];localStorage.setItem(SK,JSON.stringify(D));if(pu){var ok=false;for(var i=0;i<D.users.length;i++)if(D.users[i].id===pu.id&&D.users[i].active!==false){SU=D.users[i];ok=true;break;}if(!ok){SU=null;try{sessionStorage.removeItem(SSK);}catch(e){}}}render();}
     }).catch(function(){});
   },2000);
 }
-// Auto-push every 60 seconds
 setInterval(function(){if(SU&&D.settings&&D.settings.cloudMode&&D.settings.cloudBinId)cloudPush();},60000);
 </script>
-
-
-</body></html>
+</body>
+</html>
